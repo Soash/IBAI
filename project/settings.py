@@ -145,7 +145,7 @@ MEDIA_URL = 'media/'
 STATIC_ROOT = BASE_DIR/'staticfiles'
 
 if not DEBUG:
-    MEDIA_ROOT = '/home/dawnofbi/public_html/media'
+    MEDIA_ROOT = '/home/dawnofbi/ibaidob.com/media'
 else:
     MEDIA_ROOT = BASE_DIR / 'media'
 
