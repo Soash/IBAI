@@ -1,0 +1,400 @@
+{% extends 'base.html' %}
+
+{% load static i18n %}
+
+{% block title %}Course Details{% endblock %}
+
+{% block content %}
+{% include 'partials/theme-switch.html' %}
+
+<main class="main_wrapper overflow-hidden">
+
+    <!-- topbar__section__stert -->
+    {% include 'partials/top-banner.html' %}
+    <!-- topbar__section__end -->
+
+    <!-- headar section start -->
+    {% include 'partials/navbar.html' %}
+    <!-- header section end -->
+
+    <!-- Mobile Menu Start Here -->
+    {% include 'partials/mobile-menu.html' %}
+    <!-- Mobile Menu end Here -->
+
+    <!-- theme fixed shadow -->
+    <div>
+        <div class="theme__shadow__circle"></div>
+        <div class="theme__shadow__circle shadow__right"></div>
+    </div>
+    <!-- theme fixed shadow -->
+    <!-- breadcrumbarea__section__start -->
+
+    <div class="breadcrumbarea">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="breadcrumb__content__wraper" data-aos="fade-up">
+                        <div class="breadcrumb__title">
+                            <h2 class="heading">Course-Details</h2>
+                        </div>
+                        <div class="breadcrumb__inner">
+                            <ul>
+                                <li><a href="/">Home</a></li>
+                                <li>Course-Details</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="shape__icon__2">
+            <img loading="lazy" class=" shape__icon__img shape__icon__img__1" src="{% static 'img/herobanner/herobanner__1.png' %}"
+                alt="photo">
+            <img loading="lazy" class=" shape__icon__img shape__icon__img__2" src="{% static 'img/herobanner/herobanner__2.png' %}"
+                alt="photo">
+            <img loading="lazy" class=" shape__icon__img shape__icon__img__3" src="{% static 'img/herobanner/herobanner__3.png' %}"
+                alt="photo">
+            <img loading="lazy" class=" shape__icon__img shape__icon__img__4" src="{% static 'img/herobanner/herobanner__5.png' %}"
+                alt="photo">
+        </div>
+
+    </div>
+    <!-- breadcrumbarea__section__end-->
+
+    <div class="blogarea__2 sp_top_100 sp_bottom_100">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-xl-8 col-lg-8">
+
+                    <div class="blogarae__img__2 course__details__img__2" data-aos="fade-up">
+                        {% if course.thumbnail %}
+                        <img loading="lazy" src="{{ course.thumbnail.url }}" alt="blog">
+                        {% endif %}
+                    </div>
+
+                    <div class="blog__details__content__wraper">
+                        <div class="course__button__wraper" data-aos="fade-up">
+                            <div class="course__date">
+                                <p>Published on: <span>{{ course.created_at|date:"F j, Y" }}</span></p>
+                            </div>
+                        </div>
+                        <div class="course__details__heading" data-aos="fade-up">
+                            <h3>{{ course.title }}</h3>
+                        </div>
+                        <div class="course__details__price" data-aos="fade-up">
+                            <ul>
+                                <li>
+                                    <div class="course__price">
+                                        ৳{{ course.price }} <del>/ ৳{{ course.original_price }}</del>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="course__details__date">
+                                        <i class="icofont-book-alt"></i> {{ total_videos }} Lectures
+                                    </div>
+
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+
+                        </div>
+                        <div class="course__details__paragraph" data-aos="fade-up">
+                            <p>{{ course.description }}</p>
+                        </div>
+
+
+                        <div class="course__details__tab__wrapper" data-aos="fade-up">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <ul class="nav  course__tap__wrap" id="myTab" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <button class="single__tab__link active" data-bs-toggle="tab"
+                                                data-bs-target="#projects__two" type="button"><i
+                                                    class="icofont-book-alt"></i>Curriculum</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="single__tab__link" data-bs-toggle="tab"
+                                                data-bs-target="#projects__four" type="button"><i
+                                                    class="icofont-teacher"></i>Instructor</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                            <div class="tab-content tab__content__wrapper" id="myTabContent">
+                                <!-- Curriculum -->
+                                <div class="tab-pane fade  active show" id="projects__two" role="tabpanel" aria-labelledby="projects__two">
+                                    <div class="accordion content__cirriculum__wrap" id="accordionExample">
+
+                                        {% for lesson in lessons %}
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="heading{{ forloop.counter }}">
+                                                <button class="accordion-button {% if not forloop.first %}collapsed{% endif %}" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapse{{ forloop.counter }}" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}"
+                                                    aria-controls="collapse{{ forloop.counter }}">
+                                                    {{ forloop.counter }}. {{ lesson.title }}
+                                                    <span>{{ lesson.total_duration }} min</span>
+                                                </button>
+                                            </h2>
+                                            <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse {% if forloop.first %}show{% endif %}"
+                                                aria-labelledby="heading{{ forloop.counter }}">
+                                                <div class="accordion-body">
+
+                                                    {% for item in lesson.items_ordered %}
+                                                        <div class="scc__wrap">
+                                                            <div class="scc__info">
+                                                                {% if item.item_type == 'video' %}
+                                                                    <i class="icofont-video-alt"></i>
+                                                                {% else %}
+                                                                    <i class="icofont-question"></i>
+                                                                {% endif %}
+                                                                    <h5>
+                                                                        <a href="{% url 'course_item' course.slug lesson.slug item.order %}">{{ item.title }}</a>
+                                                                    </h5>
+                                                            </div>
+                                                            <div class="scc__meta">
+                                                                {% if item.item_type == 'video' %}
+                                                                    <span class="time"><i class="icofont-clock-time"></i> {{ item.video_length_min }} min</span>
+                                                                {% endif %}    
+                                                                <a href="{% url 'course_item' course.slug lesson.slug item.order %}"><span class="question"><i class="icofont-play-alt-2"></i> Preview</span></a>
+                                                            </div>
+                                                        </div>
+                                                    {% endfor %}
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% empty %}
+                                        <li class="list-group-item text-muted">No videos in this lesson yet.</li>
+                                        {% endfor %}
+
+                                    </div>
+                                </div>
+                                <!-- Curriculum -->
+
+                                <!-- Instructor -->
+                                <div class="tab-pane fade" id="projects__four" role="tabpanel"
+                                    aria-labelledby="projects__four">
+                                    <div class="blogsidebar__content__wraper__2 tab__instructor">
+                                        <div class="blogsidebar__content__inner__2">
+
+                                            <div class="blogsidebar__img__2">
+                                                {% if course.instructor.profile_picture %}
+                                                    <img loading="lazy" src="{{ course.instructor.profile_picture.url }}" alt="profile" width="100">
+                                                {% else %}
+                                                    <img loading="lazy" src="{% static 'img/profile.png' %}" alt="profile" width="100">
+                                                {% endif %} 
+                                            </div>
+
+                                            <div class="tab__instructor__inner">
+                                                <div class="blogsidebar__name__2">
+                                                    <h5>
+                                                        <a href="#">{{ course.instructor.first_name }}</a>
+                                                    </h5>
+                                                </div>
+                                                <div class="blog__sidebar__text__2">
+                                                    <p>{{ course.instructor.bio }}</p>
+                                                </div>
+                                                <div class="blogsidbar__icon__2">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="mailto:{{ course.instructor.email }}"><i class="icofont-email"></i></a>
+                                                        </li>
+                                                        {% if course.instructor.facebook_link %}
+                                                            <li>
+                                                                <a href="{{ course.instructor.facebook_link }}"><i class="icofont-facebook"></i></a>
+                                                            </li>
+                                                        {% endif %}
+                                                        {% if course.instructor.linkedin_link %}
+                                                            <li>
+                                                                <a href="{{ course.instructor.linkedin_link }}"><i class="icofont-linkedin"></i></a>
+                                                            </li>
+                                                        {% endif %}
+                                                        {% if course.instructor.website %}
+                                                            <li>
+                                                                <a href="{{ course.instructor.website }}"><i class="icofont-web"></i></a>
+                                                            </li>
+                                                        {% endif %}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Instructor -->
+
+                            </div>
+                        </div>
+
+
+                        <!-- comments section -->
+                        <div class="blog__details__comment">
+                            <div class="blog__details__comment__heading" data-aos="fade-up">
+                                <h5>({{ total_comments }}) Comment</h5>
+                            </div>
+                            
+                            {% for comment in comments %}
+                            <div class="blog__details__comment__inner" data-aos="fade-up">
+                                <div class="author__img">
+                                    {% if comment.user.profile_picture %}
+                                        <img loading="lazy" src="{{ comment.user.profile_picture.url }}" alt="author" width="80">
+                                    {% else %}
+                                        <img loading="lazy" src="{% static 'img/profile.png' %}" alt="author">
+                                    {% endif %}
+                                </div>
+                                <div class="author__content">
+                                    <div class="author__name">
+                                        <h6><a href="#">{{ comment.user.username }}</a></h6>
+                                        <p>{{ comment.created_at|date:"d F Y" }}</p>
+                                    </div>
+                                    <div class="author__text">
+                                        <p>{{ comment.content }}</p>
+                                    </div>
+                                </div>
+                                <div class="author__icon">
+                                    <button>
+                                        <svg width="26" height="19" viewBox="0 0 26 19" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M5.91943 10.2031L12.1694 16.4531C13.3413 17.625 15.3726 16.8047 15.3726 15.125V12.3516C19.9819 12.5469 20.0991 13.5625 19.4351 15.8672C18.9272 17.5469 20.8413 18.9141 22.2866 17.9375C24.2788 16.5703 25.3726 14.8516 25.3726 12.3516C25.3726 6.76562 20.3726 5.67188 15.3726 5.47656V2.66406C15.3726 0.984375 13.3413 0.164062 12.1694 1.33594L5.91943 7.58594C5.17725 8.28906 5.17725 9.5 5.91943 10.2031ZM7.24756 8.875L13.4976 2.625V7.3125C18.1851 7.3125 23.4976 7.58594 23.4976 12.3516C23.4976 14.5391 22.3647 15.6328 21.2319 16.375C22.8335 11.0625 18.8491 10.4375 13.4976 10.4375V15.125L7.24756 8.875ZM0.919434 7.58594C0.177246 8.28906 0.177246 9.5 0.919434 10.2031L7.16943 16.4531C7.95068 17.2734 9.12256 17.1562 9.82568 16.4531L2.24756 8.875L9.82568 1.33594C9.12256 0.632812 7.95068 0.515625 7.16943 1.33594L0.919434 7.58594Z"
+                                                fill="#121416" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+
+                        {% if user.is_authenticated and is_enrolled %}
+                        <form method="post" action="{% url 'add_comment' course.slug %}">{% csrf_token %}
+                            <div class="blog__details__form">
+                                <div class="blog__details__input__heading" data-aos="fade-up">
+                                    <h5>Write your comment</h5>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xl-12" data-aos="fade-up">
+                                        <div class="blog__details__input">
+                                            <textarea cols="30" rows="10" name="content">Enter your message*</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog__details__button" data-aos="fade-up">
+                                <button class="default__button" type="submit">Post a Comment</button>
+                            </div>
+                        </form>
+                        {% endif %}
+                         <!-- comments section -->
+                    </div>
+                </div>
+
+
+                <div class="col-xl-4 col-lg-4">
+
+                    <div class="course__details__sidebar">
+                        <div class="event__sidebar__wraper" data-aos="fade-up">
+
+
+                            <div class="blogarae__img__2 course__details__img__2" data-aos="fade-up">
+
+                                {% if intro_video_thumbnail %}
+                                    <img loading="lazy" src="{{ intro_video_thumbnail }}" alt="blog">
+                                {% endif %}
+
+                                <div class="registerarea__content course__details__video">
+                                    <div class="registerarea__video">
+                                        <div class="video__pop__btn">
+                                            <a class="video-btn" href="{{ course.intro_video_url }}">
+                                                <img loading="lazy" src="{% static 'img/icon/video.png' %}" alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="event__price__wraper">
+
+                                <div class="event__price">
+                                    ৳{{ course.price }} <del>/ ৳{{ course.original_price }}</del>
+                                </div>
+                                <div class="event__Price__button">
+                                    <a href="#">{{ course.discount_percentage }}% OFF</a>
+                                </div>
+                            </div>
+
+                            <div class="course__summery__button">
+                                {% if user.is_authenticated %}
+                                    {% if is_enrolled %}
+                                        <button class="default__button default__button--2" disabled>Enrolled</button>
+                                    {% else %}
+                                        <a href="{% url 'initiate_payment' course.slug %}" class="default__button">Buy Now</a>
+                                    {% endif %}
+                                {% else %}
+                                    <a href="{% url 'user_login' %}?next={{ request.path }}" class="default__button">Login to Enroll</a>
+                                {% endif %}
+                            </div>
+
+                            <div class="course__summery__lists">
+                                <ul>
+                                    <li>
+                                        <div class="course__summery__item">
+                                            <span class="sb_label">Enrolled</span>
+                                            <span class="sb_content"> {{ total_enrollments}} </span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="course__summery__item">
+                                            <span class="sb_label">Duration</span>
+                                            <span class="sb_content"> {{ total_duration }}</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="course__summery__item">
+                                            <span class="sb_label">Course Level</span><span
+                                                class="sb_content">{{ course.get_course_level_display }}</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="course__summery__item">
+                                            <span class="sb_label">Language</span>
+                                            <span class="sb_content">{{ course.get_language_display }}</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="course__summery__item">
+                                            <span class="sb_label">Certificate</span>
+                                            <span class="sb_content">
+                                                {% if course.certificate_available %}
+                                                    Yes
+                                                {% else %}
+                                                    No
+                                                {% endif %}
+                                            </span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="course__summery__button">
+                                <p>More inquery about course.</p>
+                                <a class="default__button default__button--3" href="tel:+8801517831136"><i
+                                        class="icofont-phone"></i> +880 1517 831 136</a>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'partials/footer.html' %}
+
+</main>
+
+{% endblock %}
+

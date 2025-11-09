@@ -1,0 +1,420 @@
+{% extends 'base.html' %}
+
+{% load static i18n %}
+
+{% block title %}Become An Instructor{% endblock %}
+
+{% block content %}
+{% include 'partials/theme-switch.html' %}
+
+<main class="main_wrapper overflow-hidden">
+
+    <!-- topbar__section__stert -->
+    {% include 'partials/top-banner-2.html' %}
+    <!-- topbar__section__end -->
+
+
+    <!-- headar section start -->
+    {% include 'partials/navbar-2.html' %}
+    <!-- header section end -->
+
+    <!-- Mobile Menu Start Here -->
+    {% include 'partials/mobile-menu.html' %}
+    <!-- Mobile Menu end Here -->
+
+
+    <!-- theme fixed shadow -->
+    <div>
+        <div class="theme__shadow__circle"></div>
+        <div class="theme__shadow__circle shadow__right"></div>
+    </div>
+    <!-- theme fixed shadow -->
+    <!-- breadcrumbarea__section__start -->
+
+    <div class="breadcrumbarea">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="breadcrumb__content__wraper" data-aos="fade-up">
+                        <div class="breadcrumb__title">
+                            <h2 class="heading">Become An Instructor</h2>
+                        </div>
+                        <div class="breadcrumb__inner">
+                            <ul>
+                                <li><a href="{% url 'pages:dynamic_pages' template_name='index' %}">Home</a></li>
+                                <li>Become An Instructor</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="shape__icon__2">
+            <img loading="lazy" class=" shape__icon__img shape__icon__img__1" src="{% static 'img/herobanner/herobanner__1.png' %}"
+                alt="photo">
+            <img loading="lazy" class=" shape__icon__img shape__icon__img__2" src="{% static 'img/herobanner/herobanner__2.png' %}"
+                alt="photo">
+            <img loading="lazy" class=" shape__icon__img shape__icon__img__3" src="{% static 'img/herobanner/herobanner__3.png' %}"
+                alt="photo">
+            <img loading="lazy" class=" shape__icon__img shape__icon__img__4" src="{% static 'img/herobanner/herobanner__5.png' %}"
+                alt="photo">
+        </div>
+
+    </div>
+    <!-- breadcrumbarea__section__end-->
+
+
+    <!-- become__instructor__start -->
+    <div class="become__instructor sp_100">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="become__instructor__heading">
+                        <h2>Apply As Instructor</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+                    <div class="become__instructor__text">
+                        <h3 class="become__instructor__small__heading">Become an Instructor</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus blanditiis officiis vero
+                            fugiat inventore voluptates sint magnam, accusantium cupiditate odio dolore ipsam ut,
+                            corrupti quisquam veritatis pariatur harum labore voluptatibus consectetur dolorem aliquid
+                            soluta.</p>
+                        <h3 class="become__instructor__small__heading">Instructor Rules</h3>
+                        <p>Various versions have evolved over the years, sometimes by accident, sometimes on purpose
+                            (injected humour and the like).</p>
+                        <div class="become__instructor__list">
+                            <ul>
+                                <li>
+                                    <div class="become__instructor__img">
+                                        <img loading="lazy" src="{% static 'img/dashbord/check__1.png' %}" alt="">
+                                    </div>
+
+                                    Basic knowledge and detailed understanding of CSS3 to create.
+                                </li>
+                                <li>
+                                    <div class="become__instructor__img">
+                                        <img loading="lazy" src="{% static 'img/dashbord/check__1.png' %}" alt="">
+                                    </div>
+
+                                    Details Idea about HTMLS, Creating Basic Web Pages using HTMLS
+                                </li>
+                                <li>
+                                    <div class="become__instructor__img">
+                                        <img loading="lazy" src="{% static 'img/dashbord/check__1.png' %}" alt="">
+                                    </div>
+
+                                    Web Page Layout Design and Slider Creation
+                                </li>
+                                <li>
+                                    <div class="become__instructor__img">
+                                        <img loading="lazy" src="{% static 'img/dashbord/check__1.png' %}" alt="">
+                                    </div>
+
+                                    Image Insert method af web site
+                                </li>
+                                <li>
+                                    <div class="become__instructor__img">
+                                        <img loading="lazy" src="{% static 'img/dashbord/check__1.png' %}" alt="">
+                                    </div>
+
+                                    Creating Styling Web Pages Using CSS3
+                                </li>
+                            </ul>
+                        </div>
+
+                        <h3 class="become__instructor__small__heading">Start With courses</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam facilis inventore tempora
+                            maxime quibusdam cumque aperiam? Ducimus totam repellendus fugiat vel dolorum. Commodi, vel.
+                            Aliquid quia voluptas esse accusantium? Libero impedit, odit dolorum sint fugit error.</p>
+                        <div class="become__instructor__list">
+                            <ul>
+                                <li>
+                                    <div class="become__instructor__img">
+                                        <img loading="lazy" src="{% static 'img/dashbord/check__1.png' %}" alt="">
+                                    </div>
+
+                                    Basic knowledge and detailed understanding of CSS3 to create.
+                                </li>
+                                <li>
+                                    <div class="become__instructor__img">
+                                        <img loading="lazy" src="{% static 'img/dashbord/check__1.png' %}" alt="">
+                                    </div>
+
+                                    Details Idea about HTMLS, Creating Basic Web Pages using HTMLS
+                                </li>
+                                <li>
+                                    <div class="become__instructor__img">
+                                        <img loading="lazy" src="{% static 'img/dashbord/check__1.png' %}" alt="">
+                                    </div>
+
+                                    Web Page Layout Design and Slider Creation
+                                </li>
+
+                            </ul>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, voluptas.</p>
+
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+
+                    <div class="become__instructor__form">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="dashboard__form__wraper">
+                                    <div class="dashboard__form__input">
+                                        <label for="#">First Name</label>
+                                        <input type="text" placeholder="John">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-12">
+                                <div class="dashboard__form__wraper">
+                                    <div class="dashboard__form__input">
+                                        <label for="#">Last Name</label>
+                                        <input type="text" placeholder="Due">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-xl-12">
+                                <div class="dashboard__form__wraper">
+                                    <div class="dashboard__form__input">
+                                        <label for="#">Email</label>
+                                        <input type="text" placeholder="Email">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-12">
+                                <div class="dashboard__form__wraper">
+                                    <div class="dashboard__form__input">
+                                        <label for="#">Phone Number</label>
+                                        <input type="text" placeholder="+8-333-555-6666">
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-xl-12">
+                                <div class="dashboard__form__wraper">
+                                    <div class="dashboard__form__input">
+                                        <label for="#">Bio</label>
+                                        <textarea name="" id="" cols="30"
+                                            rows="10">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="become__instructor__check">
+                                <input class="become__instructor__check__input" type="checkbox" value=""
+                                    id="flexCheckDefault">
+                                <label class="become__instructor__check__label" for="flexCheckDefault">
+                                    You agree to our friendly <a href="#">Privacy policy</a>.
+                                </label>
+                            </div>
+
+
+                            <div class="col-xl-12">
+                                <div class="dashboard__form__button">
+                                    <a class="default__button" href="#">Update Info</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- become__instructor__end -->
+    <!-- footer__section__start -->
+    <div class="footerarea">
+        <div class="container">
+            <div class="footerarea__newsletter__wraper">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12" data-aos="fade-up">
+                        <div class="footerarea__logo">
+                            <a href="#"><img loading="lazy" src="{% static 'img/logo/logo_2.png' %}" alt="logophoto"></a>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12" data-aos="fade-up">
+                        <div class="footerarea__newsletter">
+                            <div class="footerarea__newsletter__input">
+                                <form action="#">
+                                    <input type="text" placeholder="Enter your email here">
+                                    <div class="footerarea__newsletter__button">
+                                        <button type="submit" class="subscribe__btn">Subscribe Now</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footerarea__wrapper">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 " data-aos="fade-up">
+                        <div class="footerarea__inner footerarea__about__us">
+                            <div class="footerarea__heading">
+                                <h3>About us</h3>
+                            </div>
+                            <div class="footerarea__content">
+                                <p>orporate clients and leisure travelers has been relying on Groundlink for dependable
+                                    safe, and professional chauffeured car end service in major cities across World.</p>
+                            </div>
+                            <div class="footerarea__icon">
+                                <ul>
+                                    <li><a href="//facebook.com"><i class="icofont-facebook"></i></a></li>
+                                    <li><a href="//twitter.com"><i class="icofont-twitter"></i></a></li>
+                                    <li><a href="//vimeo.com"><i class="icofont-vimeo"></i></a></li>
+                                    <li><a href="//linkedin.com"><i class="icofont-linkedin"></i></a></li>
+                                    <li><a href="//skype.com"><i class="icofont-skype"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 " data-aos="fade-up">
+                        <div class="footerarea__inner">
+                            <div class="footerarea__heading">
+                                <h3>Usefull Links</h3>
+                            </div>
+                            <div class="footerarea__list">
+                                <ul>
+                                    <li>
+                                        <a href="#">About Us</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Teachers</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Partner</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Room-Details</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Gallery</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 " data-aos="fade-up">
+                        <div class="footerarea__inner footerarea__padding__left">
+                            <div class="footerarea__heading">
+                                <h3>Course</h3>
+                            </div>
+                            <div class="footerarea__list">
+                                <ul>
+                                    <li>
+                                        <a href="#">Ui Ux Design</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Web Development</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Business Strategy</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Softwere Development</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Business English</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12" data-aos="fade-up">
+                        <div class="footerarea__right__wraper footerarea__inner">
+                            <div class="footerarea__heading">
+                                <h3>Recent Post</h3>
+                            </div>
+                            <div class="footerarea__right__list">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <div class="footerarea__right__img">
+                                                <img loading="lazy" src="{% static 'img/footer/footer__1.png' %}" alt="footerphoto">
+                                            </div>
+                                            <div class="footerarea__right__content">
+                                                <span>02 Apr 2024 </span>
+                                                <h6>Best Your Business</h6>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            <div class="footerarea__right__img">
+                                                <img loading="lazy" src="{% static 'img/footer/footer__2.png' %}" alt="footerphoto">
+                                            </div>
+                                            <div class="footerarea__right__content">
+                                                <span>02 Apr 2024 </span>
+                                                <h6>Keep Your Business</h6>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            <div class="footerarea__right__img">
+                                                <img loading="lazy" src="{% static 'img/footer/footer__3.png' %}" alt="footerphoto">
+                                            </div>
+                                            <div class="footerarea__right__content">
+                                                <span>02 Apr 2024 </span>
+                                                <h6>Nice Your Business</h6>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footerarea__copyright__wrapper">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" data-aos="fade-up">
+                        <div class="footerarea__copyright__content">
+                            <p>© 2024 Powered by <a href="#">Edurock</a>. All Rights Reserved.</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" data-aos="fade-up">
+                        <div class="footerarea__copyright__list">
+                            <ul>
+                                <li><a href="#">Terms of Use</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- footer__section__end -->
+
+</main>
+
+{% endblock %}

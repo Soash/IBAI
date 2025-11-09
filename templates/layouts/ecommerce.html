@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% load static i18n %}
+
+{% block title %}{% endblock %}
+
+{% block extra_css %} {% endblock %}
+
+{% block body_attribute %}{% endblock %}
+
+{% block preloader %}
+
+{% endblock %}
+
+{% block content %}
+  {% include 'partials/theme-switch.html' %}
+
+  <main class="main_wrapper overflow-hidden">
+
+    {% include 'partials/top-banner-2.html' %}
+
+    {% include 'partials/navbar-2.html' %}
+
+    {% include 'partials/mobile-menu.html' %}
+
+    <div>
+      <div class="theme__shadow__circle"></div>
+      <div class="theme__shadow__circle shadow__right"></div>
+    </div>
+
+    {% block page_content %}{% endblock %}
+
+    {% include 'partials/footer-2.html' %}
+
+    {% block modal %}{% endblock %}
+
+  </main>
+
+{% endblock %}
+
+{% block extra_javascript %} {% endblock %}

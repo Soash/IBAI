@@ -1,0 +1,43 @@
+{% extends 'layouts/student.html' %}
+
+{% load static i18n %}
+
+{% block title %}Student Profile{% endblock %}
+
+{% block page_content %}
+
+<div class="col-xl-9 col-lg-9 col-md-12">
+    <div class="dashboard__content__wraper">
+        <div class="dashboard__section__title">
+            <h4>My Profile</h4>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4">
+                <div class="dashboard__form">Registration Date</div>
+            </div>
+            <div class="col-lg-8 col-md-8">
+                <div class="dashboard__form">{{ request.user.date_joined }}</div>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="dashboard__form dashboard__form__margin">Full Name</div>
+            </div>
+            <div class="col-lg-8 col-md-8">
+                <div class="dashboard__form dashboard__form__margin">{{ request.user.first_name }}</div>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="dashboard__form dashboard__form__margin">Username</div>
+            </div>
+            <div class="col-lg-8 col-md-8">
+                <div class="dashboard__form dashboard__form__margin">{{ request.user.username }}</div>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="dashboard__form dashboard__form__margin">Email</div>
+            </div>
+            <div class="col-lg-8 col-md-8">
+                <div class="dashboard__form dashboard__form__margin">{{ request.user.email }}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

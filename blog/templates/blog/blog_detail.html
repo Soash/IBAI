@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+  {% include 'partials/theme-switch.html' %}
+<main class="main_wrapper overflow-hidden">
+
+  {% include 'partials/top-banner.html' %}
+  {% include 'partials/navbar.html' %}
+  {% include 'partials/mobile-menu.html' %}
+
+  <!-- Hero Banner -->
+  <section class="py-5 text-center border-bottom">
+    <div class="container">
+      <h1 class="fw-bold mb-3">{{ post.title }}</h1>
+      <p class="text-muted mb-0">
+        By <strong>{{ post.author }}</strong> · {{ post.created_at|date:"F j, Y" }}
+      </p>
+    </div>
+  </section>
+
+  <!-- Post Content -->
+  <section class="py-5">
+    <div class="container" style="max-width: 850px;">
+      {% if post.image %}
+        <div class="mb-4 text-center">
+          <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-fluid rounded-4 shadow-sm">
+        </div>
+      {% endif %}
+
+      <article class="p-4 p-md-5 rounded-4 shadow-sm">
+        <div class="content lead" style="line-height: 1.8;">
+          {{ post.content|safe }}
+        </div>
+      </article>
+
+      <div class="d-flex justify-content-between align-items-center mt-5">
+        <a href="{% url 'blog_list' %}" class="btn btn-outline-secondary rounded-pill px-4">
+          ← Back to Blog
+        </a>
+        <a href="#top" class="btn btn-primary rounded-pill px-4">
+          ↑ Top
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comments Section -->
+  <section class="py-5">
+    <div class="container" style="max-width: 850px;">
+      <h4 class="mb-4">Comments ({{ comments.count }})</h4>
+
+      <!-- Comment List -->
+      <div class="mb-5">
+        {% for comment in comments %}
+          <div class="border rounded-3 p-3 mb-3">
+            <p class="mb-1"><strong>{{ comment.user }}</strong> · {{ comment.created_at|date:"F j, Y H:i" }}</p>
+            <p>{{ comment.content }}</p>
+          </div>
+        {% empty %}
+          <p class="text-muted">No comments yet. Be the first to comment!</p>
+        {% endfor %}
+      </div>
+
+      <!-- Comment Form -->
+      {% if user.is_authenticated %}
+        <form method="post">
+          {% csrf_token %}
+          <textarea name="content" rows="3" class="form-control mb-2" placeholder="Write your comment..."></textarea>
+          <button type="submit" class="btn btn-primary">Post Comment</button>
+        </form>
+      {% else %}
+        <p class="text-muted">You must <a href="{% url 'user_login' %}">login</a> to post a comment.</p>
+      {% endif %}
+    </div>
+  </section>
+
+
+  {% include 'partials/footer.html' %}
+</main>
+{% endblock %}

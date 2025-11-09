@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>IBAI</title>
+</head>
+<body>
+    <div>
+        <h2>Hello {{ first_name }},</h2>
+        <h3>Welcome to IBAI - Institute of Bioinformatics and Artificial Intelligence.</h3>
+        <p>Your account has been successfully created!</p>
+        <div>
+            <p>
+                <strong>Username:</strong> {{ username }}<br>
+                <strong>Password:</strong> {{ password }}
+            </p>
+        </div>
+        <div>
+            <span>You can log in here:</span>
+            <a href="{{ login_url }}">{{ login_url }}</a>
+            <div>
+                <p>
+                    Please change your password after logging in.<br>
+                    Thank you for joining us!
+                </p>
+            </div>
+        </div>
+        <p><em>Timestamp: {{ timestamp }}</em></p>
+    </div>
+</body>
+</html>

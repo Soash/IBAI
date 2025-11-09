@@ -1,0 +1,584 @@
+{% extends 'base.html' %}
+
+{% load static i18n %}
+
+{% block title %} {% endblock %}
+
+{% block content %}
+
+<main class="main_wrapper overflow-hidden">
+
+    <!-- topbar__section__stert -->
+    {% include 'partials/top-banner-2.html' %}
+    <!-- topbar__section__end -->
+
+    <!-- headar section start -->
+    {% include 'partials/navbar-2.html' %}
+    <!-- header section end -->
+
+    <!-- Mobile Menu Start Here -->
+    {% include 'partials/mobile-menu.html' %}
+    <!-- Mobile Menu end Here -->
+
+    <!-- theme fixed shadow -->
+    <div>
+        <div class="theme__shadow__circle"></div>
+        <div class="theme__shadow__circle shadow__right"></div>
+    </div>
+    <!-- theme fixed shadow -->
+
+
+    <!-- tution__section__start -->
+    <div class="tution sp_bottom_100 sp_top_50">
+        <div class="container-fluid full__width__padding">
+            <div class="row">
+                <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12" data-aos="fade-up">
+
+                    <div class="accordion content__cirriculum__wrap" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Lesson #01
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+
+                                    <div class="scc__wrap">
+                                        <div class="scc__info">
+                                            <i class="icofont-video-alt"></i>
+                                            <h5> <a href="{% url 'pages:dynamic_pages' template_name='lessons' %}"><span>Course Intro</span></a></h5>
+                                        </div>
+                                        <div class="scc__meta">
+                                            <strong>3.27</strong>
+                                            <a href="{% url 'pages:dynamic_pages' template_name='lessons' %}"><span class="question"><i class="icofont-eye"></i>
+                                                    Preview</span></a>
+
+                                        </div>
+                                    </div>
+                                    <div class="scc__wrap">
+                                        <div class="scc__info">
+                                            <i class="icofont-video-alt"></i>
+                                            <h5> <a href="{% url 'pages:dynamic_pages' template_name='lesson-2' %}"><span>Course Outline</span></a></h5>
+                                        </div>
+                                        <div class="scc__meta">
+                                            <strong>5.00</strong>
+                                            <a href="{% url 'pages:dynamic_pages' template_name='lesson-2' %}"><span class="question"><i class="icofont-eye"></i>
+                                                    Preview</span></a>
+
+                                        </div>
+                                    </div>
+                                    <div class="scc__wrap">
+                                        <div class="scc__info">
+                                            <i class="icofont-file-text"></i>
+                                            <h5> <a href="{% url 'pages:dynamic_pages' template_name='lesson-course-materials' %}"><span>Course
+                                                        Materials</span></a></h5>
+                                        </div>
+                                    </div>
+                                    <div class="scc__wrap">
+                                        <div class="scc__info">
+                                            <i class="icofont-audio"></i>
+                                            <h5> <a href="{% url 'pages:dynamic_pages' template_name='lesson-quiz' %}"><span>Summer Quiz</span></a></h5>
+                                        </div>
+                                    </div>
+
+                                    <div class="scc__wrap">
+                                        <div class="scc__info">
+                                            <i class="icofont-file-text"></i>
+                                            <h5><a href="{% url 'pages:dynamic_pages' template_name='lesson-assignments' %}"><span>Assignment</span></a></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Lesson #02
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                data-bs-parent="#accordionExample">
+
+                                <div class="accordion-body">
+
+                                    <div class="scc__wrap">
+                                        <div class="scc__info">
+                                            <i class="icofont-video-alt"></i>
+                                            <h5> <a href="{% url 'pages:dynamic_pages' template_name='lessons' %}"><span>Course Intro</span></a></h5>
+                                        </div>
+                                        <div class="scc__meta">
+                                            <strong>3.27</strong>
+                                            <a href="{% url 'pages:dynamic_pages' template_name='lessons' %}"><span class="question"><i class="icofont-eye"></i>
+                                                    Preview</span></a>
+
+                                        </div>
+                                    </div>
+                                    <div class="scc__wrap">
+                                        <div class="scc__info">
+                                            <i class="icofont-video-alt"></i>
+                                            <h5> <a href="{% url 'pages:dynamic_pages' template_name='lesson-2' %}"><span>Course Outline</span></a></h5>
+                                        </div>
+                                        <div class="scc__meta">
+                                            <strong>5.00</strong>
+                                            <a href="{% url 'pages:dynamic_pages' template_name='lesson-2' %}"><span class="question"><i class="icofont-eye"></i>
+                                                    Preview</span></a>
+
+                                        </div>
+                                    </div>
+                                    <div class="scc__wrap">
+                                        <div class="scc__info">
+                                            <i class="icofont-video-alt"></i>
+                                            <h5> <a href="{% url 'pages:dynamic_pages' template_name='lesson-2' %}"><span>Course Outline</span></a></h5>
+                                        </div>
+                                        <div class="scc__meta">
+                                            <strong>7.00</strong>
+                                            <a href="{% url 'pages:dynamic_pages' template_name='lesson-3' %}"><span class="question"><i class="icofont-eye"></i>
+                                                    Preview</span></a>
+
+                                        </div>
+                                    </div>
+                                    <div class="scc__wrap">
+                                        <div class="scc__info">
+                                            <i class="icofont-file-text"></i>
+                                            <h5> <a href="{% url 'pages:dynamic_pages' template_name='lesson-course-materials' %}"><span>Course
+                                                        Materials</span></a></h5>
+                                        </div>
+                                    </div>
+                                    <div class="scc__wrap">
+                                        <div class="scc__info">
+                                            <i class="icofont-audio"></i>
+                                            <h5> <a href="{% url 'pages:dynamic_pages' template_name='lesson-quiz' %}"><span>Summer Quiz</span></a></h5>
+                                        </div>
+                                    </div>
+
+                                    <div class="scc__wrap">
+                                        <div class="scc__info">
+                                            <i class="icofont-file-text"></i>
+                                            <h5><a href="{% url 'pages:dynamic_pages' template_name='lesson-assignments' %}"><span>Assignment</span></a></h5>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Lesson #03
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+
+                                    <div class="scc__wrap">
+                                        <div class="scc__info">
+                                            <i class="icofont-video-alt"></i>
+                                            <h5> <a href="{% url 'pages:dynamic_pages' template_name='lessons' %}"><span>Course Intro</span></a></h5>
+                                        </div>
+                                        <div class="scc__meta">
+                                            <strong>3.27</strong>
+                                            <a href="{% url 'pages:dynamic_pages' template_name='lessons' %}"><span class="question"><i class="icofont-eye"></i>
+                                                    Preview</span></a>
+
+                                        </div>
+                                    </div>
+                                    <div class="scc__wrap">
+                                        <div class="scc__info">
+                                            <i class="icofont-video-alt"></i>
+                                            <h5> <a href="{% url 'pages:dynamic_pages' template_name='lesson-2' %}"><span>Course Outline</span></a></h5>
+                                        </div>
+                                        <div class="scc__meta">
+                                            <strong>5.00</strong>
+                                            <a href="{% url 'pages:dynamic_pages' template_name='lesson-2' %}"><span class="question"><i class="icofont-eye"></i>
+                                                    Preview</span></a>
+
+                                        </div>
+                                    </div>
+                                    <div class="scc__wrap">
+                                        <div class="scc__info">
+                                            <i class="icofont-video-alt"></i>
+                                            <h5> <a href="{% url 'pages:dynamic_pages' template_name='lesson-2' %}"><span>Course Outline</span></a></h5>
+                                        </div>
+                                        <div class="scc__meta">
+                                            <strong>7.00</strong>
+                                            <a href="{% url 'pages:dynamic_pages' template_name='lesson-3' %}"><span class="question"><i class="icofont-eye"></i>
+                                                    Preview</span></a>
+
+                                        </div>
+                                    </div>
+                                    <div class="scc__wrap">
+                                        <div class="scc__info">
+                                            <i class="icofont-file-text"></i>
+                                            <h5> <a href="{% url 'pages:dynamic_pages' template_name='lesson-course-materials' %}"><span>Course
+                                                        Materials</span></a></h5>
+                                        </div>
+                                    </div>
+                                    <div class="scc__wrap">
+                                        <div class="scc__info">
+                                            <i class="icofont-audio"></i>
+                                            <h5> <a href="{% url 'pages:dynamic_pages' template_name='lesson-quiz' %}"><span>Summer Quiz</span></a></h5>
+                                        </div>
+                                    </div>
+
+                                    <div class="scc__wrap">
+                                        <div class="scc__info">
+                                            <i class="icofont-file-text"></i>
+                                            <h5><a href="{% url 'pages:dynamic_pages' template_name='lesson-assignments' %}"><span>Assignment</span></a></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    Lesson #04
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+
+                                    <div class="scc__wrap">
+                                        <div class="scc__info">
+                                            <i class="icofont-video-alt"></i>
+                                            <h5> <a href="{% url 'pages:dynamic_pages' template_name='lessons' %}"><span>Course Intro</span></a></h5>
+                                        </div>
+                                        <div class="scc__meta">
+                                            <strong>3.27</strong>
+                                            <a href="{% url 'pages:dynamic_pages' template_name='lessons' %}"><span class="question"><i class="icofont-eye"></i>
+                                                    Preview</span></a>
+
+                                        </div>
+                                    </div>
+                                    <div class="scc__wrap">
+                                        <div class="scc__info">
+                                            <i class="icofont-video-alt"></i>
+                                            <h5> <a href="{% url 'pages:dynamic_pages' template_name='lesson-2' %}"><span>Course Outline</span></a></h5>
+                                        </div>
+                                        <div class="scc__meta">
+                                            <strong>5.00</strong>
+                                            <a href="{% url 'pages:dynamic_pages' template_name='lesson-2' %}"><span class="question"><i class="icofont-eye"></i>
+                                                    Preview</span></a>
+
+                                        </div>
+                                    </div>
+                                    <div class="scc__wrap">
+                                        <div class="scc__info">
+                                            <i class="icofont-video-alt"></i>
+                                            <h5> <a href="{% url 'pages:dynamic_pages' template_name='lesson-2' %}"><span>Course Outline</span></a></h5>
+                                        </div>
+                                        <div class="scc__meta">
+                                            <strong>7.00</strong>
+                                            <a href="{% url 'pages:dynamic_pages' template_name='lesson-3' %}"><span class="question"><i class="icofont-eye"></i>
+                                                    Preview</span></a>
+
+                                        </div>
+                                    </div>
+                                    <div class="scc__wrap">
+                                        <div class="scc__info">
+                                            <i class="icofont-file-text"></i>
+                                            <h5> <a href="{% url 'pages:dynamic_pages' template_name='lesson-course-materials' %}"><span>Course
+                                                        Materials</span></a></h5>
+                                        </div>
+                                    </div>
+                                    <div class="scc__wrap">
+                                        <div class="scc__info">
+                                            <i class="icofont-audio"></i>
+                                            <h5> <a href="{% url 'pages:dynamic_pages' template_name='lesson-quiz' %}"><span>Summer Quiz</span></a></h5>
+                                        </div>
+                                    </div>
+
+                                    <div class="scc__wrap">
+                                        <div class="scc__info">
+                                            <i class="icofont-file-text"></i>
+                                            <h5><a href="{% url 'pages:dynamic_pages' template_name='lesson-assignments' %}"><span>Assignment</span></a></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                   Lesson #05
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+
+                                    <div class="scc__wrap">
+                                        <div class="scc__info">
+                                            <i class="icofont-video-alt"></i>
+                                            <h5> <a href="{% url 'pages:dynamic_pages' template_name='lessons' %}"><span>Course Intro</span></a></h5>
+                                        </div>
+                                        <div class="scc__meta">
+                                            <strong>3.27</strong>
+                                            <a href="{% url 'pages:dynamic_pages' template_name='lessons' %}"><span class="question"><i class="icofont-eye"></i> Preview</span></a>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="scc__wrap">
+                                        <div class="scc__info">
+                                            <i class="icofont-video-alt"></i>
+                                            <h5> <a href="{% url 'pages:dynamic_pages' template_name='lesson-2' %}"><span>Course Outline</span></a></h5>
+                                        </div>
+                                        <div class="scc__meta">
+                                            <strong>5.00</strong>
+                                            <a href="{% url 'pages:dynamic_pages' template_name='lesson-2' %}"><span class="question"><i class="icofont-eye"></i> Preview</span></a>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="scc__wrap">
+                                        <div class="scc__info">
+                                            <i class="icofont-video-alt"></i>
+                                            <h5> <a href="{% url 'pages:dynamic_pages' template_name='lesson-2' %}"><span>Course Outline</span></a></h5>
+                                        </div>
+                                        <div class="scc__meta">
+                                            <strong>7.00</strong>
+                                            <a href="{% url 'pages:dynamic_pages' template_name='lesson-3' %}"><span class="question"><i class="icofont-eye"></i> Preview</span></a>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="scc__wrap">
+                                        <div class="scc__info">
+                                            <i class="icofont-file-text"></i>
+                                            <h5> <a href="{% url 'pages:dynamic_pages' template_name='lesson-course-materials' %}"><span>Course Materials</span></a></h5>
+                                        </div>
+                                    </div>
+                                    <div class="scc__wrap">
+                                        <div class="scc__info">
+                                            <i class="icofont-audio"></i>
+                                            <h5>  <a href="{% url 'pages:dynamic_pages' template_name='lesson-quiz' %}"><span>Summer Quiz</span></a></h5>
+                                        </div>
+                                    </div>
+
+                                    <div class="scc__wrap">
+                                        <div class="scc__info">
+                                            <i class="icofont-file-text"></i>
+                                            <h5><a href="{% url 'pages:dynamic_pages' template_name='lesson-assignments' %}"><span>Assignment</span></a></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+                    </div>
+                </div>
+                <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12" data-aos="fade-up">
+                    <div class="lesson__content__main">
+                        <div class="lesson__content__wrap">
+                            <h3>Video Content lesson 01</h3>
+                            <span><a href="{% url 'pages:dynamic_pages' template_name='course-details' %}">Close</a></span>
+                        </div>
+
+                        <div class="plyr__video-embed rbtplayer">
+                            <iframe src="https://www.youtube.com/embed/5tb1pd_LSRg" allowfullscreen
+                                allow="autoplay"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+    <!-- tution__section__end -->
+
+
+    <!-- footer__section__start -->
+    <div class="footerarea">
+        <div class="container">
+            <div class="footerarea__newsletter__wraper">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12" data-aos="fade-up">
+                        <div class="footerarea__text">
+                            <h3>Still You Need Our <span>Support</span> ?</h3>
+                            <p>Don’t wait make a smart & logical quote here. Its pretty easy.</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12" data-aos="fade-up">
+                        <div class="footerarea__newsletter">
+                            <div class="footerarea__newsletter__input">
+                                <form action="#">
+                                    <input type="text" placeholder="Enter your email here">
+                                    <div class="footerarea__newsletter__button">
+                                        <button type="submit" class="subscribe__btn">Subscribe Now</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footerarea__wrapper footerarea__wrapper__2">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-sm-12 col-md-12" data-aos="fade-up">
+                        <div class="footerarea__inner footerarea__about__us">
+                            <div class="footerarea__heading">
+                                <h3>About us</h3>
+                            </div>
+                            <div class="footerarea__content">
+                                <p>orporate clients and leisure travelers has been relying on Groundlink for dependable
+                                    safe, and professional chauffeured car end service in major cities across World.</p>
+                            </div>
+                            <div class="foter__bottom__text">
+                                <div class="footer__bottom__icon">
+                                    <i class="icofont-clock-time"></i>
+                                </div>
+                                <div class="footer__bottom__content">
+                                    <h6>Opening Houres</h6>
+                                    <span>Mon - Sat(8.00 - 6.00)</span>
+                                    <span>Sunday - Closed</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 col-sm-6 col-md-6" data-aos="fade-up">
+                        <div class="footerarea__inner">
+                            <div class="footerarea__heading">
+                                <h3>Usefull Links</h3>
+                            </div>
+                            <div class="footerarea__list">
+                                <ul>
+                                    <li>
+                                        <a href="#">About Us</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Teachers</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Partner</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Room-Details</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Gallery</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-sm-6 col-md-6" data-aos="fade-up">
+                        <div class="footerarea__inner footerarea__padding__left">
+                            <div class="footerarea__heading">
+                                <h3>Course</h3>
+                            </div>
+                            <div class="footerarea__list">
+                                <ul>
+                                    <li>
+                                        <a href="#">Ui Ux Design</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Web Development</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Business Strategy</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Softwere Development</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Business English</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-3 col-sm-12" data-aos="fade-up">
+                        <div class="footerarea__right__wraper footerarea__inner">
+                            <div class="footerarea__heading">
+                                <h3>Recent Post</h3>
+                            </div>
+                            <div class="footerarea__right__list">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <div class="footerarea__right__img">
+                                                <img loading="lazy" src="{% static 'img/footer/footer__1.png' %}" alt="footerphoto">
+                                            </div>
+                                            <div class="footerarea__right__content">
+                                                <span>02 Apr 2024 </span>
+                                                <h6>Best Your Business</h6>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            <div class="footerarea__right__img">
+                                                <img loading="lazy" src="{% static 'img/footer/footer__2.png' %}" alt="footerphoto">
+                                            </div>
+                                            <div class="footerarea__right__content">
+                                                <span>02 Apr 2024 </span>
+                                                <h6>Keep Your Business</h6>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            <div class="footerarea__right__img">
+                                                <img loading="lazy" src="{% static 'img/footer/footer__3.png' %}" alt="footerphoto">
+                                            </div>
+                                            <div class="footerarea__right__content">
+                                                <span>02 Apr 2024 </span>
+                                                <h6>Nice Your Business</h6>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footerarea__copyright__wrapper footerarea__copyright__wrapper__2">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-3">
+                        <div class="copyright__logo">
+                            <a href="/"><img loading="lazy" src="{% static 'img/logo/logo_2.png' %}" alt="logo"></a>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="footerarea__copyright__content footerarea__copyright__content__2">
+                            <p>Copyright © <span>2024</span> by edurock. All Rights Reserved.</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3">
+                        <div class="footerarea__icon footerarea__icon__2">
+                            <ul>
+                                <li><a href="//facebook.com"><i class="icofont-facebook"></i></a></li>
+                                <li><a href="//twitter.com"><i class="icofont-twitter"></i></a></li>
+                                <li><a href="//vimeo.com"><i class="icofont-vimeo"></i></a></li>
+                                <li><a href="//linkedin.com"><i class="icofont-linkedin"></i></a></li>
+                                <li><a href="//skype.com"><i class="icofont-skype"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- footer__section__end -->
+</main>
+
+{% endblock %}

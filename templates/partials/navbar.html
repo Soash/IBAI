@@ -1,0 +1,107 @@
+{% load static %}
+
+{% block extra_css %}
+<style>
+.headerarea__main__menu nav ul {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  white-space: nowrap;
+}
+.headerarea__main__menu nav ul li {
+  flex: 0 1 auto;
+}
+</style>
+{% endblock extra_css %}
+
+<header>
+  <div class="headerarea headerarea__3 header__sticky header__area">
+
+    <div class="container desktop__menu__wrapper">
+
+      <div class="row">
+        
+        <!-- Logo -->
+        <div class="col-xl-2 col-lg-2 col-md-6">
+          <div class="headerarea__left">
+            <div class="headerarea__left__logo">
+              <a href="/"><img loading="lazy" src="{% static 'img/logo/logo.jpg' %}" alt="logo" width=80></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-7 col-lg-7 main_menu_wrap">
+          <div class="headerarea__main__menu">
+            <nav>
+              <ul>
+                <li><a href="{% url 'training_list' %}">Training</a></li>
+                <li><a href="{% url 'intern_list' %}">Internship</a></li>
+                <li><a href="#">Thesis</a></li>
+                <li><a href="#">Collaboration</a></li>
+                <li><a href="{% url 'blog_list' %}">Blogs</a></li>
+                <li><a href="{% url 'course_list' %}">Courses</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'student_dashboard' %}">Dashboard</a></li>
+                {% endif %}
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-lg-3 col-md-6">
+          <div class="headerarea__right">
+            {% if not user.is_authenticated %}
+            <div class="headerarea__login">
+              <a href="{% url 'user_login' %}"><i class="icofont-user-alt-5"></i></a>
+            </div>
+            {% endif %}
+            {% if user.is_authenticated %}
+            <div class="headerarea__login">
+              <div>Welcome, {{ user.username }}!</div>
+            </div>
+            <div class="headerarea__login">
+                <a href="{% url 'user_logout' %}"><i class="icofont-logout"></i></a>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="container-fluid mob_menu_wrapper">
+      <div class="row align-items-center">
+        <div class="col-6">
+          <div class="mobile-logo">
+            <a href="/"><img loading="lazy" src="{% static 'img/logo/logo.jpg' %}" alt="logo" width=70></a>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="header-right-wrap">
+            <div class="mobile-off-canvas">
+              <a class="mobile-aside-button" href="#"><i class="icofont-navigation-menu"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  {% if messages %}
+  <div class="container mt-3">
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+</header>
+
+
+

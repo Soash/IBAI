@@ -1,0 +1,784 @@
+{% extends 'base.html' %}
+
+{% load static i18n %}
+
+{% block title %}Blog{% endblock %}
+
+{% block content %}
+{% include 'partials/theme-switch.html' %}
+
+<main class="main_wrapper overflow-hidden">
+
+    <!-- topbar__section__stert -->
+    {% include 'partials/top-banner-2.html' %}
+    <!-- topbar__section__end -->
+
+    <!-- headar section start -->
+    {% include 'partials/navbar-2.html' %}
+    <!-- header section end -->
+
+    <!-- Mobile Menu Start Here -->
+    {% include 'partials/mobile-menu.html' %}
+    <!-- Mobile Menu end Here -->
+
+    <!-- theme fixed shadow -->
+    <div>
+        <div class="theme__shadow__circle"></div>
+        <div class="theme__shadow__circle shadow__right"></div>
+    </div>
+    <!-- theme fixed shadow -->
+    <!-- breadcrumbarea__section__start -->
+
+    <div class="breadcrumbarea">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="breadcrumb__content__wraper" data-aos="fade-up">
+                        <div class="breadcrumb__title">
+                            <h2 class="heading">Blog Page</h2>
+                        </div>
+                        <div class="breadcrumb__inner">
+                            <ul>
+                                <li><a href="{% url 'pages:dynamic_pages' template_name='index' %}">Home</a></li>
+                                <li>Blog Page</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="shape__icon__2">
+            <img loading="lazy" class=" shape__icon__img shape__icon__img__1"
+                src="{% static 'img/herobanner/herobanner__1.png' %}" alt="photo">
+            <img loading="lazy" class=" shape__icon__img shape__icon__img__2"
+                src="{% static 'img/herobanner/herobanner__2.png' %}" alt="photo">
+            <img loading="lazy" class=" shape__icon__img shape__icon__img__3"
+                src="{% static 'img/herobanner/herobanner__3.png' %}" alt="photo">
+            <img loading="lazy" class=" shape__icon__img shape__icon__img__4"
+                src="{% static 'img/herobanner/herobanner__5.png' %}" alt="photo">
+        </div>
+
+    </div>
+    <!-- breadcrumbarea__section__end-->
+
+    <div class="blogarea__2 sp_top_100 sp_bottom_100">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12">
+                    <div class="blog__content__wraper__2" data-aos="fade-up">
+                        <div class="blogarae__img__2">
+                            <img loading="lazy" src="{% static 'img/blog/blog_6.png' %}" alt="blog">
+                            <div class="blogarea__date__2">
+                                <span>24</span>
+                                <span class="blogarea__month">Feb</span>
+                            </div>
+                        </div>
+                        <div class="blogarea__text__wraper__2">
+                            <div class="blogarea__heading__2">
+                                <h3><a href="{% url 'pages:dynamic_pages' template_name='blog-details' %}">Delivering What Consumers Really Value?</a></h3>
+                            </div>
+                            <div class="blogarea__list__2">
+                                <ul>
+                                    <li>
+                                        <a href="{% url 'pages:dynamic_pages' template_name='blog-details' %}">
+                                            <i class="icofont-business-man-alt-2"></i> Mirnsdo.H
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'pages:dynamic_pages' template_name='blog-details' %}">
+                                            <i class="icofont-speech-comments"></i> 0 Comments
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{% url 'pages:dynamic_pages' template_name='blog-details' %}">
+                                            <i class="icofont-eraser-alt"></i> Association
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div class="blogarea__paragraph">
+                                <p>These cases are perfectly simple and easy to distinguish. In a free hour, when our
+                                    power of On the other hand, organizations have the need for integrating in IT
+                                    departments</p>
+                            </div>
+                            <div class="blogarea__button__2">
+                                <a href="{% url 'pages:dynamic_pages' template_name='blog-details' %}">READ MORE
+                                    <i class="icofont-double-right"></i>
+                                </a>
+                                <a href="#">
+                                    <div class="blogarea__icon__2">
+                                        <i class="icofont-share"></i>
+                                        <i class="icofont-heart"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="blog__content__wraper__2" data-aos="fade-up">
+                        <div class="blogarae__img__2">
+                            <img loading="lazy" src="{% static 'img/blog/blog_7.png' %}" alt="blog">
+                            <div class="blogarea__date__2">
+                                <span>24</span>
+                                <span class="blogarea__month">Feb</span>
+                            </div>
+                            <div class="registerarea__content course__details__video">
+                                <div class="registerarea__video">
+                                    <div class="video__pop__btn">
+                                        <a class="video-btn" href="https://www.youtube.com/watch?v=vHdclsdkp28"> <img
+                                                loading="lazy" src="{% static 'img/icon/video.png' %}" alt=""></a>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blogarea__text__wraper__2">
+                            <div class="blogarea__heading__2">
+                                <h3><a href="{% url 'pages:dynamic_pages' template_name='blog-details' %}">Here at First Baptist Cape Coral we believe!</a></h3>
+                            </div>
+                            <div class="blogarea__list__2">
+                                <ul>
+                                    <li>
+                                        <a href="{% url 'pages:dynamic_pages' template_name='blog-details' %}">
+                                            <i class="icofont-business-man-alt-2"></i> Mirnsdo.H
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'pages:dynamic_pages' template_name='blog-details' %}">
+                                            <i class="icofont-speech-comments"></i> 0 Comments
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{% url 'pages:dynamic_pages' template_name='blog-details' %}">
+                                            <i class="icofont-eraser-alt"></i> Association
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div class="blogarea__paragraph">
+                                <p>These cases are perfectly simple and easy to distinguish. In a free hour, when our
+                                    power of On the other hand, organizations have the need for integrating in IT
+                                    departments</p>
+                            </div>
+                            <div class="blogarea__button__2">
+                                <a href="{% url 'pages:dynamic_pages' template_name='blog-details' %}">READ MORE
+                                    <i class="icofont-double-right"></i>
+                                </a>
+                                <a href="#">
+                                    <div class="blogarea__icon__2">
+                                        <i class="icofont-share"></i>
+                                        <i class="icofont-heart"></i>
+                                    </div>
+                                </a>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="blog__content__wraper__2" data-aos="fade-up">
+                        <div class="blogarae__img__2">
+                            <img loading="lazy" src="{% static 'img/blog/blog_8.png' %}" alt="blog">
+                            <div class="blogarea__date__2">
+                                <span>24</span>
+                                <span class="blogarea__month">Feb</span>
+                            </div>
+                        </div>
+                        <div class="blogarea__text__wraper__2">
+                            <div class="blogarea__heading__2">
+                                <h3><a href="{% url 'pages:dynamic_pages' template_name='blog-details' %}">We are praying for our community and for.</a></h3>
+                            </div>
+                            <div class="blogarea__list__2">
+                                <ul>
+                                    <li>
+                                        <a href="{% url 'pages:dynamic_pages' template_name='blog-details' %}">
+                                            <i class="icofont-business-man-alt-2"></i> Mirnsdo.H
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'pages:dynamic_pages' template_name='blog-details' %}">
+                                            <i class="icofont-speech-comments"></i> 0 Comments
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{% url 'pages:dynamic_pages' template_name='blog-details' %}">
+                                            <i class="icofont-eraser-alt"></i> Association
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div class="blogarea__paragraph">
+                                <p>These cases are perfectly simple and easy to distinguish. In a free hour, when our
+                                    power of On the other hand, organizations have the need for integrating in IT
+                                    departments</p>
+                            </div>
+                            <div class="blogarea__button__2">
+                                <a href="{% url 'pages:dynamic_pages' template_name='blog-details' %}">READ MORE
+                                    <i class="icofont-double-right"></i>
+                                </a>
+                                <a href="#">
+                                    <div class="blogarea__icon__2">
+                                        <i class="icofont-share"></i>
+                                        <i class="icofont-heart"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="blog__content__wraper__2" data-aos="fade-up">
+                        <div class="blogarae__img__2">
+                            <img loading="lazy" src="{% static 'img/blog/blog_9.png' %}" alt="blog">
+                            <div class="blogarea__date__2">
+                                <span>24</span>
+                                <span class="blogarea__month">Feb</span>
+                            </div>
+                        </div>
+                        <div class="blogarea__text__wraper__2">
+                            <div class="blogarea__heading__2">
+                                <h3><a href="{% url 'pages:dynamic_pages' template_name='blog-details' %}">Delivering What Consumers Really Value?</a></h3>
+                            </div>
+                            <div class="blogarea__list__2">
+                                <ul>
+                                    <li>
+                                        <a href="{% url 'pages:dynamic_pages' template_name='blog-details' %}">
+                                            <i class="icofont-business-man-alt-2"></i> Mirnsdo.H
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'pages:dynamic_pages' template_name='blog-details' %}">
+                                            <i class="icofont-speech-comments"></i> 0 Comments
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{% url 'pages:dynamic_pages' template_name='blog-details' %}">
+                                            <i class="icofont-eraser-alt"></i> Association
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div class="blogarea__paragraph">
+                                <p>These cases are perfectly simple and easy to distinguish. In a free hour, when our
+                                    power of On the other hand, organizations have the need for integrating in IT
+                                    departments</p>
+                            </div>
+                            <div class="blogarea__button__2">
+                                <a href="{% url 'pages:dynamic_pages' template_name='blog-details' %}">READ MORE
+                                    <i class="icofont-double-right"></i>
+                                </a>
+                                <a href="#">
+                                    <div class="blogarea__icon__2">
+                                        <i class="icofont-share"></i>
+                                        <i class="icofont-heart"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="main__pagination__wrapper" data-aos="fade-up">
+                        <ul class="main__page__pagination">
+                            <li><a class="disable" href="#"><i class="icofont-double-left"></i></a></li>
+                            <li><a class="active" href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#"><i class="icofont-double-right"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+                    <div class="blogsidebar__content__wraper__2" data-aos="fade-up">
+                        <div class="blogsidebar__content__inner__2">
+                            <div class="blogsidebar__img__2">
+                                <img loading="lazy" src="{% static 'img/blog/blog_10.png' %}" alt="blog">
+                            </div>
+                            <div class="blogsidebar__name__2">
+                                <h5>
+                                    <a href="#"> Rosalina D. Willaim</a>
+
+                                </h5>
+                                <p>Blogger/Photographer</p>
+                            </div>
+                            <div class="blog__sidebar__text__2">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.Veritatis distinctio
+                                    suscipit reprehenderit atque</p>
+                            </div>
+                            <div class="blogsidbar__icon__2">
+                                <ul>
+                                    <li>
+                                        <a href="#"><i class="icofont-facebook"></i></a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#"><i class="icofont-youtube-play"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="icofont-instagram"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="icofont-twitter"></i></a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blogsidebar__content__wraper__2" data-aos="fade-up">
+
+                        <h4 class="sidebar__title">Search here</h4>
+                        <form action="#">
+                            <div class="blogsudebar__input__area">
+                                <input type="text" name="search" placeholder="Search product">
+                                <button class="blogsidebar__input__icon">
+                                    <i class="icofont-search-1"></i>
+                                </button>
+
+
+                            </div>
+
+
+                        </form>
+
+                    </div>
+                    <div class="blogsidebar__content__wraper__2" data-aos="fade-up">
+
+                        <h4 class="sidebar__title">categories</h4>
+                        <ul class="categorie__list">
+                            <li><a href="#">Mobile Set <span>03</span></a></li>
+                            <li><a href="#">Mobile Set <span>03</span></a></li>
+                            <li><a href="#">Raxila Dish nonyte<span>09</span></a></li>
+                            <li><a href="#">Fresh Vegetable <span>01</span></a></li>
+                            <li><a href="#">Fruites <span>00</span></a></li>
+                            <li><a href="#">Gesuriesey <span>26</span></a></li>
+                        </ul>
+
+                    </div>
+
+                    <div class="blogsidebar__content__wraper__2" data-aos="fade-up">
+
+                        <h4 class="sidebar__title">Recent Post</h4>
+                        <ul class="recent__list">
+                            <li>
+                                <div class="recent__img">
+                                    <a href="#">
+                                        <img loading="lazy" src="{% static 'img/blog/blog_11.png' %}" alt="sidbar">
+                                        <div class="recent__number">
+                                            <span>01</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="recent__text">
+
+                                    <div class="recent__date">
+                                        <a href="#">23 December 2024</a>
+                                    </div>
+
+                                    <h6><a href="{% url 'pages:dynamic_pages' template_name='blog-details' %}">Show at the University </a></h6>
+
+
+
+
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="recent__img">
+                                    <a href="#">
+                                        <img loading="lazy" src="{% static 'img/blog/blog_12.png' %}" alt="sidbar">
+                                        <div class="recent__number">
+                                            <span>02</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="recent__text">
+
+                                    <div class="recent__date">
+                                        <a href="#">23 December 2024</a>
+                                    </div>
+
+                                    <h6><a href="{% url 'pages:dynamic_pages' template_name='blog-details' %}">Show at the University </a></h6>
+
+
+
+
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="recent__img">
+                                    <a href="#">
+                                        <img loading="lazy" src="{% static 'img/blog/blog_13.png' %}" alt="sidbar">
+                                        <div class="recent__number">
+                                            <span>03</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="recent__text">
+
+                                    <div class="recent__date">
+                                        <a href="#">23 December 2024</a>
+                                    </div>
+
+                                    <h6><a href="{% url 'pages:dynamic_pages' template_name='blog-details' %}">Show at the University </a></h6>
+
+
+
+
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="recent__img">
+                                    <a href="#">
+                                        <img loading="lazy" src="{% static 'img/blog/blog_14.png' %}" alt="sidbar">
+                                        <div class="recent__number">
+                                            <span>04</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="recent__text">
+
+                                    <div class="recent__date">
+                                        <a href="#">23 December 2024</a>
+                                    </div>
+
+                                    <h6><a href="{% url 'pages:dynamic_pages' template_name='blog-details' %}">Show at the University </a></h6>
+
+
+
+
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <div class="blogsidebar__content__wraper__2" data-aos="fade-up">
+
+                        <h4 class="sidebar__title">Photo Gallery</h4>
+                        <div class="photo__gallery__img">
+
+                            <div class="single__gallery__img">
+                                <img loading="lazy" src="{% static 'img/blog/blog_15.png' %}" alt="photo">
+                                <div class="gallery__icon">
+                                    <a class="popup__img" href="{% static 'img/blog/blog_15.png' %}"> <i
+                                            class="icofont-eye-alt"></i></a>
+                                </div>
+                            </div>
+                            <div class="single__gallery__img">
+                                <img loading="lazy" src="{% static 'img/blog/blog_16.png' %}" alt="photo">
+                                <div class="gallery__icon">
+                                    <a class="popup__img" href="{% static 'img/blog/blog_16.png' %}"> <i
+                                            class="icofont-eye-alt"></i></a>
+                                </div>
+                            </div>
+                            <div class="single__gallery__img">
+                                <img loading="lazy" src="{% static 'img/blog/blog_17.png' %}" alt="photo">
+                                <div class="gallery__icon">
+                                    <a class="popup__img" href="{% static 'img/blog/blog_17.png' %}"> <i
+                                            class="icofont-eye-alt"></i></a>
+                                </div>
+                            </div>
+                            <div class="single__gallery__img">
+                                <img loading="lazy" src="{% static 'img/blog/blog_18.png' %}" alt="photo">
+                                <div class="gallery__icon">
+                                    <a class="popup__img" href="{% static 'img/blog/blog_18.png' %}"> <i
+                                            class="icofont-eye-alt"></i></a>
+                                </div>
+                            </div>
+                            <div class="single__gallery__img">
+                                <img loading="lazy" src="{% static 'img/blog/blog_19.png' %}" alt="photo">
+                                <div class="gallery__icon">
+                                    <a class="popup__img" href="{% static 'img/blog/blog_19.png' %}"> <i
+                                            class="icofont-eye-alt"></i></a>
+                                </div>
+                            </div>
+                            <div class="single__gallery__img">
+                                <img loading="lazy" src="{% static 'img/blog/blog_20.png' %}" alt="photo">
+                                <div class="gallery__icon">
+                                    <a class="popup__img" href="{% static 'img/blog/blog_20.png' %}"> <i
+                                            class="icofont-eye-alt"></i></a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="blogsidebar__content__wraper__2" data-aos="fade-up">
+
+                        <h4 class="sidebar__title">Get in Touch</h4>
+                        <div class="get__touch__input">
+                            <input type="text" placeholder="Enter name*">
+                            <input type="text" placeholder="Enter your mail*">
+                            <input type="text" placeholder="Massage*">
+                            <a class="default__button" href="{% url 'pages:dynamic_pages' template_name='blog-details' %}">SEND MASSAGE</a>
+                        </div>
+
+                    </div>
+
+                    <div class="blogsidebar__content__wraper__2" data-aos="fade-up">
+
+                        <h4 class="sidebar__title">Popular tag</h4>
+                        <div class="populer__tag__list">
+                            <ul>
+                                <li><a href="{% url 'pages:dynamic_pages' template_name='blog-details' %}">Business</a></li>
+                                <li><a href="{% url 'pages:dynamic_pages' template_name='blog-details' %}">Design</a></li>
+                                <li><a href="{% url 'pages:dynamic_pages' template_name='blog-details' %}">apps</a></li>
+                                <li><a href="{% url 'pages:dynamic_pages' template_name='blog-details' %}">landing page</a></li>
+                                <li><a href="{% url 'pages:dynamic_pages' template_name='blog-details' %}">data</a></li>
+                                <li><a href="{% url 'pages:dynamic_pages' template_name='blog-details' %}">book</a></li>
+                                <li><a href="{% url 'pages:dynamic_pages' template_name='blog-details' %}">Design</a></li>
+                                <li><a href="{% url 'pages:dynamic_pages' template_name='blog-details' %}">book</a></li>
+                                <li><a href="{% url 'pages:dynamic_pages' template_name='blog-details' %}">landing page</a></li>
+                                <li><a href="{% url 'pages:dynamic_pages' template_name='blog-details' %}">data</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="blogsidebar__content__wraper__2" data-aos="fade-up">
+
+                        <h4 class="sidebar__title">Follow Us</h4>
+                        <div class="follow__icon">
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="icofont-facebook"></i></a>
+                                </li>
+
+                                <li>
+                                    <a href="#"><i class="icofont-youtube-play"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="icofont-instagram"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="icofont-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="icofont-instagram"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- footer__section__start -->
+    <div class="footerarea">
+        <div class="container">
+            <div class="footerarea__newsletter__wraper">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12" data-aos="fade-up">
+                        <div class="footerarea__text">
+                            <h3>Still You Need Our <span>Support</span> ?</h3>
+                            <p>Don’t wait make a smart & logical quote here. Its pretty easy.</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12" data-aos="fade-up">
+                        <div class="footerarea__newsletter">
+                            <div class="footerarea__newsletter__input">
+                                <form action="#">
+                                    <input type="text" placeholder="Enter your email here">
+                                    <div class="footerarea__newsletter__button">
+                                        <button type="submit" class="subscribe__btn">Subscribe Now</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footerarea__wrapper footerarea__wrapper__2">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-sm-12 col-md-12" data-aos="fade-up">
+                        <div class="footerarea__inner footerarea__about__us">
+                            <div class="footerarea__heading">
+                                <h3>About us</h3>
+                            </div>
+                            <div class="footerarea__content">
+                                <p>orporate clients and leisure travelers has been relying on Groundlink for dependable
+                                    safe, and professional chauffeured car end service in major cities across World.</p>
+                            </div>
+                            <div class="foter__bottom__text">
+                                <div class="footer__bottom__icon">
+                                    <i class="icofont-clock-time"></i>
+                                </div>
+                                <div class="footer__bottom__content">
+                                    <h6>Opening Houres</h6>
+                                    <span>Mon - Sat(8.00 - 6.00)</span>
+                                    <span>Sunday - Closed</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 col-sm-6 col-md-6" data-aos="fade-up">
+                        <div class="footerarea__inner">
+                            <div class="footerarea__heading">
+                                <h3>Usefull Links</h3>
+                            </div>
+                            <div class="footerarea__list">
+                                <ul>
+                                    <li>
+                                        <a href="#">About Us</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Teachers</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Partner</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Room-Details</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Gallery</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-sm-6 col-md-6" data-aos="fade-up">
+                        <div class="footerarea__inner footerarea__padding__left">
+                            <div class="footerarea__heading">
+                                <h3>Course</h3>
+                            </div>
+                            <div class="footerarea__list">
+                                <ul>
+                                    <li>
+                                        <a href="#">Ui Ux Design</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Web Development</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Business Strategy</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Softwere Development</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Business English</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-3 col-sm-12" data-aos="fade-up">
+                        <div class="footerarea__right__wraper footerarea__inner">
+                            <div class="footerarea__heading">
+                                <h3>Recent Post</h3>
+                            </div>
+                            <div class="footerarea__right__list">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <div class="footerarea__right__img">
+                                                <img loading="lazy" src="{% static 'img/footer/footer__1.png' %}"
+                                                    alt="footerphoto">
+                                            </div>
+                                            <div class="footerarea__right__content">
+                                                <span>02 Apr 2024 </span>
+                                                <h6>Best Your Business</h6>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            <div class="footerarea__right__img">
+                                                <img loading="lazy" src="{% static 'img/footer/footer__2.png' %}"
+                                                    alt="footerphoto">
+                                            </div>
+                                            <div class="footerarea__right__content">
+                                                <span>02 Apr 2024 </span>
+                                                <h6>Keep Your Business</h6>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            <div class="footerarea__right__img">
+                                                <img loading="lazy" src="{% static 'img/footer/footer__3.png' %}"
+                                                    alt="footerphoto">
+                                            </div>
+                                            <div class="footerarea__right__content">
+                                                <span>02 Apr 2024 </span>
+                                                <h6>Nice Your Business</h6>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footerarea__copyright__wrapper footerarea__copyright__wrapper__2">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-3">
+                        <div class="copyright__logo">
+                            <a href="/"><img loading="lazy" src="{% static 'img/logo/logo_2.png' %}" alt="logo"></a>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="footerarea__copyright__content footerarea__copyright__content__2">
+                            <p>Copyright © <span>2024</span> by edurock. All Rights Reserved.</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3">
+                        <div class="footerarea__icon footerarea__icon__2">
+                            <ul>
+                                <li><a href="//facebook.com"><i class="icofont-facebook"></i></a></li>
+                                <li><a href="//twitter.com"><i class="icofont-twitter"></i></a></li>
+                                <li><a href="//vimeo.com"><i class="icofont-vimeo"></i></a></li>
+                                <li><a href="//linkedin.com"><i class="icofont-linkedin"></i></a></li>
+                                <li><a href="//skype.com"><i class="icofont-skype"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- footer__section__end -->
+
+</main>
+
+{% endblock %}

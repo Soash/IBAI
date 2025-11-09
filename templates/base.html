@@ -1,0 +1,83 @@
+{% load static i18n %}
+<!DOCTYPE html>
+{% get_current_language as LANGUAGE_CODE %}
+<html lang="{{ LANGUAGE_CODE }}" {% block html_attribute %}{% endblock html_attribute %}>
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+  <title>{% block title %}IBAI{% endblock title %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="IBAI - Institute of Bioinformatics and Artificial Intelligence"/>
+  <meta name="author" content="soash"/>
+  <meta name="author" content="https://soash.github.io/"/>
+  <link rel="icon" href="{% static 'img/favicon.png' %}"/>
+
+  {% block css %}
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/animate.min.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/aos.min.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/magnific-popup.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/icofont.min.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/slick.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/swiper-bundle.min.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet"/>
+
+    {% block extra_css %} {% endblock extra_css %}
+  {% endblock css %}
+
+  <script>
+    if (localStorage.getItem("theme-color") === "dark" || (!("theme-color" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+      document.documentElement.classList.add("is_dark");
+    }
+    if (localStorage.getItem("theme-color") === "light") {
+      document.documentElement.classList.remove("is_dark");
+    }
+  </script>
+
+</head>
+
+<body {% block body_attribute %}class="body__wrapper"{% endblock body_attribute %}>
+
+{% block preloader %}{% endblock %}
+
+{% block content %}{% endblock %}
+
+{% block modal %}{% endblock %}
+
+{% block javascript %}
+  <script src="{% static 'js/vendor/modernizr-3.5.0.min.js' %}"></script>
+  <script src="{% static 'js/vendor/jquery-3.6.0.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'js/slick.min.js' %}"></script>
+  <script src="{% static 'js/jquery.meanmenu.min.js' %}"></script>
+  <script src="{% static 'js/ajax-form.js' %}"></script>
+  <script src="{% static 'js/wow.min.js' %}"></script>
+  <script src="{% static 'js/jquery.scrollUp.min.js' %}"></script>
+  <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/waypoints.min.js' %}"></script>
+  <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+  <script src="{% static 'js/plugins.js' %}"></script>
+  <script src="{% static 'js/swiper-bundle.min.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+
+  <script src="{% static 'js/main.js' %}"></script>
+
+  {% block extra_javascript %} {% endblock extra_javascript %}
+{% endblock javascript %}
+
+<script>
+  if (localStorage.getItem("theme-color") === "dark" || (!("theme-color" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+    document.getElementById("light--to-dark-button")?.classList.add("dark--mode");
+  }
+  if (localStorage.getItem("theme-color") === "light") {
+    document.getElementById("light--to-dark-button")?.classList.remove("dark--mode");
+  }
+</script>
+
+</body>
+</html>
+
+

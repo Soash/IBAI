@@ -1,0 +1,410 @@
+{% extends 'base.html' %}
+
+{% load static i18n %}
+
+{% block title %}Checkout{% endblock %}
+
+{% block content %}
+
+<main class="main_wrapper overflow-hidden">
+
+    <!-- topbar__section__stert -->
+    {% include 'partials/top-banner-2.html' %}
+    <!-- topbar__section__end -->
+
+    <!-- headar section start -->
+    {% include 'partials/navbar-2.html' %}
+    <!-- header section end -->
+
+    <!-- Mobile Menu Start Here -->
+    {% include 'partials/mobile-menu.html' %}
+    <!-- Mobile Menu end Here -->
+
+    <!-- theme fixed shadow -->
+    <div>
+        <div class="theme__shadow__circle"></div>
+        <div class="theme__shadow__circle shadow__right"></div>
+    </div>
+    <!-- theme fixed shadow -->
+    <!-- breadcrumbarea__section__start -->
+
+    <div class="breadcrumbarea">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="breadcrumb__content__wraper" data-aos="fade-up">
+                        <div class="breadcrumb__title">
+                            <h2 class="heading">Checkout</h2>
+                        </div>
+                        <div class="breadcrumb__inner">
+                            <ul>
+                                <li><a href="{% url 'pages:dynamic_pages' template_name='index' %}">Home</a></li>
+                                <li>Checkout</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="shape__icon__2">
+            <img loading="lazy" class=" shape__icon__img shape__icon__img__1" src="{% static 'img/herobanner/herobanner__1.png' %}"
+                alt="photo">
+            <img loading="lazy" class=" shape__icon__img shape__icon__img__2" src="{% static 'img/herobanner/herobanner__2.png' %}"
+                alt="photo">
+            <img loading="lazy" class=" shape__icon__img shape__icon__img__3" src="{% static 'img/herobanner/herobanner__3.png' %}"
+                alt="photo">
+            <img loading="lazy" class=" shape__icon__img shape__icon__img__4" src="{% static 'img/herobanner/herobanner__5.png' %}"
+                alt="photo">
+        </div>
+
+    </div>
+    <!-- breadcrumbarea__section__end-->
+
+
+    <!-- checkout__section__start -->
+    <div class="checkoutarea sp_bottom_100 sp_top_100">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-12">
+                    <div class="checkoutarea__billing">
+                        <div class="checkoutarea__billing__heading">
+                            <h2>Billing Details</h2>
+                        </div>
+                        <div class="checkoutarea__billing__form">
+                            <form action="#">
+                                <div class="row">
+                                    <div class="col-xl-6">
+                                        <div class="checkoutarea__inputbox">
+                                            <label for="first__name">First Name *</label>
+                                            <input type="text" id="first__name" name="namm" class="info"
+                                                placeholder="First Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6">
+                                        <div class="checkoutarea__inputbox">
+                                            <label for="last__name">Last Name*</label>
+                                            <input type="text" id="last__name" name="namm" class="info"
+                                                placeholder="Last Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-12">
+                                        <div class="checkoutarea__inputbox">
+                                            <label for="company__name">Company Name</label>
+                                            <input type="text" id="company__name" name="namm" class="info"
+                                                placeholder="Company Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6">
+                                        <div class="checkoutarea__inputbox">
+                                            <label for="email__address">Email Address*</label>
+                                            <input type="text" id="email__address" name="namm" class="info"
+                                                placeholder="Your email">
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6">
+                                        <div class="checkoutarea__inputbox">
+                                            <label for="phone__number">Phone Number*</label>
+                                            <input type="text" id="phone__number" name="namm" class="info"
+                                                placeholder="Phone Number">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xl-12">
+                                        <div class="checkoutarea__inputbox">
+                                            <label for="address__info">Address *</label>
+                                            <input type="text" id="address__info" name="namm" class="info"
+                                                placeholder="Address">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xl-12">
+                                        <div class="checkoutarea__inputbox">
+                                            <label for="town__city">Town/City *</label>
+                                            <input type="text" id="town__city" name="namm" class="info"
+                                                placeholder="Town/City">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xl-12">
+                                        <div class="checkoutarea__inputbox">
+                                            <label for="post__code">Post Code/Zip Code*</label>
+                                            <input type="text" id="post__code" name="namm" class="info"
+                                                placeholder="Post Code/Zip Code">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-12">
+                                    <div class="checkoutarea__inputbox">
+                                        <label for="order__note">Order Notes</label>
+                                        <input type="text" id="order__note" name="namm" class="info"
+                                            placeholder="Order Notes">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-12 col-12">
+                    <div class="checkoutarea__payment__wraper">
+                        <div class="checkoutarea__total">
+                            <h3>Your order</h3>
+                            <form action="#" method="post">
+                                <div class="checkoutarea__table__wraper">
+                                    <table class="checkoutarea__table">
+                                        <thead>
+                                            <tr class="checkoutarea__item">
+                                                <td class="checkoutarea__ctg__type"> Product</td>
+                                                <td class="checkoutarea__cgt__des"> Total</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="checkoutarea__item prd-name">
+                                                <td class="checkoutarea__ctg__type"> Product Title × <span>1</span></td>
+                                                <td class="checkoutarea__cgt__des"> $1,026.00</td>
+                                            </tr>
+                                            <tr class="checkoutarea__item">
+                                                <td class="checkoutarea__ctg__type"> Subtotal</td>
+                                                <td class="checkoutarea__cgt__des">$1,026.00</td>
+                                            </tr>
+                                            <tr class="checkoutarea__item">
+                                                <td class="checkoutarea__item">Shipping</td>
+                                                <td class="checkoutarea__cgt__des ship-opt">
+                                                    <div class="checkoutarea__shipp">
+                                                        <input type="radio" id="pay-toggle" name="ship">
+                                                        <label for="pay-toggle">Flat Rate: <span>$03</span></label>
+                                                    </div>
+                                                    <div class="checkoutarea__shipp">
+                                                        <input type="radio" id="pay-toggle2" name="ship">
+                                                        <label for="pay-toggle2">Free Shipping</label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="checkoutarea__item">
+                                                <td class="checkoutarea__itemcrt-total"> Total</td>
+                                                <td class="checkoutarea__cgt__des prc-total"> $ 1.029.00 </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="checkoutarea__payment clearfix">
+                            <div class="checkoutarea__payment__toggle">
+                                <form action="#">
+                                    <div class="checkoutarea__payment__total">
+                                        <div class="checkoutarea__payment__type">
+                                            <input type="radio" id="pay-toggle01" name="pay">
+                                            <label for="pay-toggle01">Direct Bank Transfer</label>
+                                        </div>
+                                        <div class="checkoutarea__payment__type">
+                                            <input type="radio" id="pay-toggle02" name="pay">
+                                            <label for="pay-toggle02">Cheque Payment</label>
+                                        </div>
+                                        <div class="checkoutarea__payment__type">
+                                            <input type="radio" id="pay-toggle03" name="pay">
+                                            <label for="pay-toggle03">Cash on Delivery</label>
+                                        </div>
+                                        <div class="checkoutarea__payment__type">
+                                            <input type="radio" id="pay-toggle04" name="pay">
+                                            <label for="pay-toggle04">Paypal</label>
+                                        </div>
+                                    </div>
+                                    <div class="checkoutarea__payment__input__box">
+                                        <a class="default__button" href="#">Place order</a>
+
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- checkout__section__end-->
+
+    <!-- footer__section__start -->
+    <div class="footerarea">
+        <div class="container">
+            <div class="footerarea__newsletter__wraper">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12" data-aos="fade-up">
+                        <div class="footerarea__logo">
+                            <a href="#"><img loading="lazy" src="{% static 'img/logo/logo_2.png' %}" alt="logophoto"></a>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12" data-aos="fade-up">
+                        <div class="footerarea__newsletter">
+                            <div class="footerarea__newsletter__input">
+                                <form action="#">
+                                    <input type="text" placeholder="Enter your email here">
+                                    <div class="footerarea__newsletter__button">
+                                        <button type="submit" class="subscribe__btn">Subscribe Now</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footerarea__wrapper">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 " data-aos="fade-up">
+                        <div class="footerarea__inner footerarea__about__us">
+                            <div class="footerarea__heading">
+                                <h3>About us</h3>
+                            </div>
+                            <div class="footerarea__content">
+                                <p>orporate clients and leisure travelers has been relying on Groundlink for dependable
+                                    safe, and professional chauffeured car end service in major cities across World.</p>
+                            </div>
+                            <div class="footerarea__icon">
+                                <ul>
+                                    <li><a href="//facebook.com"><i class="icofont-facebook"></i></a></li>
+                                    <li><a href="//twitter.com"><i class="icofont-twitter"></i></a></li>
+                                    <li><a href="//vimeo.com"><i class="icofont-vimeo"></i></a></li>
+                                    <li><a href="//linkedin.com"><i class="icofont-linkedin"></i></a></li>
+                                    <li><a href="//skype.com"><i class="icofont-skype"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 " data-aos="fade-up">
+                        <div class="footerarea__inner">
+                            <div class="footerarea__heading">
+                                <h3>Usefull Links</h3>
+                            </div>
+                            <div class="footerarea__list">
+                                <ul>
+                                    <li>
+                                        <a href="#">About Us</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Teachers</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Partner</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Room-Details</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Gallery</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 " data-aos="fade-up">
+                        <div class="footerarea__inner footerarea__padding__left">
+                            <div class="footerarea__heading">
+                                <h3>Course</h3>
+                            </div>
+                            <div class="footerarea__list">
+                                <ul>
+                                    <li>
+                                        <a href="#">Ui Ux Design</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Web Development</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Business Strategy</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Softwere Development</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Business English</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12" data-aos="fade-up">
+                        <div class="footerarea__right__wraper footerarea__inner">
+                            <div class="footerarea__heading">
+                                <h3>Recent Post</h3>
+                            </div>
+                            <div class="footerarea__right__list">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <div class="footerarea__right__img">
+                                                <img loading="lazy" src="{% static 'img/footer/footer__1.png' %}" alt="footerphoto">
+                                            </div>
+                                            <div class="footerarea__right__content">
+                                                <span>02 Apr 2024 </span>
+                                                <h6>Best Your Business</h6>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            <div class="footerarea__right__img">
+                                                <img loading="lazy" src="{% static 'img/footer/footer__2.png' %}" alt="footerphoto">
+                                            </div>
+                                            <div class="footerarea__right__content">
+                                                <span>02 Apr 2024 </span>
+                                                <h6>Keep Your Business</h6>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            <div class="footerarea__right__img">
+                                                <img loading="lazy" src="{% static 'img/footer/footer__3.png' %}" alt="footerphoto">
+                                            </div>
+                                            <div class="footerarea__right__content">
+                                                <span>02 Apr 2024 </span>
+                                                <h6>Nice Your Business</h6>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footerarea__copyright__wrapper">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" data-aos="fade-up">
+                        <div class="footerarea__copyright__content">
+                            <p>© 2024 Powered by <a href="#">Edurock</a>. All Rights Reserved.</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" data-aos="fade-up">
+                        <div class="footerarea__copyright__list">
+                            <ul>
+                                <li><a href="#">Terms of Use</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- footer__section__end -->
+
+
+</main>
+
+{% endblock %}

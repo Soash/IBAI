@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container text-center py-5">
+  <h2>✅ Payment Successful!</h2>
+  <p>Transaction ID: {{ payment.tran_id }}</p>
+  <p>Thank you for purchasing <strong>{{ payment.course.title }}</strong>.</p>
+  <a href="{% url 'course_detail' slug=payment.course.slug %}" class="btn btn-success mt-3">Go to Course</a>
+</div>
+{% endblock %}

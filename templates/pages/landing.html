@@ -1,0 +1,3734 @@
+{% load static i18n %}
+
+
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Edurock - Education LMS Template</title>
+  <meta name="description" content="Edurock - LMS Online Courses & Education Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Favicon -->
+  <link rel="icon" href="{% static '/img/favicon.png' %}">
+
+  <!-- CSS
+	============================================ -->
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="{% static '/css/bootstrap-grid.css' %}">
+
+  <!-- Animate CSS -->
+  <link rel="stylesheet" href="{% static '/css/animate.min.css' %}">
+
+  <!-- Swipper Slider CSS -->
+  <link rel="stylesheet" href="{% static '/css/swiper-bundle.min.css' %}">
+
+  <!-- Main Style CSS -->
+  <link rel="stylesheet" href="{% static '/css/landing.css' %}">
+
+  <script>
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    if (localStorage.getItem("theme-color") === "dark" || (!("theme-color" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+      document.documentElement.classList.add("is_dark");
+    }
+    if (localStorage.getItem("theme-color") === "light") {
+      document.documentElement.classList.remove("is_dark");
+    }
+  </script>
+
+
+</head>
+
+<body class="body__wrapper">
+
+<div class="main__wrapper">
+
+  <!-- Dark/Light area start -->
+  <div class="mode_switcher my_switcher">
+    <button id="light--to-dark-button" class="light align-items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="ionicon dark__mode" viewBox="0 0 512 512">
+        <path
+          d="M160 136c0-30.62 4.51-61.61 16-88C99.57 81.27 48 159.32 48 248c0 119.29 96.71 216 216 216 88.68 0 166.73-51.57 200-128-26.39 11.49-57.38 16-88 16-119.29 0-216-96.71-216-216z"
+          fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="32"/>
+      </svg>
+
+      <svg xmlns="http://www.w3.org/2000/svg" class="ionicon light__mode" viewBox="0 0 512 512">
+        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10"
+              stroke-width="32"
+              d="M256 48v48M256 416v48M403.08 108.92l-33.94 33.94M142.86 369.14l-33.94 33.94M464 256h-48M96 256H48M403.08 403.08l-33.94-33.94M142.86 142.86l-33.94-33.94"/>
+        <circle cx="256" cy="256" r="80" fill="none" stroke="currentColor" stroke-linecap="round"
+                stroke-miterlimit="10" stroke-width="32"/>
+      </svg>
+
+      <span class="light__mode">Light</span>
+      <span class="dark__mode">Dark</span>
+    </button>
+  </div>
+  <!-- Dark/Light area end -->
+
+  <!-- theme fixed shadow -->
+  <div>
+    <div class="theme__shadow__circle"></div>
+    <div class="theme__shadow__circle shadow__right"></div>
+  </div>
+  <!-- theme fixed shadow -->
+
+
+  <!--=============================================
+=            landing header area         =
+=============================================-->
+
+  <!--====================  header area ====================-->
+  <header class="header__section">
+    <div class="header-area-wrapper transparent-header header__sticky">
+      <div class="header-area">
+        <!--=======  header top area  =======-->
+        <div class="header-top-area">
+          <div class="container-fluid">
+
+            <div class="header-wrapper">
+              <div class="row align-items-center">
+
+                <div class="col-xl-2 col-lg-2 col-md-4 col-6 logo_area">
+                  <!-- logo -->
+                  <div class="logo">
+                    <a href="/">
+                      <img loading="lazy" src="{% static 'img/logo/logo_1.png' %}" class="img-fluid" alt="">
+                    </a>
+                  </div>
+                </div>
+
+                <div class="col-xl-8 col-lg-8 col-md-4 col-6 menu_area">
+                  <!-- header middle -->
+                  <div class="header-middle">
+                    <ul class="header_menu">
+                      <li><a href="#demos" class="smooth-scroll-demos">Demos</a></li>
+                      <li><a href="#inner_page" class="smooth-scroll-demos">Inner Page</a></li>
+                      <li><a href="#dashboard" class="smooth-scroll-demos">Dashboard</a></li>
+                      <li>
+                        <a href="#zoom_integration" class="smooth-scroll-demos">Zoom
+                          <span><img loading="lazy" src="{% static '/img/landing/features/zoom.png' %}"
+                                     alt="">Integration</span>
+                        </a>
+                      </li>
+                      <li><a href="#ecommerce" class="smooth-scroll-demos">Showcase
+                        <span>eCommarce</span></a></li>
+                      <li><a target="_blank"
+                             href="https://html.themewin.com/docs/edurock">Documentation</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="col-xl-2 col-lg-2 col-md-4 col-6 button_area">
+                  <div class="btn_wrapper">
+                    <a target="_blank"
+                       href="https://themeforest.net/item/edurock-education-lms-bootstrap-5-template/46075990"
+                       class="default_btn"><span>Purchase Now</span>
+
+                      <svg xmlns="http://www.w3.org/2000/svg" class="ionicon"
+                           viewBox="0 0 512 512">
+                        <circle cx="176" cy="416" r="16" fill="none" stroke="currentColor"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="32"/>
+                        <circle cx="400" cy="416" r="16" fill="none" stroke="currentColor"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="32"/>
+                        <path fill="none" stroke="currentColor" stroke-linecap="round"
+                              stroke-linejoin="round" stroke-width="32"
+                              d="M48 80h64l48 272h256"/>
+                        <path
+                          d="M160 288h249.44a8 8 0 007.85-6.43l28.8-144a8 8 0 00-7.85-9.57H128"
+                          fill="none" stroke="currentColor" stroke-linecap="round"
+                          stroke-linejoin="round" stroke-width="32"/>
+                      </svg>
+
+                    </a>
+
+                    <!-- Dark/Light area start -->
+                    <!-- <div class="mode_switcher my_switcher">
+                                        <button onclick="switchTheme()" class="light align-items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M160 136c0-30.62 4.51-61.61 16-88C99.57 81.27 48 159.32 48 248c0 119.29 96.71 216 216 216 88.68 0 166.73-51.57 200-128-26.39 11.49-57.38 16-88 16-119.29 0-216-96.71-216-216z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
+                                            </button>
+                                    </div> -->
+                    <!-- Dark/Light area end -->
+
+                  </div>
+
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--=======  End of header top area  =======-->
+
+      </div>
+    </div>
+  </header>
+  <!--====================  End of header area  ====================-->
+
+  <!--=====  End of landing header area  ======-->
+
+  <!--=============================================
+=            landing hero area         =
+=============================================-->
+
+  <div class="landing-hero-area">
+    <div class="container-fluid container-fluid--cp-80">
+      <div class="row main-top-content-wrapper">
+
+        <div class="col-lg-12 col-xl-6 main-top-content">
+          <div class="quick__contact__wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+              <path
+                d="M320 254.27c-4.5 51-40.12 80-80.55 80s-67.34-35.82-63.45-80 37.12-80 77.55-80 70.33 36 66.45 80z"
+                fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="32"/>
+              <path
+                d="M319.77 415.77c-28.56 12-47.28 14.5-79.28 14.5-97.2 0-169-78.8-160.49-176s94.31-176 191.51-176C381 78.27 441.19 150 432.73 246c-6.31 71.67-52.11 92.32-76.09 88.07-22.56-4-41.18-24.42-37.74-63.5l8.48-96.25"
+                fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="32"/>
+            </svg>
+            <div class="quick__contact__text">
+              <label>Get Support</label>
+              <a href="#">techbootmail@gmail.com</a>
+            </div>
+          </div>
+
+
+          <!-- <h2 class="main-top-content__title">
+                            <span>Dream site best</span>
+
+                            <span class="cd-headline clip is-full-width introarea__small__text">
+                                <span class="text__primary__color">for</span>
+
+                                <span class="cd-words-wrapper">
+                                    <b class="is-visible"> Education</b>
+                                    <b>LMS Service</b>
+                                    <b>Online Course</b>
+                                    <b>School Collage</b>
+                                    <b>University</b>
+                                    <b>Kindergarten</b>
+                                </span>
+                            </span>
+                        </h2> -->
+
+
+          <h2 class="main-top-content__title">
+            <span>Dream site best</span>
+            <div class="d-flex animated__content__wrapper">
+              <span class="animated--header-first-word">For-  </span>
+              <span class="txt-type animated--headline" data-wait="3000"
+                    data-words='[" Education", " LMS Service", " School Collage", " University", " Kindergarten", " Responsive"]'> </span>
+            </div>
+          </h2>
+
+          <p>A best template for different purposes that creativity, efficiency, and diversity.</p>
+          <div class="btn__img__wrap">
+            <!--<a href="{% url 'pages:dynamic_pages' template_name='index' %}" class="default_btn">Explore More<i class="ion-arrow-right-c"></i></a>-->
+            <img loading="lazy" src="{% static '/img/landing/award.png' %}" alt="Banner Images">
+          </div>
+        </div>
+        <div class="col-lg-12 col-xl-6">
+          <div class="animated__cont__feature__wrap">
+
+            <div class="animated-promo-wrapper">
+              <div class="animated-promo-loop">
+                <div class="animated-promo animated-promo-tbone">
+                  <img src="{% static '/img/landing/banner/banner-01.png' %}" alt="Banner Images">
+                  <img src="{% static '/img/landing/banner/banner-01.png' %}" alt="Banner Images">
+                </div>
+                <div class="animated-promo animated-promo-tbtwo">
+                  <img src="{% static '/img/landing/banner/banner-02.png' %}" alt="Banner Images">
+                  <img src="{% static '/img/landing/banner/banner-02.png' %}" alt="Banner Images">
+                </div>
+                <div class="animated-promo animated-promo-tbthree">
+                  <img src="{% static '/img/landing/banner/banner-03.png' %}" alt="Banner Images">
+                  <img src="{% static '/img/landing/banner/banner-03.png' %}" alt="Banner Images">
+                </div>
+                <div class="animated-promo animated-promo-tbfour d-none d-sm-block">
+                  <img src="{% static '/img/landing/banner/banner-04.png' %}" alt="Banner Images">
+                  <img src="{% static '/img/landing/banner/banner-04.png' %}" alt="Banner Images">
+                </div>
+                <div class="animated-promo animated-promo-tbfive d-none d-sm-block">
+                  <img src="{% static '/img/landing/banner/banner-05.png' %}" alt="Banner Images">
+                  <img src="{% static '/img/landing/banner/banner-05.png' %}" alt="Banner Images">
+                </div>
+              </div>
+            </div>
+
+
+            <div class="hero__noteable__feature">
+              <div class="hnf__feature">
+                <a class="smooth-scroll-demos" href="#ecommerce"><img loading="lazy"
+                                                                      src="{% static '/img/landing/features/ecommerce-hero.png' %}"
+                                                                      alt=""></a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!--=====  End of landing hero area  ======-->
+
+  <div class="core_feature_area">
+    <div class="container-fluid">
+      <div class="single_feature-wrapper">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 single_feat">
+            <div class="single_feature-single">
+              <div class="single_feature-single__content">
+                <h3 class="title">100+ HTML With eCommerce</h3>
+                <p class="text">Edurock is built specially for Education, Online Course & Events
+                  with online store.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 single_feat">
+            <div class="single_feature-single">
+              <div class="single_feature-single__content">
+                <h3 class="title">LMS & Zoom Integration</h3>
+                <p class="text">Edurock is built specially for also Learning Managment System.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 single_feat">
+            <div class="single_feature-single">
+              <div class="single_feature-single__content">
+                <h3 class="title">SASS, BEM & Light/Dark</h3>
+                <p class="text">Modern CSS & HTML code followed by SASS & BEM with Light/Dark Mode.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 single_feat">
+            <div class="single_feature-single">
+              <div class="single_feature-single__content">
+                <h3 class="title">Multi Header & Footers</h3>
+                <p class="text">Build powerful websites quickly with beautiful Header & Footer.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- animate condtent start-->
+  <div class="animate__content">
+    <div class="container-fluid">
+      <div class="animate__content__wrap">
+        <div class="animate__content__single">
+          <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+            <path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" fill="none"
+                  stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/>
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="32" d="M352 176L217.6 336 160 272"/>
+          </svg>
+          <span>Responsive & Retina Ready </span>
+        </div>
+        <div class="animate__content__single animate__content__single--2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+            <path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" fill="none"
+                  stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/>
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="32" d="M352 176L217.6 336 160 272"/>
+          </svg>
+          <span>SEO Optimized </span>
+        </div>
+        <div class="animate__content__single">
+          <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+            <path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" fill="none"
+                  stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/>
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="32" d="M352 176L217.6 336 160 272"/>
+          </svg>
+          <span>eCommarce Ready</span>
+        </div>
+        <div class="animate__content__single animate__content__single--2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+            <path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" fill="none"
+                  stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/>
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="32" d="M352 176L217.6 336 160 272"/>
+          </svg>
+          <span>Zoom Integration</span>
+        </div>
+        <div class="animate__content__single">
+          <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+            <path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" fill="none"
+                  stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/>
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="32" d="M352 176L217.6 336 160 272"/>
+          </svg>
+          <span>Instructor Dashboard</span>
+        </div>
+        <div class="animate__content__single animate__content__single--2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+            <path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" fill="none"
+                  stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/>
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="32" d="M352 176L217.6 336 160 272"/>
+          </svg>
+          <span>Student Dashboard</span>
+        </div>
+        <div class="animate__content__single">
+          <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+            <path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" fill="none"
+                  stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/>
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="32" d="M352 176L217.6 336 160 272"/>
+          </svg>
+          <span>Unique Elements</span>
+        </div>
+        <div class="animate__content__single animate__content__single--2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+            <path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" fill="none"
+                  stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/>
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="32" d="M352 176L217.6 336 160 272"/>
+          </svg>
+          <span>It’s Super Fast</span>
+        </div>
+        <div class="animate__content__single">
+          <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+            <path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" fill="none"
+                  stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/>
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="32" d="M352 176L217.6 336 160 272"/>
+          </svg>
+          <span>Light/Dark Screen Mode</span>
+        </div>
+        <div class="animate__content__single animate__content__single--2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+            <path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" fill="none"
+                  stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/>
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="32" d="M352 176L217.6 336 160 272"/>
+          </svg>
+          <span>SASS Preprocessor</span>
+        </div>
+        <div class="animate__content__single">
+          <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+            <path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" fill="none"
+                  stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/>
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="32" d="M352 176L217.6 336 160 272"/>
+          </svg>
+          <span>BEM Methodology</span>
+        </div>
+        <div class="animate__content__single animate__content__single--2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+            <path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" fill="none"
+                  stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/>
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="32" d="M352 176L217.6 336 160 272"/>
+          </svg>
+          <span>Latest Bootstrap</span>
+        </div>
+        <div class="animate__content__single">
+          <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+            <path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" fill="none"
+                  stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/>
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="32" d="M352 176L217.6 336 160 272"/>
+          </svg>
+          <span>High Quality Support</span>
+        </div>
+        <div class="animate__content__single animate__content__single--2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+            <path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" fill="none"
+                  stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/>
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="32" d="M352 176L217.6 336 160 272"/>
+          </svg>
+          <span>Fully Customizable</span>
+        </div>
+        <div class="animate__content__single">
+          <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+            <path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" fill="none"
+                  stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/>
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="32" d="M352 176L217.6 336 160 272"/>
+          </svg>
+          <span>Lifetime Update</span>
+        </div>
+        <div class="animate__content__single animate__content__single--2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+            <path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" fill="none"
+                  stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/>
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="32" d="M352 176L217.6 336 160 272"/>
+          </svg>
+          <span>Google Font</span>
+        </div>
+        <div class="animate__content__single animate__content__single--2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+            <path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" fill="none"
+                  stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/>
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="32" d="M352 176L217.6 336 160 272"/>
+          </svg>
+          <span>Unlimited Colors</span>
+        </div>
+        <div class="animate__content__single animate__content__single--2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+            <path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" fill="none"
+                  stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/>
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="32" d="M352 176L217.6 336 160 272"/>
+          </svg>
+          <span>Mobile-first design</span>
+        </div>
+        <div class="animate__content__single animate__content__single--2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+            <path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" fill="none"
+                  stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/>
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="32" d="M352 176L217.6 336 160 272"/>
+          </svg>
+          <span>Big Template For LMS</span>
+        </div>
+        <div class="animate__content__single animate__content__single--2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+            <path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" fill="none"
+                  stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/>
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="32" d="M352 176L217.6 336 160 272"/>
+          </svg>
+          <span>Cross-browser compatible</span>
+        </div>
+
+        <div class="animate__content__single animate__content__single--2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+            <path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" fill="none"
+                  stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/>
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="32" d="M352 176L217.6 336 160 272"/>
+          </svg>
+          <span>Unlimited Possibilities</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- animate condtent end-->
+
+
+  <!--=============================================
+=            landing demo area         =
+=============================================-->
+
+
+  <!-- grid__section__start -->
+  <div class="gridarea main-demo-area sp_top_50" id="demos">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="main-demo-title-area">
+            <h2 class="big-title">Homepages</h2>
+            <div class="title-wrapper">
+              <h4>World Class Design</h4>
+              <h3 class="title"><span class="highlight">20+ Stunning Demos</span>Unlimited
+                possibilities</h3>
+              <!-- <p class="text">Unique homepages built for a convenient site building experience</p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" data-aos="fade-up">
+        <div class="col-xl-12">
+          <div class="gridfilter_nav grid__filter gridFilter" id="myBtnContainer">
+            <button class="btn active" onclick="filterSelection('all')">All Demos</button>
+            <button class="btn" onclick="filterSelection('demo_light')">Light</button>
+            <button class="btn" onclick="filterSelection('demo_dark')">Dark</button>
+            <button class="btn" onclick="filterSelection('demo_course')">Course</button>
+            <button class="btn" onclick="filterSelection('demo_marketplace')">Marketplace</button>
+            <button class="btn" onclick="filterSelection('demo_institute')">Institute</button>
+            <button class="btn" onclick="filterSelection('demo_ecommerce')"> eCommerce</button>
+          </div>
+        </div>
+      </div>
+
+
+      <!--
+                <div id="myBtnContainer">
+                    <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+                    <button class="btn" onclick="filterSelection('cars')"> Cars</button>
+                    <button class="btn" onclick="filterSelection('animals')"> Animals</button>
+                    <button class="btn" onclick="filterSelection('fruits')"> Fruits</button>
+                    <button class="btn" onclick="filterSelection('colors')"> Colors</button>
+                  </div>
+
+
+                  <div class="container">
+                    <div class="filterDiv cars">BMW</div>
+                    <div class="filterDiv colors fruits">Orange</div>
+                    <div class="filterDiv cars">Volvo</div>
+                    <div class="filterDiv colors">Red</div>
+                    <div class="filterDiv cars">Ford</div>
+                    <div class="filterDiv colors">Blue</div>
+                    <div class="filterDiv animals">Cat</div>
+                    <div class="filterDiv animals">Dog</div>
+                    <div class="filterDiv fruits">Melon</div>
+                    <div class="filterDiv fruits animals">Kiwi</div>
+                    <div class="filterDiv fruits">Banana</div>
+                    <div class="filterDiv fruits">Lemon</div>
+                    <div class="filterDiv animals">Cow</div>
+                  </div>
+                -->
+
+
+      <div class="demo-wrapper">
+        <div class="row grid row-30 justify-content-center" data-aos="fade-up">
+
+          <!-- Start Solo Demo  -->
+          <div
+            class="col-xl-4  col-lg-6 col-sm-6 demo-custom-padding grid-item filterDiv  demo_light demo_marketplace">
+            <div class="demo-item">
+              <div class="solo-demo">
+                <a class="solo-demo-link" target="_blank"
+                   href="{% url 'pages:dynamic_pages' template_name='index' %}">
+                  <div class="thumbnail">
+                    <img loading="lazy" src="{% static '/img/landing/demo/home/home-1.jpg' %}"
+                         alt="Home Image">
+                    <div class="mobile-view">
+                      <div class="inner">
+                        <img loading="lazy" src="{% static '/img/landing/demo/mobile/home-1.jpg' %}"
+                             alt="Responsive Images">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <h3 class="title">Home (Default) <span class="label-light">Light</span></h3>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- End Solo Demo  -->
+
+          <!-- Start Solo Demo  -->
+          <div
+            class="col-xl-4  col-lg-6 col-sm-6 demo-custom-padding grid-item filterDiv  demo_dark demo_marketplace">
+            <div class="demo-item">
+              <div class="solo-demo">
+                <a class="solo-demo-link" target="_blank"
+                   href="{% url 'pages:dynamic_pages' template_name='index-dark' %}">
+                  <div class="thumbnail">
+                    <img loading="lazy" src="{% static '/img/landing/demo/home/home-1-dark.jpg' %}"
+                         alt="Home Image">
+                    <div class="mobile-view">
+                      <div class="inner">
+                        <img loading="lazy" src="{% static '/img/landing/demo/mobile/home-1-dark.jpg' %}"
+                             alt="Responsive Images">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <h3 class="title">Home (Default) <span
+                      class="label-light label-dark">Dark</span></h3>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- End Solo Demo  -->
+
+          <!-- Start Solo Demo  -->
+          <div
+            class="col-xl-4  col-lg-6 col-sm-6 demo-custom-padding grid-item filterDiv  demo_light demo_marketplace">
+            <div class="demo-item">
+              <div class="solo-demo">
+                <a class="solo-demo-link" target="_blank"
+                   href="{% url 'pages:dynamic_pages' template_name='home-2' %}">
+                  <div class="thumbnail">
+                    <img loading="lazy" src="{% static '/img/landing/demo/home/home-2.jpg' %}"
+                         alt="Home Image">
+                    <div class="mobile-view">
+                      <div class="inner">
+                        <img loading="lazy" src="{% static '/img/landing/demo/mobile/home-2.jpg' %}"
+                             alt="Responsive Images">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <h3 class="title">Home (Elegant) <span class="label-light">Light</span></h3>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- End Solo Demo  -->
+
+          <!-- Start Solo Demo  -->
+          <div
+            class="col-xl-4  col-lg-6 col-sm-6 demo-custom-padding grid-item filterDiv  demo_dark demo_marketplace">
+            <div class="demo-item">
+              <div class="solo-demo">
+                <a class="solo-demo-link" target="_blank"
+                   href="{% url 'pages:dynamic_pages' template_name='home-2-dark' %}">
+                  <div class="thumbnail">
+                    <img loading="lazy" src="{% static '/img/landing/demo/home/home-2-dark.jpg' %}"
+                         alt="Home Image">
+                    <div class="mobile-view">
+                      <div class="inner">
+                        <img loading="lazy" src="{% static '/img/landing/demo/mobile/home-2-dark.jpg' %}"
+                             alt="Responsive Images">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <h3 class="title">Home (Elegant) <span
+                      class="label-light label-dark">Dark</span></h3>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- End Solo Demo  -->
+
+          <!-- Start Solo Demo  -->
+          <div
+            class="col-xl-4  col-lg-6 col-sm-6 demo-custom-padding grid-item filterDiv  demo_light demo_marketplace">
+            <div class="demo-item">
+              <div class="solo-demo">
+                <a class="solo-demo-link" target="_blank"
+                   href="{% url 'pages:dynamic_pages' template_name='home-3' %}">
+                  <div class="thumbnail">
+                    <img loading="lazy" src="{% static '/img/landing/demo/home/home-3.jpg' %}"
+                         alt="Home Image">
+                    <div class="mobile-view">
+                      <div class="inner">
+                        <img loading="lazy" src="{% static '/img/landing/demo/mobile/home-3.jpg' %}"
+                             alt="Responsive Images">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <h3 class="title">Home (Classic) <span class="label-light">light</span></h3>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- End Solo Demo  -->
+
+          <!-- Start Solo Demo  -->
+          <div
+            class="col-xl-4  col-lg-6 col-sm-6 demo-custom-padding grid-item filterDiv  demo_dark demo_marketplace">
+            <div class="demo-item">
+              <div class="solo-demo">
+                <a class="solo-demo-link" target="_blank"
+                   href="{% url 'pages:dynamic_pages' template_name='home-3-dark' %}">
+                  <div class="thumbnail">
+                    <img loading="lazy" src="{% static '/img/landing/demo/home/home-3-dark.jpg' %}"
+                         alt="Home Image">
+                    <div class="mobile-view">
+                      <div class="inner">
+                        <img loading="lazy" src="{% static '/img/landing/demo/mobile/home-3-dark.jpg' %}"
+                             alt="Responsive Images">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <h3 class="title">Home (Classic) <span
+                      class="label-light label-dark">Dark</span></h3>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- End Solo Demo  -->
+
+          <!-- Start Solo Demo  -->
+          <div
+            class="col-xl-4  col-lg-6 col-sm-6 demo-custom-padding grid-item filterDiv  demo_light demo_marketplace demo_course">
+            <div class="demo-item">
+              <div class="solo-demo">
+                <a class="solo-demo-link" target="_blank"
+                   href="{% url 'pages:dynamic_pages' template_name='home-4' %}">
+                  <div class="thumbnail">
+                    <img loading="lazy" src="{% static '/img/landing/demo/home/home-4.jpg' %}"
+                         alt="Home Image">
+                    <div class="mobile-view">
+                      <div class="inner">
+                        <img loading="lazy" src="{% static '/img/landing/demo/mobile/home-4.jpg' %}"
+                             alt="Responsive Images">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <h3 class="title">Home (Classic LMS) <span class="label-light">Light</span>
+                    </h3>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- End Solo Demo  -->
+
+          <!-- Start Solo Demo  -->
+          <div
+            class="col-xl-4  col-lg-6 col-sm-6 demo-custom-padding grid-item filterDiv  demo_dark demo_marketplace demo_course">
+            <div class="demo-item">
+              <div class="solo-demo">
+                <a class="solo-demo-link" target="_blank"
+                   href="{% url 'pages:dynamic_pages' template_name='home-4-dark' %}">
+                  <div class="thumbnail">
+                    <img loading="lazy" src="{% static '/img/landing/demo/home/home-4-dark.jpg' %}"
+                         alt="Home Image">
+                    <div class="mobile-view">
+                      <div class="inner">
+                        <img loading="lazy" src="{% static '/img/landing/demo/mobile/home-4-dark.jpg' %}"
+                             alt="Responsive Images">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <h3 class="title">Home (Classic LMS) <span
+                      class="label-light label-dark">Dark</span></h3>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- End Solo Demo  -->
+
+          <!-- Start Solo Demo  -->
+          <div class="col-xl-4  col-lg-6 col-sm-6 demo-custom-padding grid-item filterDiv  demo_light demo_course">
+            <div class="demo-item">
+              <div class="solo-demo">
+                <a class="solo-demo-link" target="_blank"
+                   href="{% url 'pages:dynamic_pages' template_name='home-5' %}">
+                  <div class="thumbnail">
+                    <img loading="lazy" src="{% static '/img/landing/demo/home/home-5.jpg' %}"
+                         alt="Home Image">
+                    <div class="mobile-view">
+                      <div class="inner">
+                        <img loading="lazy" src="{% static '/img/landing/demo/mobile/home-5.jpg' %}"
+                             alt="Responsive Images">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <h3 class="title">Home (Online Course) <span
+                      class="label-light">Light</span></h3>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- End Solo Demo  -->
+
+          <!-- Start Solo Demo  -->
+          <div class="col-xl-4  col-lg-6 col-sm-6 demo-custom-padding grid-item filterDiv  demo_dark demo_course">
+            <div class="demo-item">
+              <div class="solo-demo">
+                <a class="solo-demo-link" target="_blank"
+                   href="{% url 'pages:dynamic_pages' template_name='home-5-dark' %}">
+                  <div class="thumbnail">
+                    <img loading="lazy" src="{% static '/img/landing/demo/home/home-5-dark.jpg' %}"
+                         alt="Home Image">
+                    <div class="mobile-view">
+                      <div class="inner">
+                        <img loading="lazy" src="{% static '/img/landing/demo/mobile/home-5-dark.jpg' %}"
+                             alt="Responsive Images">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <h3 class="title">Home (Online Course) <span
+                      class="label-light label-dark">Dark</span></h3>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- End Solo Demo  -->
+
+          <!-- Start Solo Demo  -->
+          <div
+            class="col-xl-4  col-lg-6 col-sm-6 demo-custom-padding grid-item filterDiv  demo_light demo_marketplace">
+            <div class="demo-item">
+              <div class="solo-demo">
+                <a class="solo-demo-link" target="_blank"
+                   href="{% url 'pages:dynamic_pages' template_name='home-6' %}">
+                  <div class="thumbnail">
+                    <img loading="lazy" src="{% static '/img/landing/demo/home/home-6.jpg' %}"
+                         alt="Home Image">
+                    <div class="mobile-view">
+                      <div class="inner">
+                        <img loading="lazy" src="{% static '/img/landing/demo/mobile/home-6.jpg' %}"
+                             alt="Responsive Images">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <h3 class="title">Home (Marketplace) <span class="label-light">Light</span>
+                    </h3>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- End Solo Demo  -->
+
+          <!-- Start Solo Demo  -->
+          <div
+            class="col-xl-4  col-lg-6 col-sm-6 demo-custom-padding grid-item filterDiv  demo_dark demo_marketplace">
+            <div class="demo-item">
+              <div class="solo-demo">
+                <a class="solo-demo-link" target="_blank"
+                   href="{% url 'pages:dynamic_pages' template_name='home-6-dark' %}">
+                  <div class="thumbnail">
+                    <img loading="lazy" src="{% static '/img/landing/demo/home/home-6-dark.jpg' %}"
+                         alt="Home Image">
+                    <div class="mobile-view">
+                      <div class="inner">
+                        <img loading="lazy" src="{% static '/img/landing/demo/mobile/home-6-dark.jpg' %}"
+                             alt="Responsive Images">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <h3 class="title">Home (Marketplace) <span
+                      class="label-light label-dark">Dark</span></h3>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- End Solo Demo  -->
+
+          <!-- Start Solo Demo  -->
+          <div
+            class="col-xl-4  col-lg-6 col-sm-6 demo-custom-padding grid-item filterDiv  demo_light demo_institute">
+            <div class="demo-item">
+              <div class="solo-demo">
+                <a class="solo-demo-link" target="_blank"
+                   href="{% url 'pages:dynamic_pages' template_name='home-7' %}">
+                  <div class="thumbnail">
+                    <img loading="lazy" src="{% static '/img/landing/demo/home/home-7.jpg' %}"
+                         alt="Home Image">
+                    <div class="mobile-view">
+                      <div class="inner">
+                        <img loading="lazy" src="{% static '/img/landing/demo/mobile/home-7.jpg' %}"
+                             alt="Responsive Images">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <h3 class="title">Home (University) <span class="label-light">Light</span>
+                    </h3>
+                  </div>
+                </a>
+                <div class="new__label">
+                  New
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Solo Demo  -->
+
+          <!-- Start Solo Demo  -->
+          <div
+            class="col-xl-4  col-lg-6 col-sm-6 demo-custom-padding grid-item filterDiv  demo_dark demo_institute">
+            <div class="demo-item">
+              <div class="solo-demo">
+                <a class="solo-demo-link" target="_blank"
+                   href="{% url 'pages:dynamic_pages' template_name='home-7-dark' %}">
+                  <div class="thumbnail">
+                    <img loading="lazy" src="{% static '/img/landing/demo/home/home-7-dark.jpg' %}"
+                         alt="Home Image">
+                    <div class="mobile-view">
+                      <div class="inner">
+                        <img loading="lazy" src="{% static '/img/landing/demo/mobile/home-7-dark.jpg' %}"
+                             alt="Responsive Images">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <h3 class="title">Home (University) <span
+                      class="label-light label-dark">Dark</span></h3>
+                  </div>
+                </a>
+                <div class="new__label">
+                  New
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Solo Demo  -->
+
+          <!-- Start Solo Demo  -->
+          <div
+            class="col-xl-4  col-lg-6 col-sm-6 demo-custom-padding grid-item filterDiv  demo_light demo_ecommerce">
+            <div class="demo-item">
+              <div class="solo-demo">
+                <a class="solo-demo-link" target="_blank"
+                   href="{% url 'pages:dynamic_pages' template_name='home-8' %}">
+                  <div class="thumbnail">
+                    <img loading="lazy" src="{% static '/img/landing/demo/home/home-8.jpg' %}"
+                         alt="Home Image">
+                    <div class="mobile-view">
+                      <div class="inner">
+                        <img loading="lazy" src="{% static '/img/landing/demo/mobile/home-8.jpg' %}"
+                             alt="Responsive Images">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <h3 class="title">Home (eCommerce) <span class="label-light">Light</span>
+                    </h3>
+                  </div>
+                </a>
+                <div class="new__label">
+                  New
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Solo Demo  -->
+
+          <!-- Start Solo Demo  -->
+          <div
+            class="col-xl-4  col-lg-6 col-sm-6 demo-custom-padding grid-item filterDiv  demo_dark demo_ecommerce">
+            <div class="demo-item">
+              <div class="solo-demo">
+                <a class="solo-demo-link" target="_blank"
+                   href="{% url 'pages:dynamic_pages' template_name='home-8-dark' %}">
+                  <div class="thumbnail">
+                    <img loading="lazy" src="{% static '/img/landing/demo/home/home-8-dark.jpg' %}"
+                         alt="Home Image">
+                    <div class="mobile-view">
+                      <div class="inner">
+                        <img loading="lazy" src="{% static '/img/landing/demo/mobile/home-8-dark.jpg' %}"
+                             alt="Responsive Images">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <h3 class="title">Home (eCommarce) <span
+                      class="label-light label-dark">Dark</span></h3>
+                  </div>
+                </a>
+                <div class="new__label">
+                  New
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Solo Demo  -->
+
+          <!-- Start Solo Demo  -->
+          <div
+            class="col-xl-4  col-lg-6 col-sm-6 demo-custom-padding grid-item filterDiv  demo_light demo_institute">
+            <div class="demo-item">
+              <div class="solo-demo">
+                <a class="solo-demo-link" target="_blank"
+                   href="{% url 'pages:dynamic_pages' template_name='home-9' %}">
+                  <div class="thumbnail">
+                    <img loading="lazy" src="{% static '/img/landing/demo/home/home-9.jpg' %}"
+                         alt="Home Image">
+                    <div class="mobile-view">
+                      <div class="inner">
+                        <img loading="lazy" src="{% static '/img/landing/demo/mobile/home-9.jpg' %}"
+                             alt="Responsive Images">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <h3 class="title">Home (Kindergarten) <span class="label-light">Light</span>
+                    </h3>
+                  </div>
+                </a>
+                <div class="new__label">
+                  New
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Solo Demo  -->
+
+          <!-- Start Solo Demo  -->
+          <div
+            class="col-xl-4  col-lg-6 col-sm-6 demo-custom-padding grid-item filterDiv  demo_dark demo_institute">
+            <div class="demo-item">
+              <div class="solo-demo">
+                <a class="solo-demo-link" target="_blank"
+                   href="{% url 'pages:dynamic_pages' template_name='home-9-dark' %}">
+                  <div class="thumbnail">
+                    <img loading="lazy" src="{% static '/img/landing/demo/home/home-9-dark.jpg' %}"
+                         alt="Home Image">
+                    <div class="mobile-view">
+                      <div class="inner">
+                        <img loading="lazy" src="{% static '/img/landing/demo/mobile/home-9-dark.jpg' %}"
+                             alt="Responsive Images">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <h3 class="title">Home (Kindergarten) <span
+                      class="label-light label-dark">Dark</span></h3>
+                  </div>
+                </a>
+                <div class="new__label">
+                  New
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Solo Demo  -->
+
+          <!-- Start Solo Demo  -->
+          <div class="col-xl-4  col-lg-6 col-sm-6 demo-custom-padding grid-item filterDiv  demo_light demo_course">
+            <div class="demo-item">
+              <div class="solo-demo">
+                <a class="solo-demo-link" target="_blank"
+                   href="{% url 'pages:dynamic_pages' template_name='home-10' %}">
+                  <div class="thumbnail">
+                    <img loading="lazy" src="{% static '/img/landing/demo/home/home-10.jpg' %}"
+                         alt="Home Image">
+                    <div class="mobile-view">
+                      <div class="inner">
+                        <img loading="lazy" src="{% static '/img/landing/demo/mobile/home-10.jpg' %}"
+                             alt="Responsive Images">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <h3 class="title">Home AI (Machine Learning) <span
+                      class="label-light">Light</span></h3>
+                  </div>
+                </a>
+                <div class="new__label">
+                  New
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Solo Demo  -->
+
+          <!-- Start Solo Demo  -->
+          <div class="col-xl-4  col-lg-6 col-sm-6 demo-custom-padding grid-item filterDiv  demo_dark demo_course">
+            <div class="demo-item">
+              <div class="solo-demo">
+                <a class="solo-demo-link" target="_blank"
+                   href="{% url 'pages:dynamic_pages' template_name='home-10-dark' %}">
+                  <div class="thumbnail">
+                    <img loading="lazy" src="{% static '/img/landing/demo/home/home-10-dark.jpg' %}"
+                         alt="Home Image">
+                    <div class="mobile-view">
+                      <div class="inner">
+                        <img loading="lazy"
+                             src="{% static '/img/landing/demo/mobile/home-10-dark.jpg' %}"
+                             alt="Responsive Images">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <h3 class="title">Home AI (Machine Learning) <span
+                      class="label-light label-dark">Dark</span></h3>
+                  </div>
+                </a>
+                <div class="new__label">
+                  New
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Solo Demo  -->
+
+          <!-- Start Solo Demo  -->
+          <div class="col-xl-4  col-lg-6 col-sm-6 demo-custom-padding grid-item filterDiv  demo_light demo_course">
+            <div class="demo-item">
+              <div class="solo-demo">
+                <a class="solo-demo-link" target="_blank"
+                   href="{% url 'pages:dynamic_pages' template_name='home-11' %}">
+                  <div class="thumbnail">
+                    <img loading="lazy" src="{% static '/img/landing/demo/home/home-11.jpg' %}"
+                         alt="Home Image">
+                    <div class="mobile-view">
+                      <div class="inner">
+                        <img loading="lazy" src="{% static '/img/landing/demo/mobile/mobile-11.jpg' %}"
+                             alt="Responsive Images">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <h3 class="title">Home (Single Course) <span
+                      class="label-light">Light</span></h3>
+                  </div>
+                </a>
+                <div class="new__label">
+                  New
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Solo Demo  -->
+
+          <!-- Start Solo Demo  -->
+          <div class="col-xl-4  col-lg-6 col-sm-6 demo-custom-padding grid-item filterDiv  demo_dark demo_course">
+            <div class="demo-item">
+              <div class="solo-demo">
+                <a class="solo-demo-link" target="_blank"
+                   href="{% url 'pages:dynamic_pages' template_name='home-11-dark' %}">
+                  <div class="thumbnail">
+                    <img loading="lazy" src="{% static '/img/landing/demo/home/home-11-dark.jpg' %}"
+                         alt="Home Image">
+                    <div class="mobile-view">
+                      <div class="inner">
+                        <img loading="lazy"
+                             src="{% static '/img/landing/demo/mobile/mobile-11-dark.jpg' %}"
+                             alt="Responsive Images">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content">
+                    <h3 class="title">Home (Single Course) <span
+                      class="label-light label-dark">Dark</span></h3>
+                  </div>
+                </a>
+                <div class="new__label">
+                  New
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Solo Demo  -->
+
+          <!-- Start Solo Demo  -->
+          <div
+            class="col-xl-4  col-lg-6 col-sm-6 demo-custom-padding grid-item filterDiv demo_light demo_dark demo_marketplace">
+            <div class="demo-item">
+              <div class="solo-demo">
+                <a class="solo-demo-link" target="_blank" href="#">
+                  <div class="thumbnail">
+                    <img loading="lazy" src="{% static '/img/landing/demo/comming-soon.jpg' %}"
+                         alt="Home Image">
+                  </div>
+                  <div class="content">
+                    <h3 class="title">Comming Soon More<span class="label-light">Hot</span></h3>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- End Solo Demo  -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- grid__section__end -->
+
+
+  <!-- Start of landing demo area  -->
+  <div class="main-demo-area-inner sp_top_50 sp_bottom_90" id="inner_page">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="main-demo-title-area">
+            <h2 class="big-title">Inner pages</h2>
+            <div class="title-wrapper">
+              <h3 class="title"><span class="highlight">Awesome Design</span>Stunning Inner pages.
+              </h3>
+              <!-- <p class="text">Unique Inner pages built for a convenient site building experience.</p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="demo-wrapper inner__pages__wrapper">
+            <div class="row inner__pages__animation">
+
+              <!-- Start Solo Demo  -->
+              <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="demo-item">
+                  <div class="solo-demo">
+                    <a class="solo-demo-link" target="_blank"
+                       href="{% url 'pages:dynamic_pages' template_name='about' %}">
+                      <div class="thumbnail">
+                        <img loading="lazy" src="{% static '/img/landing/demo/about.jpg' %}"
+                             alt="Home Image">
+                      </div>
+                      <div class="content">
+                        <h3 class="title">About <span class="label-light">Light</span></h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- End Solo Demo  -->
+
+              <!-- Start Solo Demo  -->
+              <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="demo-item">
+                  <div class="solo-demo">
+                    <a class="solo-demo-link" target="_blank"
+                       href="{% url 'pages:dynamic_pages' template_name='about-dark' %}">
+                      <div class="thumbnail">
+                        <img loading="lazy" src="{% static '/img/landing/demo/about-dark.jpg' %}"
+                             alt="Home Image">
+                      </div>
+                      <div class="content">
+                        <h3 class="title">About <span
+                          class="label-light label-dark">Dark</span></h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- End Solo Demo  -->
+
+              <!-- Start Solo Demo  -->
+              <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="demo-item">
+                  <div class="solo-demo">
+                    <a class="solo-demo-link" target="_blank"
+                       href="{% url 'pages:dynamic_pages' template_name='course' %}">
+                      <div class="thumbnail">
+                        <img loading="lazy" src="{% static '/img/landing/demo/course.jpg' %}"
+                             alt="Home Image">
+                      </div>
+                      <div class="content">
+                        <h3 class="title">Course <span class="label-light">Light</span></h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- End Solo Demo  -->
+
+              <!-- Start Solo Demo  -->
+              <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="demo-item">
+                  <div class="solo-demo">
+                    <a class="solo-demo-link" target="_blank"
+                       href="{% url 'pages:dynamic_pages' template_name='course-dark' %}">
+                      <div class="thumbnail">
+                        <img loading="lazy" src="{% static '/img/landing/demo/course-dark.jpg' %}"
+                             alt="Home Image">
+                      </div>
+                      <div class="content">
+                        <h3 class="title">Course <span
+                          class="label-light label-dark">Dark</span></h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- End Solo Demo  -->
+
+              <!-- Start Solo Demo  -->
+              <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="demo-item">
+                  <div class="solo-demo">
+                    <a class="solo-demo-link" target="_blank"
+                       href="{% url 'pages:dynamic_pages' template_name='course-grid' %}">
+                      <div class="thumbnail">
+                        <img loading="lazy" src="{% static '/img/landing/demo/course-grid.jpg' %}"
+                             alt="Home Image">
+                      </div>
+                      <div class="content">
+                        <h3 class="title">Course Grid <span class="label-light">Light</span>
+                        </h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- End Solo Demo  -->
+
+              <!-- Start Solo Demo  -->
+              <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="demo-item">
+                  <div class="solo-demo">
+                    <a class="solo-demo-link" target="_blank"
+                       href="{% url 'pages:dynamic_pages' template_name='course-grid-dark' %}">
+                      <div class="thumbnail">
+                        <img loading="lazy" src="{% static '/img/landing/demo/course-grid-dark.jpg' %}"
+                             alt="Home Image">
+                      </div>
+                      <div class="content">
+                        <h3 class="title">Course Grid <span
+                          class="label-light label-dark">Dark</span></h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- End Solo Demo  -->
+
+
+              <!-- Start Solo Demo  -->
+              <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="demo-item">
+                  <div class="solo-demo">
+                    <a class="solo-demo-link" target="_blank"
+                       href="{% url 'pages:dynamic_pages' template_name='course-list' %}">
+                      <div class="thumbnail">
+                        <img loading="lazy" src="{% static '/img/landing/demo/course-list.jpg' %}"
+                             alt="Home Image">
+                      </div>
+                      <div class="content">
+                        <h3 class="title">Course List <span class="label-light">Light</span>
+                        </h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- End Solo Demo  -->
+
+
+              <!-- Start Solo Demo  -->
+              <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="demo-item">
+                  <div class="solo-demo">
+                    <a class="solo-demo-link" target="_blank"
+                       href="{% url 'pages:dynamic_pages' template_name='course-list-dark' %}">
+                      <div class="thumbnail">
+                        <img loading="lazy" src="{% static '/img/landing/demo/course-list-dark.jpg' %}"
+                             alt="Home Image">
+                      </div>
+                      <div class="content">
+                        <h3 class="title">Course List <span
+                          class="label-light label-dark">Dark</span></h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- End Solo Demo  -->
+
+              <!-- Start Solo Demo  -->
+              <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="demo-item">
+                  <div class="solo-demo">
+                    <a class="solo-demo-link" target="_blank"
+                       href="{% url 'pages:dynamic_pages' template_name='course-details' %}">
+                      <div class="thumbnail">
+                        <img loading="lazy" src="{% static '/img/landing/demo/course-details.jpg' %}"
+                             alt="Home Image">
+                      </div>
+                      <div class="content">
+                        <h3 class="title">Course Details <span
+                          class="label-light">Light</span></h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- End Solo Demo  -->
+
+
+              <!-- Start Solo Demo  -->
+              <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="demo-item">
+                  <div class="solo-demo">
+                    <a class="solo-demo-link" target="_blank"
+                       href="{% url 'pages:dynamic_pages' template_name='course-details-dark' %}">
+                      <div class="thumbnail">
+                        <img loading="lazy"
+                             src="{% static '/img/landing/demo/course-details-dark.jpg' %}"
+                             alt="Home Image">
+                      </div>
+                      <div class="content">
+                        <h3 class="title">Course Details <span
+                          class="label-light label-dark">Dark</span></h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- End Solo Demo  -->
+
+
+              <!-- Start Solo Demo  -->
+              <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="demo-item">
+                  <div class="solo-demo">
+                    <a class="solo-demo-link" target="_blank"
+                       href="{% url 'pages:dynamic_pages' template_name='course-details-2' %}">
+                      <div class="thumbnail">
+                        <img loading="lazy" src="{% static '/img/landing/demo/course-details-2.jpg' %}"
+                             alt="Home Image">
+                      </div>
+                      <div class="content">
+                        <h3 class="title">Course Details 2 <span
+                          class="label-light">Light</span></h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- End Solo Demo  -->
+
+
+              <!-- Start Solo Demo  -->
+              <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="demo-item">
+                  <div class="solo-demo">
+                    <a class="solo-demo-link" target="_blank"
+                       href="{% url 'pages:dynamic_pages' template_name='course-details-2-dark' %}">
+                      <div class="thumbnail">
+                        <img loading="lazy"
+                             src="{% static '/img/landing/demo/course-details-2-dark.jpg' %}"
+                             alt="Home Image">
+                      </div>
+                      <div class="content">
+                        <h3 class="title">Course Details 2 <span
+                          class="label-light label-dark">Dark</span></h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- End Solo Demo  -->
+
+              <!-- Start Solo Demo  -->
+              <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="demo-item">
+                  <div class="solo-demo">
+                    <a class="solo-demo-link" target="_blank"
+                       href="{% url 'pages:dynamic_pages' template_name='course-details-3' %}">
+                      <div class="thumbnail">
+                        <img loading="lazy" src="{% static '/img/landing/demo/course-details-3.jpg' %}"
+                             alt="Home Image">
+                      </div>
+                      <div class="content">
+                        <h3 class="title">Course Details 3 <span
+                          class="label-light">Light</span></h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- End Solo Demo  -->
+
+              <!-- Start Solo Demo  -->
+              <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="demo-item">
+                  <div class="solo-demo">
+                    <a class="solo-demo-link" target="_blank"
+                       href="{% url 'pages:dynamic_pages' template_name='course-details-3-dark' %}">
+                      <div class="thumbnail">
+                        <img loading="lazy"
+                             src="{% static '/img/landing/demo/course-details-3-dark.jpg' %}"
+                             alt="Home Image">
+                      </div>
+                      <div class="content">
+                        <h3 class="title">Course Details 3 <span
+                          class="label-light label-dark">Dark</span></h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- End Solo Demo  -->
+
+              <!-- Start Solo Demo  -->
+              <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="demo-item">
+                  <div class="solo-demo">
+                    <a class="solo-demo-link" target="_blank"
+                       href="{% url 'pages:dynamic_pages' template_name='blog' %}">
+                      <div class="thumbnail">
+                        <img loading="lazy" src="{% static '/img/landing/demo/blog.jpg' %}"
+                             alt="Home Image">
+                      </div>
+                      <div class="content">
+                        <h3 class="title">Blog <span class="label-light">Light</span></h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- End Solo Demo  -->
+
+              <!-- Start Solo Demo  -->
+              <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="demo-item">
+                  <div class="solo-demo">
+                    <a class="solo-demo-link" target="_blank"
+                       href="{% url 'pages:dynamic_pages' template_name='blog-dark' %}">
+                      <div class="thumbnail">
+                        <img loading="lazy" src="{% static '/img/landing/demo/blog-dark.jpg' %}"
+                             alt="Home Image">
+                      </div>
+                      <div class="content">
+                        <h3 class="title">Blog <span
+                          class="label-light label-dark">Dark</span></h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- End Solo Demo  -->
+
+            </div>
+
+
+            <div class="row inner__pages__animation inner__pages__animation--2">
+
+
+              <!-- Start Solo Demo  -->
+              <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="demo-item">
+                  <div class="solo-demo">
+                    <a class="solo-demo-link" target="_blank"
+                       href="{% url 'pages:dynamic_pages' template_name='blog-details' %}">
+                      <div class="thumbnail">
+                        <img loading="lazy" src="{% static '/img/landing/demo/blog-details.jpg' %}"
+                             alt="Home Image">
+                      </div>
+                      <div class="content">
+                        <h3 class="title">Blog Details <span
+                          class="label-light">Light</span></h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- End Solo Demo  -->
+
+
+              <!-- Start Solo Demo  -->
+              <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="demo-item">
+                  <div class="solo-demo">
+                    <a class="solo-demo-link" target="_blank"
+                       href="{% url 'pages:dynamic_pages' template_name='blog-details-dark' %}">
+                      <div class="thumbnail">
+                        <img loading="lazy" src="{% static '/img/landing/demo/blog-details-dark.jpg' %}"
+                             alt="Home Image">
+                      </div>
+                      <div class="content">
+                        <h3 class="title">Blog Details <span
+                          class="label-light label-dark">Dark</span></h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- End Solo Demo  -->
+
+
+              <!-- Start Solo Demo  -->
+              <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="demo-item">
+                  <div class="solo-demo">
+                    <a class="solo-demo-link" target="_blank"
+                       href="{% url 'pages:dynamic_pages' template_name='event-details' %}">
+                      <div class="thumbnail">
+                        <img loading="lazy" src="{% static '/img/landing/demo/event-details.jpg' %}"
+                             alt="Home Image">
+                      </div>
+                      <div class="content">
+                        <h3 class="title">Event Details<span
+                          class="label-light">Light</span></h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- End Solo Demo  -->
+
+
+              <!-- Start Solo Demo  -->
+              <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="demo-item">
+                  <div class="solo-demo">
+                    <a class="solo-demo-link" target="_blank"
+                       href="{% url 'pages:dynamic_pages' template_name='event-details-dark' %}">
+                      <div class="thumbnail">
+                        <img loading="lazy" src="{% static '/img/landing/demo/event-details-dark.jpg' %}"
+                             alt="Home Image">
+                      </div>
+                      <div class="content">
+                        <h3 class="title">Event Details <span
+                          class="label-light label-dark">Dark</span></h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- End Solo Demo  -->
+
+
+              <!-- Start Solo Demo  -->
+              <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="demo-item">
+                  <div class="solo-demo">
+                    <a class="solo-demo-link" target="_blank"
+                       href="{% url 'pages:dynamic_pages' template_name='instructor' %}">
+                      <div class="thumbnail">
+                        <img loading="lazy" src="{% static '/img/landing/demo/instructor.jpg' %}"
+                             alt="Home Image">
+                      </div>
+                      <div class="content">
+                        <h3 class="title">Instructor <span class="label-light">Light</span>
+                        </h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- End Solo Demo  -->
+
+
+              <!-- Start Solo Demo  -->
+              <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="demo-item">
+                  <div class="solo-demo">
+                    <a class="solo-demo-link" target="_blank"
+                       href="{% url 'pages:dynamic_pages' template_name='instructor-dark' %}">
+                      <div class="thumbnail">
+                        <img loading="lazy" src="{% static '/img/landing/demo/instructor-dark.jpg' %}"
+                             alt="Home Image">
+                      </div>
+                      <div class="content">
+                        <h3 class="title">Instructor <span
+                          class="label-light label-dark">Dark</span></h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- End Solo Demo  -->
+
+
+              <!-- Start Solo Demo  -->
+              <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="demo-item">
+                  <div class="solo-demo">
+                    <a class="solo-demo-link" target="_blank"
+                       href="{% url 'pages:dynamic_pages' template_name='instructor-detail' %}">
+                      <div class="thumbnail">
+                        <img loading="lazy" src="{% static '/img/landing/demo/instructor-details.jpg' %}"
+                             alt="Home Image">
+                      </div>
+                      <div class="content">
+                        <h3 class="title">Instructor Details <span
+                          class="label-light">Light</span></h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- End Solo Demo  -->
+
+
+              <!-- Start Solo Demo  -->
+              <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="demo-item">
+                  <div class="solo-demo">
+                    <a class="solo-demo-link" target="_blank"
+                       href="{% url 'pages:dynamic_pages' template_name='instructor-details-dark' %}">
+                      <div class="thumbnail">
+                        <img loading="lazy"
+                             src="{% static '/img/landing/demo/instructor-details-dark.jpg' %}"
+                             alt="Home Image">
+                      </div>
+                      <div class="content">
+                        <h3 class="title">Instructor Details <span
+                          class="label-light label-dark">Dark</span></h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- End Solo Demo  -->
+
+
+              <!-- Start Solo Demo  -->
+              <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="demo-item">
+                  <div class="solo-demo">
+                    <a class="solo-demo-link" target="_blank"
+                       href="{% url 'pages:dynamic_pages' template_name='contact' %}">
+                      <div class="thumbnail">
+                        <img loading="lazy" src="{% static '/img/landing/demo/contact.jpg' %}"
+                             alt="Home Image">
+                      </div>
+                      <div class="content">
+                        <h3 class="title">Contact <span class="label-light">Light</span>
+                        </h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- End Solo Demo  -->
+
+
+              <!-- Start Solo Demo  -->
+              <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="demo-item">
+                  <div class="solo-demo">
+                    <a class="solo-demo-link" target="_blank"
+                       href="{% url 'pages:dynamic_pages' template_name='contact-dark' %}">
+                      <div class="thumbnail">
+                        <img loading="lazy" src="{% static '/img/landing/demo/contact-dark.jpg' %}"
+                             alt="Home Image">
+                      </div>
+                      <div class="content">
+                        <h3 class="title">Contact <span
+                          class="label-light label-dark">Dark</span></h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- End Solo Demo  -->
+
+
+              <!-- Start Solo Demo  -->
+              <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="demo-item">
+                  <div class="solo-demo">
+                    <a class="solo-demo-link" target="_blank"
+                       href="{% url 'pages:dynamic_pages' template_name='login' %}">
+                      <div class="thumbnail">
+                        <img loading="lazy" src="{% static '/img/landing/demo/login.jpg' %}"
+                             alt="Home Image">
+                      </div>
+                      <div class="content">
+                        <h3 class="title">Login <span class="label-light">Light</span></h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- End Solo Demo  -->
+
+
+              <!-- Start Solo Demo  -->
+              <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="demo-item">
+                  <div class="solo-demo">
+                    <a class="solo-demo-link" target="_blank"
+                       href="{% url 'pages:dynamic_pages' template_name='login-dark' %}">
+                      <div class="thumbnail">
+                        <img loading="lazy" src="{% static '/img/landing/demo/login-dark.jpg' %}"
+                             alt="Home Image">
+                      </div>
+                      <div class="content">
+                        <h3 class="title">Login <span
+                          class="label-light label-dark">Dark</span></h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- End Solo Demo  -->
+
+
+              <!-- Start Solo Demo  -->
+              <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="demo-item">
+                  <div class="solo-demo">
+                    <a class="solo-demo-link" target="_blank"
+                       href="{% url 'pages:dynamic_pages' template_name='error' %}">
+                      <div class="thumbnail">
+                        <img loading="lazy" src="{% static '/img/landing/demo/error.jpg' %}"
+                             alt="Home Image">
+                      </div>
+                      <div class="content">
+                        <h3 class="title">Error 404 <span class="label-light">Light</span>
+                        </h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- End Solo Demo  -->
+
+
+              <!-- Start Solo Demo  -->
+              <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="demo-item">
+                  <div class="solo-demo">
+                    <a class="solo-demo-link" target="_blank"
+                       href="{% url 'pages:dynamic_pages' template_name='error-dark' %}">
+                      <div class="thumbnail">
+                        <img loading="lazy" src="{% static '/img/landing/demo/error-dark.jpg' %}"
+                             alt="Home Image">
+                      </div>
+                      <div class="content">
+                        <h3 class="title">Error 404 <span
+                          class="label-light label-dark">Dark</span></h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- End Solo Demo  -->
+
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--=====  End of landing demo area  ======-->
+
+
+  <!-- Dashboard__section__start -->
+  <div id="dashboard" class="dashboard__area sp_bottom_70">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="main-demo-title-area">
+            <h2 class="big-title">Dashboard</h2>
+            <div class="title-wrapper">
+              <h3 class="title"><span class="highlight">Innovative Dashboard</span>Admin, Instructor &
+                Student.
+              </h3>
+              <!-- <p class="text">Responsive homepages built for a convenient site building experience</p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-12" data-aos="fade-up">
+          <ul class="nav nav-tabs  dashboard__area__button__wrap" id="myTab" role="tablist">
+            <li class="nav-item active" role="presentation">
+              <a class="dashboard__area__button__link" href="#projects__one">Admin</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="dashboard__area__button__link" href="#projects__two">Instructor</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="dashboard__area__button__link" href="#projects__three">Student</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="dashboard__area__button__link" href="#projects__four">Others</a>
+            </li>
+
+
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="tab-content tab__content__wrapper" id="myTabContent" data-aos="fade-up">
+
+        <div class="tab-pane fade active show" id="projects__one" role="tabpanel"
+             aria-labelledby="projects__one">
+          <div class="row">
+
+            <!-- Start Solo Demo  -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="demo-item">
+                <div class="solo-demo">
+                  <a class="solo-demo-link" target="_blank"
+                     href="{% url 'pages:dynamic_pages' template_name='admin-dashboard' %}">
+                    <div class="thumbnail">
+                      <img loading="lazy"
+                           src="{% static '/img/landing/demo/dashboard/admin-dashboard.jpg' %}"
+                           alt="Home Image">
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Admin Dashboard <span class="label-light">Light</span>
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Solo Demo  -->
+
+            <!-- Start Solo Demo  -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="demo-item">
+                <div class="solo-demo">
+                  <a class="solo-demo-link" target="_blank"
+                     href="{% url 'pages:dynamic_pages' template_name='admin-profile' %}">
+                    <div class="thumbnail">
+                      <img loading="lazy"
+                           src="{% static '/img/landing/demo/dashboard/admin-profile.jpg' %}"
+                           alt="Home Image">
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Admin Profile <span class="label-light">Light</span>
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Solo Demo  -->
+
+            <!-- Start Solo Demo  -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="demo-item">
+                <div class="solo-demo">
+                  <a class="solo-demo-link" target="_blank"
+                     href="{% url 'pages:dynamic_pages' template_name='admin-message' %}">
+                    <div class="thumbnail">
+                      <img loading="lazy"
+                           src="{% static '/img/landing/demo/dashboard/admin-message.jpg' %}"
+                           alt="Home Image">
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Admin Message <span class="label-light">Light</span>
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Solo Demo  -->
+
+            <!-- Start Solo Demo  -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="demo-item">
+                <div class="solo-demo">
+                  <a class="solo-demo-link" target="_blank"
+                     href="dashboard/admin-{% url 'pages:dynamic_pages' template_name='course' %}">
+                    <div class="thumbnail">
+                      <img loading="lazy" src="{% static '/img/landing/demo/dashboard/admin-course.jpg' %}"
+                           alt="Home Image">
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Admin Course <span class="label-light">Light</span>
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Solo Demo  -->
+
+            <!-- Start Solo Demo  -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="demo-item">
+                <div class="solo-demo">
+                  <a class="solo-demo-link" target="_blank"
+                     href="{% url 'pages:dynamic_pages' template_name='admin-reviews' %}">
+                    <div class="thumbnail">
+                      <img loading="lazy" src="{% static '/img/landing/demo/dashboard/admin-review.jpg' %}"
+                           alt="Home Image">
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Admin Reviews <span class="label-light">Light</span>
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Solo Demo  -->
+
+            <!-- Start Solo Demo  -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="demo-item">
+                <div class="solo-demo">
+                  <a class="solo-demo-link" target="_blank"
+                     href="{% url 'pages:dynamic_pages' template_name='admin-quiz' %}">
+                    <div class="thumbnail">
+                      <img loading="lazy" src="{% static '/img/landing/demo/dashboard/admin-quiz.jpg' %}"
+                           alt="Home Image">
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Admin Quiz <span class="label-light">Light</span>
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Solo Demo  -->
+
+            <!-- Start Solo Demo  -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="demo-item">
+                <div class="solo-demo">
+                  <a class="solo-demo-link" target="_blank"
+                     href="{% url 'pages:dynamic_pages' template_name='admin-settings' %}">
+                    <div class="thumbnail">
+                      <img loading="lazy"
+                           src="{% static '/img/landing/demo/dashboard/admin-settings.jpg' %}"
+                           alt="Home Image">
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Admin Settings <span class="label-light">Light</span>
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Solo Demo  -->
+
+          </div>
+
+
+        </div>
+
+        <div class="tab-pane fade" id="projects__two" role="tabpanel" aria-labelledby="projects__two">
+          <div class="row">
+
+            <!-- Start Solo Demo  -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="demo-item">
+                <div class="solo-demo">
+                  <a class="solo-demo-link" target="_blank"
+                     href="{% url 'pages:dynamic_pages' template_name='instructor-dashboard' %}">
+                    <div class="thumbnail">
+                      <img loading="lazy"
+                           src="{% static '/img/landing/demo/dashboard/instructor-dashboard.jpg' %}"
+                           alt="Home Image">
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Dashboard <span class="label-light">Light</span>
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Solo Demo  -->
+
+            <!-- Start Solo Demo  -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="demo-item">
+                <div class="solo-demo">
+                  <a class="solo-demo-link" target="_blank"
+                     href="{% url 'pages:dynamic_pages' template_name='instructor-profile' %}">
+                    <div class="thumbnail">
+                      <img loading="lazy"
+                           src="{% static '/img/landing/demo/dashboard/instructor-profile.jpg' %}"
+                           alt="Home Image">
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Profile <span class="label-light">Light</span>
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Solo Demo  -->
+
+            <!-- Start Solo Demo  -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="demo-item">
+                <div class="solo-demo">
+                  <a class="solo-demo-link" target="_blank"
+                     href="{% url 'pages:dynamic_pages' template_name='instructor-message' %}">
+                    <div class="thumbnail">
+                      <img loading="lazy"
+                           src="{% static '/img/landing/demo/dashboard/instructor-message.jpg' %}"
+                           alt="Home Image">
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Message <span class="label-light">Light</span>
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Solo Demo  -->
+
+            <!-- Start Solo Demo  -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="demo-item">
+                <div class="solo-demo">
+                  <a class="solo-demo-link" target="_blank"
+                     href="{% url 'pages:dynamic_pages' template_name='instructor-wishlist' %}">
+                    <div class="thumbnail">
+                      <img loading="lazy"
+                           src="{% static '/img/landing/demo/dashboard/instructor-wishlist.jpg' %}"
+                           alt="Home Image">
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Wishlist <span class="label-light">Light</span>
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Solo Demo  -->
+
+            <!-- Start Solo Demo  -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="demo-item">
+                <div class="solo-demo">
+                  <a class="solo-demo-link" target="_blank"
+                     href="{% url 'pages:dynamic_pages' template_name='instructor-reviews' %}">
+                    <div class="thumbnail">
+                      <img loading="lazy"
+                           src="{% static '/img/landing/demo/dashboard/instructor-review.jpg' %}"
+                           alt="Home Image">
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Reviews <span class="label-light">Light</span>
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Solo Demo  -->
+
+            <!-- Start Solo Demo  -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="demo-item">
+                <div class="solo-demo">
+                  <a class="solo-demo-link" target="_blank"
+                     href="{% url 'pages:dynamic_pages' template_name='instructor-quiz' %}">
+                    <div class="thumbnail">
+                      <img loading="lazy"
+                           src="{% static '/img/landing/demo/dashboard/instructor-my-quiz.jpg' %}"
+                           alt="Home Image">
+                    </div>
+                    <div class="content">
+                      <h3 class="title">My Quiz <span class="label-light">Light</span>
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Solo Demo  -->
+
+            <!-- Start Solo Demo  -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="demo-item">
+                <div class="solo-demo">
+                  <a class="solo-demo-link" target="_blank"
+                     href="{% url 'pages:dynamic_pages' template_name='instructor-order-history' %}">
+                    <div class="thumbnail">
+                      <img loading="lazy"
+                           src="{% static '/img/landing/demo/dashboard/instructor-order-history.jpg' %}"
+                           alt="Home Image">
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Order History <span class="label-light">Light</span>
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Solo Demo  -->
+
+            <!-- Start Solo Demo  -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="demo-item">
+                <div class="solo-demo">
+                  <a class="solo-demo-link" target="_blank"
+                     href="{% url 'pages:dynamic_pages' template_name='course' %}">
+                    <div class="thumbnail">
+                      <img loading="lazy"
+                           src="{% static '/img/landing/demo/dashboard/instructor-my-course.jpg' %}"
+                           alt="Home Image">
+                    </div>
+                    <div class="content">
+                      <h3 class="title">My Courses <span class="label-light">Light</span>
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Solo Demo  -->
+
+            <!-- Start Solo Demo  -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="demo-item">
+                <div class="solo-demo">
+                  <a class="solo-demo-link" target="_blank"
+                     href="{% url 'pages:dynamic_pages' template_name='instructor-announcments' %}">
+                    <div class="thumbnail">
+                      <img loading="lazy"
+                           src="{% static '/img/landing/demo/dashboard/instructor-announcment.jpg' %}"
+                           alt="Home Image">
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Announcements <span class="label-light">Light</span>
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Solo Demo  -->
+
+            <!-- Start Solo Demo  -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="demo-item">
+                <div class="solo-demo">
+                  <a class="solo-demo-link" target="_blank"
+                     href="{% url 'pages:dynamic_pages' template_name='instructor-quiz' %}">
+                    <div class="thumbnail">
+                      <img loading="lazy"
+                           src="{% static '/img/landing/demo/dashboard/instructor-quiz-attemp.jpg' %}"
+                           alt="Home Image">
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Quiz Attempts <span class="label-light">Light</span>
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Solo Demo  -->
+
+            <!-- Start Solo Demo  -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="demo-item">
+                <div class="solo-demo">
+                  <a class="solo-demo-link" target="_blank"
+                     href="{% url 'pages:dynamic_pages' template_name='instructor-assignments' %}">
+                    <div class="thumbnail">
+                      <img loading="lazy"
+                           src="{% static '/img/landing/demo/dashboard/instructor-assignment.jpg' %}"
+                           alt="Home Image">
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Assignments <span class="label-light">Light</span>
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Solo Demo  -->
+
+            <!-- Start Solo Demo  -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="demo-item">
+                <div class="solo-demo">
+                  <a class="solo-demo-link" target="_blank"
+                     href="{% url 'pages:dynamic_pages' template_name='instructor-settings' %}">
+                    <div class="thumbnail">
+                      <img loading="lazy"
+                           src="{% static '/img/landing/demo/dashboard/instructor-settings.jpg' %}"
+                           alt="Home Image">
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Settings <span class="label-light">Light</span>
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Solo Demo  -->
+
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="projects__three" role="tabpanel" aria-labelledby="projects__three">
+          <div class="row">
+
+            <!-- Start Solo Demo  -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="demo-item">
+                <div class="solo-demo">
+                  <a class="solo-demo-link" target="_blank"
+                     href="{% url 'pages:dynamic_pages' template_name='student-dashboard' %}">
+                    <div class="thumbnail">
+                      <img loading="lazy"
+                           src="{% static '/img/landing/demo/dashboard/student-dashboard.jpg' %}"
+                           alt="Home Image">
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Dashboard <span class="label-light">Light</span>
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Solo Demo  -->
+
+            <!-- Start Solo Demo  -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="demo-item">
+                <div class="solo-demo">
+                  <a class="solo-demo-link" target="_blank"
+                     href="{% url 'pages:dynamic_pages' template_name='student-profile' %}">
+                    <div class="thumbnail">
+                      <img loading="lazy"
+                           src="{% static '/img/landing/demo/dashboard/student-profile.jpg' %}"
+                           alt="Home Image">
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Profile <span class="label-light">Light</span>
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Solo Demo  -->
+
+            <!-- Start Solo Demo  -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="demo-item">
+                <div class="solo-demo">
+                  <a class="solo-demo-link" target="_blank"
+                     href="{% url 'pages:dynamic_pages' template_name='student-message' %}">
+                    <div class="thumbnail">
+                      <img loading="lazy"
+                           src="{% static '/img/landing/demo/dashboard/student-message.jpg' %}"
+                           alt="Home Image">
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Message <span class="label-light">Light</span>
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Solo Demo  -->
+
+            <!-- Start Solo Demo  -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="demo-item">
+                <div class="solo-demo">
+                  <a class="solo-demo-link" target="_blank"
+                     href="{% url 'pages:dynamic_pages' template_name='student-enrolled-course' %}">
+                    <div class="thumbnail">
+                      <img loading="lazy"
+                           src="{% static '/img/landing/demo/dashboard/student-enrolled-course.jpg' %}"
+                           alt="Home Image">
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Enrolled Course <span
+                        class="label-light label-dark">Light</span>
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Solo Demo  -->
+
+            <!-- Start Solo Demo  -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="demo-item">
+                <div class="solo-demo">
+                  <a class="solo-demo-link" target="_blank"
+                     href="{% url 'pages:dynamic_pages' template_name='student-wishlist' %}">
+                    <div class="thumbnail">
+                      <img loading="lazy"
+                           src="{% static '/img/landing/demo/dashboard/student-wishlist.jpg' %}"
+                           alt="Home Image">
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Wishlist <span class="label-light">Light</span>
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Solo Demo  -->
+
+            <!-- Start Solo Demo  -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="demo-item">
+                <div class="solo-demo">
+                  <a class="solo-demo-link" target="_blank"
+                     href="{% url 'pages:dynamic_pages' template_name='student-reviews' %}">
+                    <div class="thumbnail">
+                      <img loading="lazy"
+                           src="{% static '/img/landing/demo/dashboard/student-review.jpg' %}"
+                           alt="Home Image">
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Reviews <span class="label-light">Light</span>
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Solo Demo  -->
+
+            <!-- Start Solo Demo  -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="demo-item">
+                <div class="solo-demo">
+                  <a class="solo-demo-link" target="_blank"
+                     href="{% url 'pages:dynamic_pages' template_name='student-quiz' %}">
+                    <div class="thumbnail">
+                      <img loading="lazy"
+                           src="{% static '/img/landing/demo/dashboard/student-quiz-attemp.jpg' %}"
+                           alt="Home Image">
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Quiz Attempts <span class="label-light">Light</span>
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Solo Demo  -->
+
+            <!-- Start Solo Demo  -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="demo-item">
+                <div class="solo-demo">
+                  <a class="solo-demo-link" target="_blank"
+                     href="{% url 'pages:dynamic_pages' template_name='student-assignments' %}">
+                    <div class="thumbnail">
+                      <img loading="lazy"
+                           src="{% static '/img/landing/demo/dashboard/student-assignment.jpg' %}"
+                           alt="Home Image">
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Assignments<span class="label-light">Light</span>
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Solo Demo  -->
+
+            <!-- Start Solo Demo  -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="demo-item">
+                <div class="solo-demo">
+                  <a class="solo-demo-link" target="_blank"
+                     href="{% url 'pages:dynamic_pages' template_name='student-settings' %}">
+                    <div class="thumbnail">
+                      <img loading="lazy"
+                           src="{% static '/img/landing/demo/dashboard/student-settings.jpg' %}"
+                           alt="Home Image">
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Settings<span class="label-light">Light</span>
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Solo Demo  -->
+
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="projects__four" role="tabpanel" aria-labelledby="projects__four">
+
+          <div class="row">
+
+            <!-- Start Solo Demo  -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="demo-item">
+                <div class="solo-demo">
+                  <a class="solo-demo-link" target="_blank"
+                     href="{% url 'pages:dynamic_pages' template_name='become-an-instructor' %}">
+                    <div class="thumbnail">
+                      <img loading="lazy"
+                           src="{% static '/img/landing/demo/dashboard/become-instructor.jpg' %}"
+                           alt="Home Image">
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Become An Instructor <span
+                        class="label-light">Light</span>
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Solo Demo  -->
+
+            <!-- Start Solo Demo  -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="demo-item">
+                <div class="solo-demo">
+                  <a class="solo-demo-link" target="_blank"
+                     href="{% url 'pages:dynamic_pages' template_name='course' %}">
+                    <div class="thumbnail">
+                      <img loading="lazy"
+                           src="{% static '/img/landing/demo/dashboard/create-course.jpg' %}"
+                           alt="Home Image">
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Create Course <span class="label-light">Light</span>
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Solo Demo  -->
+
+            <!-- Start Solo Demo  -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="demo-item">
+                <div class="solo-demo">
+                  <a class="solo-demo-link" target="_blank"
+                     href="{% url 'pages:dynamic_pages' template_name='lessons' %}">
+                    <div class="thumbnail">
+                      <img loading="lazy"
+                           src="{% static '/img/landing/demo/dashboard/course-lesson.jpg' %}"
+                           alt="Home Image">
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Lesson <span class="label-light">Light</span>
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Solo Demo  -->
+
+            <!-- Start Solo Demo  -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="demo-item">
+                <div class="solo-demo">
+                  <a class="solo-demo-link" target="_blank"
+                     href="{% url 'pages:dynamic_pages' template_name='lesson-course-materials' %}">
+                    <div class="thumbnail">
+                      <img loading="lazy"
+                           src="{% static '/img/landing/demo/dashboard/course-materials.jpg' %}"
+                           alt="Home Image">
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Course Materials <span class="label-light">Light</span>
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Solo Demo  -->
+
+
+            <!-- Start Solo Demo  -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="demo-item">
+                <div class="solo-demo">
+                  <a class="solo-demo-link" target="_blank"
+                     href="{% url 'pages:dynamic_pages' template_name='lesson-assignments' %}">
+                    <div class="thumbnail">
+                      <img loading="lazy"
+                           src="{% static '/img/landing/demo/dashboard/lesson-assignemnt.jpg' %}"
+                           alt="Home Image">
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Lesson Assignments <span class="label-light">Light</span>
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Solo Demo  -->
+
+            <!-- Start Solo Demo  -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="demo-item">
+                <div class="solo-demo">
+                  <a class="solo-demo-link" target="_blank"
+                     href="{% url 'pages:dynamic_pages' template_name='lesson-quiz' %}">
+                    <div class="thumbnail">
+                      <img loading="lazy" src="{% static '/img/landing/demo/dashboard/lesson-quiz.jpg' %}"
+                           alt="Home Image">
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Lesson Quiz <span class="label-light">Light</span>
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Solo Demo  -->
+
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+  </div>
+  <!-- .Dashboard__section__end -->
+
+
+  <!--=============================================
+=            landing premium plugin area         =
+=============================================-->
+
+  <div class="responsive_screen_area sp_top_80 sp_bottom_100">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="main-demo-title-area">
+            <h2 class="big-title">Responsive</h2>
+            <div class="title-wrapper">
+              <h3 class="title"><span class="highlight">100% Responsive</span>Various screens
+                functioned properly.</h3>
+              <!-- <p class="text">Responsive homepages built for a convenient site building experience</p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="landing-premium-plugin-image text-center">
+            <img loading="lazy" src="{% static '/img/landing/responsive_mocup.png' %}" class="img-fluid" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--=====  End of landing premium plugin area  ======-->
+
+
+  <!--=============================================
+=            landing feature area         =
+=============================================-->
+
+  <div class="landing-feature-area sp_top_80 sp_bottom_30">
+    <div class="container-fluid">
+      <div class="main-demo-title-area">
+        <h2 class="big-title">Features</h2>
+        <div class="title-wrapper">
+          <h3 class="title"><span class="highlight">Core Features</span>Edurock Exclusive Features</h3>
+        </div>
+      </div>
+      <div class="landing-feature-wrapper">
+        <div class="row row-30">
+
+
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12 single__feature__wrap">
+            <div class="single__feature">
+              <div class="inner">
+                <div class="icon">
+                  <img loading="lazy" src="{% static '/img/landing/features/fi-01.png' %}"
+                       alt="Preview Images">
+                </div>
+                <h6 class="title">HTML5</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12 single__feature__wrap">
+            <div class="single__feature">
+              <div class="inner">
+                <div class="icon">
+                  <img loading="lazy" src="{% static '/img/landing/features/fi-02.png' %}"
+                       alt="Preview Images">
+                </div>
+                <h6 class="title">CSS3</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12 single__feature__wrap">
+            <div class="single__feature">
+              <div class="inner">
+                <div class="icon">
+                  <img loading="lazy" src="{% static '/img/landing/features/fi-03.png' %}"
+                       alt="Preview Images">
+                </div>
+                <h6 class="title">SASS</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12 single__feature__wrap">
+            <div class="single__feature">
+              <div class="inner">
+                <div class="icon">
+                  <img loading="lazy" src="{% static '/img/landing/features/fi-04.png' %}"
+                       alt="Preview Images">
+                </div>
+                <h6 class="title">Bootstrap (Latest)</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12 single__feature__wrap">
+            <div class="single__feature">
+              <div class="inner">
+                <div class="icon">
+                  <img loading="lazy" src="{% static '/img/landing/features/zoom-icon.png' %}"
+                       alt="Preview Images">
+                </div>
+                <h6 class="title">Zoom Integration</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12 single__feature__wrap">
+            <div class="single__feature">
+              <div class="inner">
+                <div class="icon">
+                  <img loading="lazy" src="{% static '/img/landing/features/fi-06.png' %}"
+                       alt="Preview Images">
+                </div>
+                <h6 class="title">SEO Optimized</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12 single__feature__wrap">
+            <div class="single__feature">
+              <div class="inner">
+                <div class="icon">
+                  <img loading="lazy" src="{% static '/img/landing/features/ecommerce.png' %}"
+                       alt="Preview Images">
+                </div>
+                <h6 class="title">eCommerce</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12 single__feature__wrap">
+            <div class="single__feature">
+              <div class="inner">
+                <div class="icon">
+                  <img loading="lazy" src="{% static '/img/landing/features/fi-08.png' %}"
+                       alt="Preview Images">
+                </div>
+                <h6 class="title">Speed Performance</h6>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12 single__feature__wrap">
+            <div class="single__feature">
+              <div class="inner">
+                <div class="icon">
+                  <img loading="lazy" src="{% static '/img/landing/features/swipper.png' %}"
+                       alt="Preview Images">
+                </div>
+                <h6 class="title">Swiper Slider</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12 single__feature__wrap">
+            <div class="single__feature">
+              <div class="inner">
+                <div class="icon">
+                  <img loading="lazy" src="{% static '/img/landing/features/fi-10.png' %}"
+                       alt="Preview Images">
+                </div>
+                <h6 class="title">Google Fonts</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12 single__feature__wrap">
+            <div class="single__feature">
+              <div class="inner">
+                <div class="icon">
+                  <img loading="lazy" src="{% static '/img/landing/features/fi-11.png' %}"
+                       alt="Preview Images">
+                </div>
+                <h6 class="title">Light/Dark Ready</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12 single__feature__wrap">
+            <div class="single__feature">
+              <div class="inner">
+                <div class="icon">
+                  <img loading="lazy" src="{% static '/img/landing/features/fi-07.png' %}"
+                       alt="Preview Images">
+                </div>
+                <h6 class="title">Animation</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12 single__feature__wrap">
+            <div class="single__feature">
+              <div class="inner">
+                <div class="icon">
+                  <img loading="lazy" src="{% static '/img/landing/features/fi-13.png' %}"
+                       alt="Preview Images">
+                </div>
+                <h6 class="title">Icofont</h6>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12 single__feature__wrap">
+            <div class="single__feature">
+              <div class="inner">
+                <div class="icon">
+                  <img loading="lazy" src="{% static '/img/landing/features/fi-14.png' %}"
+                       alt="Preview Images">
+                </div>
+                <h6 class="title">Smooth Effects</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12 single__feature__wrap">
+            <div class="single__feature">
+              <div class="inner">
+                <div class="icon">
+                  <img loading="lazy" src="{% static '/img/landing/features/fi-15.png' %}"
+                       alt="Preview Images">
+                </div>
+                <h6 class="title">Responsive Layouts</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12 single__feature__wrap">
+            <div class="single__feature">
+              <div class="inner">
+                <div class="icon">
+                  <img loading="lazy" src="{% static '/img/landing/features/fi-16.png' %}"
+                       alt="Preview Images">
+                </div>
+                <h6 class="title">Browser Compatibility</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12 single__feature__wrap">
+            <div class="single__feature">
+              <div class="inner">
+                <div class="icon">
+                  <img loading="lazy" src="{% static '/img/landing/features/fi-17.png' %}"
+                       alt="Preview Images">
+                </div>
+                <h6 class="title">Developer Friendly</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12 single__feature__wrap">
+            <div class="single__feature">
+              <div class="inner">
+                <div class="icon">
+                  <img loading="lazy" src="{% static '/img/landing/features/fi-18.png' %}"
+                       alt="Preview Images">
+                </div>
+                <h6 class="title">Quick Support</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12 single__feature__wrap">
+            <div class="single__feature">
+              <div class="inner">
+                <div class="icon">
+                  <img loading="lazy" src="{% static '/img/landing/features/fi-19.png' %}"
+                       alt="Preview Images">
+                </div>
+                <h6 class="title">Well Documented</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12 single__feature__wrap">
+            <div class="single__feature">
+              <div class="inner">
+                <div class="icon">
+                  <img loading="lazy" src="{% static '/img/landing/features/fi-20.png' %}"
+                       alt="Preview Images">
+                </div>
+                <h6 class="title">Lifetime Updates</h6>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--=====  End of landing feature area  ======-->
+
+
+  <!--=====  Start Zoom Feature  ======-->
+  <div class="zoom__video__call sp_top_50 sp_bottom_120" id="zoom_integration">
+    <div class="container">
+      <div class="row team__special__service">
+        <div class="col-xl-6 col-lg-12 col-12">
+          <div class="zoom__video__call__content">
+            <h5>ZOOM VIDEO CALL</h5>
+            <h3>Video Conference Integration</h3>
+            <p>Zoom has revolutionized the way we connect and communicate through its comprehensive
+              video and audio conferencing platform. With the ability to join from any
+              internet-connected device, such as desktops, laptops, tablets, and smartphones, Zoom has
+              made virtual meetings.</p>
+
+            <ul>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                  <path fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="32"
+                        d="M464 128L240 384l-96-96M144 384l-96-96M368 128L232 284"/>
+                </svg>
+                <a href="{% url 'pages:dynamic_pages' template_name='zoom-meetings' %}">
+                  Zoom Meeting
+                </a>
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                  <path fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="32"
+                        d="M464 128L240 384l-96-96M144 384l-96-96M368 128L232 284"/>
+                </svg>
+                <a href="{% url 'pages:dynamic_pages' template_name='zoom-meetings-details' %}">
+                  Zoom Meeting Details
+                </a>
+              </li>
+            </ul>
+            <a class="default_btn support__btn" target="_blank"
+               href="{% url 'pages:dynamic_pages' template_name='zoom-meetings' %}">
+              Join Zoom Integration
+            </a>
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-12 col-12">
+          <div class="zoom__video__call__img">
+            <img loading="lazy" src="{% static '/img/landing/zoom-support.png' %}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--=====  End  Zoom Feature   ======-->
+
+
+  <!--=====  Start Showcase area  ======-->
+  <div class="showcase__area sp_top_120 sp_bottom_120" id="ecommerce"
+       style="background-image: url(/static/img/landing/showcase__bg.png);">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xl-5 col-lg-10 col-12">
+          <div class="showcase__area__img">
+
+
+            <div class="swiper showcase__slider__active">
+              <div class="swiper-wrapper">
+
+                <!-- Start Single Slider  -->
+                <div class="swiper-slide">
+                  <div class="showcase__area__img__single">
+                    <div class="showcase__area__img__single__thumb">
+                      <a href="{% url 'pages:dynamic_pages' template_name='home-8' %}"><img loading="lazy"
+                                                                                                    src="{% static '/img/landing/demo/showcase/ecommarce-home-1.jpg' %}"
+                                                                                                    alt="showcase"></a>
+                    </div>
+                    <div class="showcase__area__img__single__content">
+                      <h4><a href="{% url 'pages:dynamic_pages' template_name='home-8' %}">Home Layout</a></h4>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Single Slider  -->
+
+                <!-- Start Single Slider  -->
+                <div class="swiper-slide">
+                  <div class="showcase__area__img__single">
+                    <div class="showcase__area__img__single__thumb">
+                      <a href="{% url 'pages:dynamic_pages' template_name='home-8-dark' %}"><img loading="lazy"
+                                                                                                         src="{% static '/img/landing/demo/showcase/ecommarce-home-1-dark.jpg' %}"
+                                                                                                         alt="showcase"></a>
+                    </div>
+                    <div class="showcase__area__img__single__content">
+                      <h4><a href="{% url 'pages:dynamic_pages' template_name='home-8-dark' %}">Home Layout
+                        Dark</a></h4>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Single Slider  -->
+
+                <!-- Start Single Slider  -->
+                <div class="swiper-slide">
+                  <div class="showcase__area__img__single">
+                    <div class="showcase__area__img__single__thumb">
+                      <a href="{% url 'pages:dynamic_pages' template_name='ecommerce-shop' %}"><img
+                        loading="lazy"
+                        src="{% static '/img/landing/demo/showcase/ecommarce-shop.jpg' %}"
+                        alt="showcase"></a>
+                    </div>
+                    <div class="showcase__area__img__single__content">
+                      <h4><a href="{% url 'pages:dynamic_pages' template_name='ecommerce-shop' %}">Shop
+                        Layout</a></h4>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Single Slider  -->
+
+                <!-- Start Single Slider  -->
+                <div class="swiper-slide">
+                  <div class="showcase__area__img__single">
+                    <div class="showcase__area__img__single__thumb">
+                      <a href="{% url 'pages:dynamic_pages' template_name='ecommerce-shop-dark' %}"><img loading="lazy"
+                                                                      src="{% static '/img/landing/demo/showcase/ecommarce-shop-dark.jpg' %}"
+                                                                      alt="showcase"></a>
+                    </div>
+                    <div class="showcase__area__img__single__content">
+                      <h4><a href="{% url 'pages:dynamic_pages' template_name='ecommerce-shop-dark' %}">Shop Dark Layout</a></h4>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Single Slider  -->
+
+
+                <!-- Start Single Slider  -->
+                <div class="swiper-slide">
+                  <div class="showcase__area__img__single">
+                    <div class="showcase__area__img__single__thumb">
+                      <a href="{% url 'pages:dynamic_pages' template_name='product-details' %}"><img
+                        loading="lazy"
+                        src="{% static '/img/landing/demo/showcase/ecommarce-product-details.jpg' %}"
+                        alt="showcase"></a>
+                    </div>
+                    <div class="showcase__area__img__single__content">
+                      <h4><a href="{% url 'pages:dynamic_pages' template_name='product-details' %}">Product
+                        Details
+                        Layout</a></h4>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Start Single Slider  -->
+                <div class="swiper-slide">
+                  <div class="showcase__area__img__single">
+                    <div class="showcase__area__img__single__thumb">
+                      <a href="{% url 'pages:dynamic_pages' template_name='product-details-dark' %}"><img loading="lazy"
+                                                                                 src="{% static '/img/landing/demo/showcase/ecommarce-product-details-dark.jpg' %}"
+                                                                                 alt="showcase"></a>
+                    </div>
+                    <div class="showcase__area__img__single__content">
+                      <h4><a href="{% url 'pages:dynamic_pages' template_name='product-details-dark' %}">Product
+                        Details Dark Layout</a></h4>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Single Slider  -->
+
+                <!-- Start Single Slider  -->
+                <div class="swiper-slide">
+                  <div class="showcase__area__img__single">
+                    <div class="showcase__area__img__single__thumb">
+                      <a href="{% url 'pages:dynamic_pages' template_name='cart' %}"><img loading="lazy"
+                                                                                                  src="{% static '/img/landing/demo/showcase/ecommarce-cart.jpg' %}"
+                                                                                                  alt="showcase"></a>
+                    </div>
+                    <div class="showcase__area__img__single__content">
+                      <h4><a href="{% url 'pages:dynamic_pages' template_name='cart' %}">Cart Layout</a></h4>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Single Slider  -->
+
+                <!-- Start Single Slider  -->
+                <div class="swiper-slide">
+                  <div class="showcase__area__img__single">
+                    <div class="showcase__area__img__single__thumb">
+                      <img loading="lazy"
+                           src="{% static '/img/landing/demo/showcase/ecommarce-cart-dark.jpg' %}"
+                           alt="showcase"></a>
+                    </div>
+                    <div class="showcase__area__img__single__content">
+                      <h4><a href="{% url 'pages:dynamic_pages' template_name='cart-dark' %}">Cart Dark Layout</a></h4>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Single Slider  -->
+
+                <!-- Start Single Slider  -->
+                <div class="swiper-slide">
+                  <div class="showcase__area__img__single">
+                    <div class="showcase__area__img__single__thumb">
+                      <a href="{% url 'pages:dynamic_pages' template_name='checkout' %}"><img loading="lazy"
+                                                                                                      src="{% static '/img/landing/demo/showcase/ecommarce-checkout.jpg' %}"
+                                                                                                      alt="showcase"></a>
+                    </div>
+                    <div class="showcase__area__img__single__content">
+                      <h4><a href="{% url 'pages:dynamic_pages' template_name='checkout' %}">Checkout Layout</a>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Single Slider  -->
+
+                <!-- Start Single Slider  -->
+                <div class="swiper-slide">
+                  <div class="showcase__area__img__single">
+                    <div class="showcase__area__img__single__thumb">
+                      <a href="{% url 'pages:dynamic_pages' template_name='checkout-dark' %}"><img loading="lazy"
+                                                                          src="{% static '/img/landing/demo/showcase/ecommarce-checkout-dark.jpg' %}"
+                                                                          alt="showcase"></a>
+                    </div>
+                    <div class="showcase__area__img__single__content">
+                      <h4><a href="{% url 'pages:dynamic_pages' template_name='checkout-dark' %}">Checkout Dark
+                        Layout</a></h4>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Single Slider  -->
+
+                <!-- Start Single Slider  -->
+                <div class="swiper-slide">
+                  <div class="showcase__area__img__single">
+                    <div class="showcase__area__img__single__thumb">
+                      <a href="{% url 'pages:dynamic_pages' template_name='wishlist' %}"> <img loading="lazy"
+                                                                                                       src="{% static '/img/landing/demo/showcase/ecommarce-wishlist.jpg' %}"
+                                                                                                       alt="showcase"></a>
+                    </div>
+                    <div class="showcase__area__img__single__content">
+                      <h4><a href="{% url 'pages:dynamic_pages' template_name='wishlist' %}"> Wishlist
+                        Layout </a></h4>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Single Slider  -->
+
+                <!-- Start Single Slider  -->
+                <div class="swiper-slide">
+                  <div class="showcase__area__img__single">
+                    <div class="showcase__area__img__single__thumb">
+                      <a href="{% url 'pages:dynamic_pages' template_name='wishlist-dark' %}"> <img loading="lazy"
+                                                                           src="{% static '/img/landing/demo/showcase/ecommarce-wishlist-dark.jpg' %}"
+                                                                           alt="showcase"></a>
+                    </div>
+                    <div class="showcase__area__img__single__content">
+                      <h4><a href="{% url 'pages:dynamic_pages' template_name='wishlist-dark' %}">Wishlist Dark
+                        Layout</a></h4>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Single Slider  -->
+
+
+              </div>
+              <div
+                class="slider__controls__wrap slider__controls__pagination slider__controls__arrows">
+                <div class="swiper-button-next arrow-btn"></div>
+                <div class="swiper-button-prev arrow-btn"></div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+        <div class="col-xl-5 offset-xl-1 col-lg-10 col-12 showcase__area__content__wrap">
+          <div class="showcase__area__content">
+            <h4>Online Shop</h4>
+            <h2>Craft an exquisite best store <span>Instantly</span> with Edurock!</h2>
+            <p>Experience the allure of our online Bookstore! Powered by the dynamic Edurock template,
+              it offers a diverse array of literary treasures and more.</p>
+            <h3>Shopping - The Elevated Experience :</h3>
+
+            <ul>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                  <path fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="32"
+                        d="M464 128L240 384l-96-96M144 384l-96-96M368 128L232 284"/>
+                </svg>
+                <a href="{% url 'pages:dynamic_pages' template_name='home-8' %}">
+                  Clean & minimal home layout.
+                </a>
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                  <path fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="32"
+                        d="M464 128L240 384l-96-96M144 384l-96-96M368 128L232 284"/>
+                </svg>
+                <a href="{% url 'pages:dynamic_pages' template_name='ecommerce-shop' %}">
+                  Modern shop layout Page.
+                </a>
+              </li>
+
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                  <path fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="32"
+                        d="M464 128L240 384l-96-96M144 384l-96-96M368 128L232 284"/>
+                </svg>
+                <a href="{% url 'pages:dynamic_pages' template_name='product-details' %}">
+                  Product details layout page.
+                </a>
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                  <path fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="32"
+                        d="M464 128L240 384l-96-96M144 384l-96-96M368 128L232 284"/>
+                </svg>
+                <a href="{% url 'pages:dynamic_pages' template_name='product-details' %}">
+                  Size with color swatch.
+                </a>
+              </li>
+
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                  <path fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="32"
+                        d="M464 128L240 384l-96-96M144 384l-96-96M368 128L232 284"/>
+                </svg>
+                <a href="{% url 'pages:dynamic_pages' template_name='cart' %}">
+                  Mini cart with cart layout page.
+                </a>
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                  <path fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="32"
+                        d="M464 128L240 384l-96-96M144 384l-96-96M368 128L232 284"/>
+                </svg>
+                <a href="{% url 'pages:dynamic_pages' template_name='checkout' %}">
+                  One page checkout layout page.
+                </a>
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                  <path fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="32"
+                        d="M464 128L240 384l-96-96M144 384l-96-96M368 128L232 284"/>
+                </svg>
+                <a href="{% url 'pages:dynamic_pages' template_name='wishlist' %}">
+                  Wishlist layout page.
+                </a>
+              </li>
+
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                  <path fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="32"
+                        d="M464 128L240 384l-96-96M144 384l-96-96M368 128L232 284"/>
+                </svg>
+                <a href="ecommerce/{% url 'pages:dynamic_pages' template_name='home-8-dark' %}">
+                  All layouts light & dark with many more...
+                </a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--=====  End Showcase area  ======-->
+
+
+  <div class="scan__area sp_top_100 sp_bottom_100">
+    <div class="container">
+
+      <div class="main-demo-title-area">
+        <h2 class="big-title">Responsive</h2>
+        <div class="title-wrapper">
+          <h3 class="title"><span class="highlight">Designed for Mobile</span>Great Appearance</h3>
+        </div>
+      </div>
+
+
+      <div class="row justify-content-center">
+
+        <!-- Start Solo Demo  -->
+        <div class="col-xl-4  col-lg-4 col-md-4 col-sm-6 demo-custom-padding">
+          <div class="demo-item">
+            <div class="solo-demo">
+              <div class="mobile-view">
+                <div class="inner">
+                  <img loading="lazy" src="{% static '/img/landing/demo/mobile/scan_1.jpg' %}"
+                       alt="Responsive Images">
+                </div>
+                <div class="solo-demo-qr">
+                  <img loading="lazy" src="{% static '/img/landing/demo/mobile/qr_home-1.png' %}"
+                       alt="Responsive Images">
+                </div>
+              </div>
+
+
+              <span>Home (Default)</span>
+            </div>
+          </div>
+        </div>
+        <!-- End Solo Demo  -->
+
+        <!-- Start Solo Demo  -->
+        <div class="col-xl-4  col-lg-4 col-md-4 col-sm-6 demo-custom-padding">
+          <div class="demo-item">
+            <div class="solo-demo">
+              <div class="mobile-view">
+                <div class="inner">
+                  <img loading="lazy" src="{% static '/img/landing/demo/mobile/scan_2.jpg' %}"
+                       alt="Responsive Images">
+                </div>
+                <div class="solo-demo-qr">
+                  <img loading="lazy" src="{% static '/img/landing/demo/mobile/qr_home-2-dark.png' %}"
+                       alt="Responsive Images">
+                </div>
+              </div>
+
+
+              <span>Home 2 (Dark)</span>
+            </div>
+          </div>
+        </div>
+        <!-- End Solo Demo  -->
+
+
+        <!-- Start Solo Demo  -->
+        <div class="col-xl-4  col-lg-4 col-md-4  col-sm-6 demo-custom-padding">
+          <div class="demo-item">
+            <div class="solo-demo">
+              <div class="mobile-view">
+                <div class="inner">
+                  <img loading="lazy" src="{% static '/img/landing/demo/mobile/scan_3.jpg' %}"
+                       alt="Responsive Images">
+                </div>
+                <div class="solo-demo-qr">
+                  <img loading="lazy" src="{% static '/img/landing/demo/mobile/qr_home-3.png' %}"
+                       alt="Responsive Images">
+                </div>
+              </div>
+
+
+              <span>Home 3 (Light)</span>
+            </div>
+          </div>
+        </div>
+        <!-- End Solo Demo  -->
+
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- faq__section__start -->
+  <div class="faqarea sp_bottom_120">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12">
+          <div class="faqarea__heading">
+            <h3>faq</h3>
+          </div>
+        </div>
+
+
+        <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12">
+
+          <div class="faqarea__wrapper">
+
+
+            <!-- the button holds the title of the accordion-->
+            <div class="single__accordion">
+              <button class="course-accordion active"> What is Edurock? How does it work?</button>
+              <div class="course-panel" style="max-height:200px">
+                <P>Hello and thank you for visiting Edurock- Education LMS Template. Edurock is a
+                  modern, trendy, and creative education LMS Bootstrap 5 Template. It loads much
+                  faster and has a high degree of conformability. Edurock speeds up the creation of
+                  your website by using simple, well-documented code.</P>
+              </div>
+            </div>
+
+
+            <!-- the button holds the title of the accordion-->
+            <div class="single__accordion">
+              <button class="course-accordion"> Why are you choosing Bootstrap 5 Template?</button>
+              <div class="course-panel">
+                <p>You should use bootstrap 5 for several reasons:Simple to use, cross-browser
+                  compatibility, performance, mobile-first approach,
+                  customizability, and active community support.
+                  <br> Overall, using Bootstrap 5 can save you time and effort when
+                  creating a responsive website that works well on various devices and
+                  browsers.
+                </p>
+              </div>
+            </div>
+
+            <div class="single__accordion">
+              <!-- the button holds the title of the accordion-->
+              <button class="course-accordion">What is the best way customer service?</button>
+              <div class="course-panel">
+                <p>The email address "techbootmail@gmail.com" can be used to get in touch
+                  with the sender directly. You will receive assistance from our devoted
+                  support staff.</p>
+              </div>
+            </div>
+
+            <div class="single__accordion">
+              <!-- the button holds the title of the accordion-->
+              <button class="course-accordion"> How long do I get support & updates?</button>
+              <div class="course-panel">
+                <p>The Edurock - Education LMS Template will be updated, that much is true.
+                  Additionally, you can get it at any time. When we do this again, we'll add more
+                  features. Updates are available indefinitely. On enhancements, our development team
+                  will work.</p>
+              </div>
+            </div>
+
+            <div class="single__accordion">
+              <!-- the button holds the title of the accordion-->
+              <button class="course-accordion"> Can I make any custom modifications?</button>
+              <div class="course-panel">
+                <p>Undoubtedly, yes. Customers can get help from our developer. However, extra fees
+                  might be charged.</p>
+              </div>
+            </div>
+
+            <div class="single__accordion">
+              <!-- the button holds the title of the accordion-->
+              <button class="course-accordion"> With this template, can I create a finished project?
+              </button>
+              <div class="course-panel">
+                <p>Sure, why not. A project and finished website can be created as you please.Included
+                  in this template are additional components. As long as you follow the documentation,
+                  you can use it.</p>
+              </div>
+            </div>
+
+            <div class="single__accordion">
+              <!-- the button holds the title of the accordion-->
+              <button class="course-accordion"> Can I change any of the elements however I want?</button>
+              <div class="course-panel">
+                <p>Absolutely. You are free to alter any element. Furthermore, you are free to build the
+                  website of your choice.</p>
+              </div>
+            </div>
+
+            <div class="single__accordion">
+              <!-- the button holds the title of the accordion-->
+              <button class="course-accordion"> Are your documents available online?</button>
+              <div class="course-panel">
+                <p>Yes, if you <a href="https://html.themewin.com/docs/edurock">click
+                  here</a> , you can access our online documentation.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- faq__section__end -->
+
+
+  <div class="doc__support__hire sp_bottom_90">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-4 col-md-6 col-sm-12 col-12 single__dsh">
+          <div class="team__special__service">
+            <div class="ts__inner">
+              <div class="ts__icon">
+                <img loading="lazy" src="{% static '/img/landing/features/documents.png' %}" alt="Icons Images">
+              </div>
+              <div class="ts__content">
+                <h4 class="ts__title">
+                  <a href="https://html.themewin.com/docs/edurock">Online Documentation</a>
+                </h4>
+                <p class="ts__description">The job is much easier with good documentation.
+                  Up-to-date and organized doc from us</p>
+                <a class="default_btn" target="_blank"
+                   href="https://html.themewin.com/docs/edurock">
+                  View Documentation
+                </a>
+              </div>
+            </div>
+
+            <div class="ts__icon__bg">
+              <img loading="lazy" src="{% static '/img/landing/features/documents.png' %}" alt="Icons Images">
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="col-lg-4 col-md-6 col-sm-12 col-12 single__dsh">
+          <div class="team__special__service">
+            <div class="ts__inner">
+              <div class="ts__icon">
+                <img loading="lazy" src="{% static '/img/landing/features/help-line.png' %}" alt="Icons Images">
+              </div>
+              <div class="ts__content">
+                <h4 class="ts__title">
+                  <a href="mailto:techbootmail@gmail.com">Dedicated Support</a>
+                </h4>
+                <p class="ts__description">Need assistance? Send a ticket in. We will be pleased to
+                  help you.</p>
+                <a class="default_btn support__btn" target="_blank"
+                   href="mailto:techbootmail@gmail.com">
+                  Get Expert Support
+                </a>
+              </div>
+            </div>
+            <div class="ts__icon__bg">
+              <img loading="lazy" src="{% static '/img/landing/features/help-line.png' %}" alt="Icons Images">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 col-12 single__dsh">
+          <div class="team__special__service">
+            <div class="ts__inner">
+              <div class="ts__icon">
+                <img loading="lazy" src="{% static '/img/landing/features/hired.png' %}" alt="Icons Images">
+              </div>
+              <div class="ts__content">
+                <h4 class="ts__title">
+                  <a href="mailto:techbootmail@gmail.com">Hire Developer & Designer</a>
+                </h4>
+                <p class="ts__description">Give us the project's specifics, and our developer will
+                  finish it more quickly, better, and effectively than you could ever imagine.</p>
+                <a class="default_btn" target="_blank" href="mailto:techbootmail@gmail.com">
+                  Hire Expert
+                </a>
+              </div>
+            </div>
+            <div class="ts__icon__bg">
+              <img loading="lazy" src="{% static '/img/landing/features/hired.png' %}" alt="Icons Images">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!--=============================================
+=           footer area      				  =
+==============================================-->
+
+  <div class="footer-area-wrapper">
+    <div class="footer-area">
+
+
+      <div class="container">
+        <div class="footer-info row">
+          <div
+            class="col-xxl-8 offset-xxl-2 col-xl-10 offset-xl-1 col-lg-10 offset-lg-1 col-md-12 col-12">
+            <h2>Let's go to purchase.</h2>
+            <p>Purchase Edurock and Make Your Expected Dream Site Clean &amp; faster.</p>
+            <div class="purchase_btn">
+              <a target="_blank"
+                 href="https://themeforest.net/item/edurock-education-lms-bootstrap-5-template/46075990"
+                 class="default_btn">Purchase Now</a>
+            </div>
+          </div>
+
+
+          <div class="cta__features">
+            <div class="cta__single__feature">
+              <div class="icon">
+                <img loading="lazy" src="{% static '/img/landing/features/icons/updated.png' %}"
+                     alt="Splash Images">
+              </div>
+              <h6 class="title">Free update <br> Lifetime</h6>
+            </div>
+            <div class="cta__single__feature">
+              <div class="icon">
+                <img loading="lazy" src="{% static '/img/landing/features/icons/support.png' %}"
+                     alt="Splash Images">
+              </div>
+              <h6 class="title">Premium Support <br> 6 Months Free</h6>
+            </div>
+
+            <div class="cta__single__feature">
+              <div class="icon">
+                <img loading="lazy" src="{% static '/img/landing/features/icons/screen.png' %}"
+                     alt="Splash Images">
+              </div>
+              <h6 class="title">Light/Dark<br> Screen (Enjoy)</h6>
+            </div>
+            <div class="cta__single__feature">
+              <div class="icon">
+                <img loading="lazy" src="{% static '/img/landing/features/icons/speedometer.png' %}"
+                     alt="Splash Images">
+              </div>
+              <h6 class="title">High Speed <br> Performance</h6>
+            </div>
+            <div class="cta__single__feature">
+              <div class="icon">
+                <img loading="lazy" src="{% static '/img/landing/features/icons/code.png' %}"
+                     alt="Splash Images">
+              </div>
+              <h6 class="title">Clean code <br> Developer Friendly</h6>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="footer-copyright">
+      <p>All Right Reserved 2024 Edurock</p>
+    </div>
+  </div>
+
+  <!--=====  End of landing footer  ======-->
+</div>
+
+<!--====================  scroll top ====================-->
+<a href="#" class="scroll-top" id="scroll-top">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up"
+       viewBox="0 0 16 16">
+    <path fill-rule="evenodd"
+          d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+  </svg>
+</a>
+
+<script src="{% static 'js/vendor/jquery-3.6.0.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+<script src="{% static '/js/swiper-bundle.min.js' %}"></script>
+<script src="{% static '/js/text-type.js' %}"></script>
+
+<!-- Main JS -->
+<script src="{% static '/js/landing.js' %}"></script>
+
+<script>
+  // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+  if (localStorage.getItem("theme-color") === "dark" || (!("theme-color" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+    document.getElementById("light--to-dark-button")?.classList.add("dark--mode");
+  }
+  if (localStorage.getItem("theme-color") === "light") {
+    document.getElementById("light--to-dark-button")?.classList.remove("dark--mode");
+  }
+</script>
+
+</body>
+
+</html>

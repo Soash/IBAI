@@ -1,0 +1,175 @@
+{% extends 'layouts/student.html' %}
+
+{% load static i18n %}
+
+{% block title %}Student Courses{% endblock %}
+
+{% block page_content %}
+
+<div class="col-xl-9 col-lg-9 col-md-12">
+    <div class="dashboard__content__wraper">
+        <div class="dashboard__section__title">
+            <h4>My Profile</h4>
+        </div>
+        <div class="row">
+
+            <div class="col-xl-12 aos-init aos-animate" data-aos="fade-up">
+                <ul class="nav  about__button__wrap dashboard__button__wrap" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="single__tab__link active" data-bs-toggle="tab" data-bs-target="#ongoing"
+                            type="button" aria-selected="true" role="tab">Enrolled Courses</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="single__tab__link" data-bs-toggle="tab" data-bs-target="#completed"
+                            type="button" aria-selected="false" role="tab" tabindex="-1">Completed Courses</button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="tab-content tab__content__wrapper aos-init aos-animate" id="myTabContent" data-aos="fade-up">
+
+                <!-- Ongoing Courses -->
+                <div class="tab-pane fade show active" id="ongoing" role="tabpanel" aria-labelledby="ongoing-tab">
+                    <div class="row">
+                    {% for progress in ongoing_courses %}
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+                        <div class="gridarea__wraper">
+                            <div class="gridarea__img">
+                                <a href="{% url 'course_detail' progress.course.slug %}">
+                                <img loading="lazy" src="{{ progress.course.thumbnail.url|default:'/static/img/grid/grid_1.png' }}" alt="{{ progress.course.title }}">
+                                </a>
+                                <div class="gridarea__small__button">
+                                <div class="grid__badge">{{ progress.course.category.name }}</div>
+                                </div>
+                            </div>
+
+                            <div class="gridarea__content">
+                                <div class="gridarea__list">
+                                    <ul>
+                                        <li>
+                                            <i class="icofont-book-alt"></i> {{ progress.course.total_videos }} Lectures
+                                        </li>
+                                        <li>
+                                            <i class="icofont-clock-time"></i> {{ progress.course.total_duration }} Min
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="gridarea__heading">
+                                    <h3><a href="{% url 'course_detail' progress.course.slug %}">{{ progress.course.title }}</a></h3>
+                                </div>
+
+                                <div class="gridarea__price">
+                                    ৳{{ progress.course.price }} {% if progress.course.original_price %}<del>/ ৳{{ progress.course.original_price }}</del>{% endif %}
+                                    {% if progress.course.price > 0 %}
+                                        <span class="text-danger small">Paid</span>
+                                    {% else %}
+                                        <span class="text-success small">Free</span>
+                                    {% endif %}
+                                </div>
+
+                                <div class="gridarea__bottom">
+                                    <a href="#">
+                                        <div class="gridarea__small__img">
+                                            {% if progress.course.instructor.profile_picture %}
+                                                <img loading="lazy" src="{{ progress.course.instructor.profile_picture.url }}" alt="grid">
+                                            {% else %}
+                                                <img loading="lazy" src="{% static 'img/profile.png' %}" alt="grid">
+                                            {% endif %}
+                                            <div class="gridarea__small__content">
+                                                <h6>{{ progress.course.instructor.first_name }}</h6>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="grid__course__status populerarea__button">
+                                <a class="default__button" href="{% url 'course_detail' progress.course.slug %}">
+                                Go to Course
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {% empty %}
+                    <p class="text-center mt-3">You are not enrolled in any ongoing courses.</p>
+                    {% endfor %}
+                    </div>
+                </div>
+
+                
+                <!-- Completed Courses -->
+                <div class="tab-pane fade" id="completed" role="tabpanel" aria-labelledby="completed-tab">
+                    <div class="row">
+                    {% for progress in completed_courses %}
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+                        <div class="gridarea__wraper">
+                            <div class="gridarea__img">
+                                <a href="{% url 'course_detail' progress.course.slug %}">
+                                <img loading="lazy" src="{{ progress.course.thumbnail.url|default:'/static/img/grid/grid_1.png' }}" alt="{{ progress.course.title }}">
+                                </a>
+                                <div class="gridarea__small__button">
+                                <div class="grid__badge">{{ progress.course.category.name }}</div>
+                                </div>
+                            </div>
+
+                            <div class="gridarea__content">
+                                <div class="gridarea__list">
+                                    <ul>
+                                        <li>
+                                            <i class="icofont-book-alt"></i> {{ progress.course.total_videos }} Lectures
+                                        </li>
+                                        <li>
+                                            <i class="icofont-clock-time"></i> {{ progress.course.total_duration }} Min
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="gridarea__heading">
+                                    <h3><a href="{% url 'course_detail' progress.course.slug %}">{{ progress.course.title }}</a></h3>
+                                </div>
+                                <div class="gridarea__price">
+                                    ৳{{ progress.course.price }} {% if progress.course.original_price %}<del>/ ৳{{ progress.course.original_price }}</del>{% endif %}
+                                    {% if progress.course.price > 0 %}
+                                        <span class="text-danger small">Paid</span>
+                                    {% else %}
+                                        <span class="text-success small">Free</span>
+                                    {% endif %}
+                                </div>
+                                <div class="gridarea__bottom">
+                                    <a href="#">
+                                        <div class="gridarea__small__img">
+                                            {% if progress.course.instructor.profile_picture %}
+                                                <img loading="lazy" src="{{ progress.course.instructor.profile_picture.url }}" alt="grid">
+                                            {% else %}
+                                                <img loading="lazy" src="{% static 'img/profile.png' %}" alt="grid">
+                                            {% endif %}
+                                            <div class="gridarea__small__content">
+                                                <h6>{{ progress.course.instructor.first_name }}</h6>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="grid__course__status populerarea__button">
+                                {% if progress.certificate_id %}
+                                <a class="default__button" href="{% url 'reportlab_certificate' progress.certificate_id %}" target="_blank">
+                                    Download Certificate
+                                </a>
+                                {% else %}
+                                <button class="default__button" disabled>No Certificate</button>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    {% empty %}
+                    <p class="text-center mt-3">You haven't completed any courses yet.</p>
+                    {% endfor %}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

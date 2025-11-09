@@ -1,0 +1,208 @@
+{% extends 'layouts/student.html' %}
+
+{% load static i18n %}
+
+{% block title %}Student Message{% endblock %}
+
+{% block page_content %}
+
+<div class="col-xl-9 col-lg-9 col-md-12">
+    <div class="dashboard__message__content__main">
+        <div class="dashboard__message__content__main__title dashboard__message__content__main__title__2">
+            <h3>Messages</h3>
+
+        </div>
+        <div class="dashboard__meessage__wraper">
+            <div class="row">
+                <div class="col-xl-5 col-lg-6 col-md-12 col-12">
+                    <div class="dashboard__meessage">
+                        <div class="dashboard__meessage__chat">
+                            <h3>Chats</h3>
+                        </div>
+                        <div class="dashboard__meessage__search">
+                            <button><i class="icofont-search-1"></i></button>
+                            <input type="text" placeholder="Search">
+                        </div>
+
+                        <div class="dashboard__meessage__contact">
+                            <ul>
+                                <li>
+                                    <div class="dashboard__meessage__contact__wrap">
+                                        <div class="dashboard__meessage__chat__img">
+                                            <span class="dashboard__meessage__dot online"></span>
+                                            <img loading="lazy" src="{% static 'img/teacher/teacher__1.png' %}" alt="">
+                                        </div>
+                                        <div class="dashboard__meessage__meta">
+                                            <h5>Rex Allen</h5>
+                                            <p class="preview">Hey, How are you?</p>
+                                            <span class="chat__time">12 min</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="dashboard__meessage__contact__wrap">
+                                        <div class="dashboard__meessage__chat__img">
+                                            <span class="dashboard__meessage__dot online"></span>
+                                            <img loading="lazy" src="{% static 'img/teacher/teacher__2.png' %}" alt="">
+                                        </div>
+                                        <div class="dashboard__meessage__meta">
+                                            <h5>Rex Allen</h5>
+                                            <p class="preview">Hey, How are you?</p>
+                                            <span class="chat__time">4:35pm</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="dashboard__meessage__contact__wrap">
+                                        <div class="dashboard__meessage__chat__img">
+                                            <span class="dashboard__meessage__dot online"></span>
+                                            <img loading="lazy" src="{% static 'img/teacher/teacher__3.png' %}" alt="">
+                                        </div>
+                                        <div class="dashboard__meessage__meta">
+                                            <h5>Julia Jhones</h5>
+                                            <p class="preview">Hey, How are you?</p>
+                                            <span class="chat__time">1:40pm</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="dashboard__meessage__contact__wrap">
+                                        <div class="dashboard__meessage__chat__img">
+                                            <span class="dashboard__meessage__dot online"></span>
+                                            <img loading="lazy" src="{% static 'img/teacher/teacher__4.png' %}" alt="">
+                                        </div>
+                                        <div class="dashboard__meessage__meta">
+                                            <h5>Anderson</h5>
+                                            <p class="preview">Hey, How are you?</p>
+                                            <span class="chat__time">3:20am</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="dashboard__meessage__contact__wrap">
+                                        <div class="dashboard__meessage__chat__img">
+                                            <span class="dashboard__meessage__dot online"></span>
+                                            <img loading="lazy" src="{% static 'img/teacher/teacher__5.png' %}" alt="">
+                                        </div>
+                                        <div class="dashboard__meessage__meta">
+                                            <h5>Rex Allen</h5>
+                                            <p class="preview">Hey, How are you?</p>
+                                            <span class="chat__time">12 min</span>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="dashboard__meessage__contact__wrap">
+                                        <div class="dashboard__meessage__chat__img">
+                                            <span class="dashboard__meessage__dot online"></span>
+                                            <img loading="lazy" src="{% static 'img/teacher/teacher__6.png' %}" alt="">
+                                        </div>
+                                        <div class="dashboard__meessage__meta">
+                                            <h5>Rex Allen</h5>
+                                            <p class="preview">Hey, How are you?</p>
+                                            <span class="chat__time">12 min</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="dashboard__meessage__contact__wrap">
+                                        <div class="dashboard__meessage__chat__img">
+                                            <span class="dashboard__meessage__dot online"></span>
+                                            <img loading="lazy" src="{% static 'img/teacher/teacher__2.png' %}" alt="">
+                                        </div>
+                                        <div class="dashboard__meessage__meta">
+                                            <h5>Rex Allen</h5>
+                                            <p class="preview">Hey, How are you?</p>
+                                            <span class="chat__time">4:35pm</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="dashboard__meessage__contact__wrap">
+                                        <div class="dashboard__meessage__chat__img">
+                                            <span class="dashboard__meessage__dot online"></span>
+                                            <img loading="lazy" src="{% static 'img/teacher/teacher__1.png' %}" alt="">
+                                        </div>
+                                        <div class="dashboard__meessage__meta">
+                                            <h5>Julia Jhones</h5>
+                                            <p class="preview">Hey, How are you?</p>
+                                            <span class="chat__time">1:40pm</span>
+                                        </div>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-6 col-md-12 col-12">
+                    <div class="dashboard__meessage__content__wrap">
+                        <div class="dashboard__meessage__profile">
+                            <div class="dashboard__meessage__profile__img">
+                                <img loading="lazy" src="{% static 'img/teacher/teacher__2.png' %}" alt="">
+                            </div>
+                            <div class="dashboard__meessage__profile__meta">
+                                <h5>Bradshaw</h5>
+                                <p>Stay at home, Stay safe</p>
+                            </div>
+                            <div class="dashboard__meessage__profile__chat__option">
+                                <a href="{% url 'pages:dynamic_pages' template_name='admin-dashboard' %}"><i class="icofont-phone"></i></a>
+                                <a href="{% url 'pages:dynamic_pages' template_name='admin-dashboard' %}"><i class="icofont-ui-video-chat"></i></a>
+                            </div>
+                        </div>
+                        <div class="dashboard__meessage__sent">
+                            <ul>
+                                <li>
+                                    <div class="dashboard__meessage__sent__item__img">
+                                        <img loading="lazy" src="{% static 'img/teacher/teacher__1.png' %}" alt="">
+                                    </div>
+
+                                    <div class="dashboard__meessage__sent__item__content">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing sed.</p>
+                                        <span class="time">4:32 PM</span>
+                                        <p>Dolor sit amet consectetur</p>
+                                        <span class="time">4:30 PM</span>
+                                    </div>
+                                </li>
+                                <li class="dashboard__meessage__sent__item">
+
+                                    <div class="dashboard__meessage__sent__item__content">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing sed.</p>
+                                        <span class="time">4:40 PM</span>
+                                        <p>Dolor sit amet consectetur</p>
+                                        <span class="time">4:42 PM</span>
+                                    </div>
+                                    <div class="dashboard__meessage__sent__item__img">
+                                        <img loading="lazy" src="{% static 'img/teacher/teacher__3.png' %}" alt="">
+                                    </div>
+                                </li>
+                                <li class="sent">
+                                    <div class="dashboard__meessage__sent__item__img">
+                                        <img loading="lazy" src="{% static 'img/teacher/teacher__4.png' %}" alt="">
+                                    </div>
+                                    <div class="dashboard__meessage__sent__item__content">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing sed.</p>
+
+                                        <span class="time">5:01 PM</span>
+                                        <p>Dolor sit amet consectetur</p>
+                                        <span class="time">5:03 PM</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dashboard__meessage__input">
+                            <input type="text" placeholder="Type something">
+                            <i class="icofont-attachment attachment" aria-hidden="true"></i>
+                            <button class="submit"><i class="icofont-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% load static %}
+<div class="mobile-off-canvas-active">
+  <a class="mobile-aside-close"><i class="icofont  icofont-close-line"></i></a>
+  <div class="header-mobile-aside-wrap">
+
+    <div class="mobile-menu-wrap headerarea" style="border-bottom: none;">
+      <hr>
+      <div class="mobile-navigation">
+        <nav>
+          <ul class="mobile-menu">
+            <li class="menu-item-has-children "><a href="{% url 'blog_list' %}">Blogs</a></li><hr>
+            <li class="menu-item-has-children "><a href="{% url 'course_list' %}">Courses</a></li><hr>
+            <li class="menu-item-has-children "><a href="{% url 'student_dashboard' %}">Profile</a></li><hr>
+            {% if user.is_authenticated %}
+            <li class="menu-item-has-children "><a href="{% url 'user_logout' %}">Logout</a></li><hr>
+            {% else %}
+            <li class="menu-item-has-children "><a href="{% url 'user_login' %}">Login</a></li><hr>
+            {% endif %}
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="mobile-social-wrap">
+      <a class="facebook" href="#"><i class="icofont icofont-facebook"></i></a>
+      <a class="twitter" href="#"><i class="icofont icofont-twitter"></i></a>
+      <a class="pinterest" href="#"><i class="icofont icofont-pinterest"></i></a>
+      <a class="instagram" href="#"><i class="icofont icofont-instagram"></i></a>
+      <a class="google" href="#"><i class="icofont icofont-youtube-play"></i></a>
+    </div>
+
+  </div>
+</div>
+
+

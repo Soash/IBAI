@@ -1,0 +1,440 @@
+{% extends 'base.html' %}
+
+{% load static i18n %}
+
+{% block title %}Cart{% endblock %}
+
+{% block content %}
+
+<main class="main_wrapper overflow-hidden">
+
+    <!-- topbar__section__stert -->
+    {% include 'partials/top-banner-2.html' %}
+    <!-- topbar__section__end -->
+
+    <!-- headar section start -->
+    {% include 'partials/navbar-2.html' %}
+    <!-- header section end -->
+
+    <!-- Mobile Menu Start Here -->
+    {% include 'partials/mobile-menu.html' %}
+    <!-- Mobile Menu end Here -->
+
+    <!-- theme fixed shadow -->
+    <div>
+        <div class="theme__shadow__circle"></div>
+        <div class="theme__shadow__circle shadow__right"></div>
+    </div>
+    <!-- theme fixed shadow -->
+    <!-- breadcrumbarea__section__start -->
+
+    <div class="breadcrumbarea">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="breadcrumb__content__wraper" data-aos="fade-up">
+                        <div class="breadcrumb__title">
+                            <h2 class="heading">Cart</h2>
+                        </div>
+                        <div class="breadcrumb__inner">
+                            <ul>
+                                <li><a href="{% url 'pages:dynamic_pages' template_name='index' %}">Home</a></li>
+                                <li>Cart</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="shape__icon__2">
+            <img loading="lazy" class=" shape__icon__img shape__icon__img__1"
+                src="{% static 'img/herobanner/herobanner__1.png' %}" alt="photo">
+            <img loading="lazy" class=" shape__icon__img shape__icon__img__2"
+                src="{% static 'img/herobanner/herobanner__2.png' %}" alt="photo">
+            <img loading="lazy" class=" shape__icon__img shape__icon__img__3"
+                src="{% static 'img/herobanner/herobanner__3.png' %}" alt="photo">
+            <img loading="lazy" class=" shape__icon__img shape__icon__img__4"
+                src="{% static 'img/herobanner/herobanner__5.png' %}" alt="photo">
+        </div>
+
+    </div>
+    <!-- breadcrumbarea__section__end-->
+
+
+
+    <!-- cart__section__start -->
+    <div class="cartarea sp_bottom_100 sp_top_100">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <form action="#">
+                        <div class="cartarea__table__content table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Image</th>
+                                        <th>Product</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
+                                        <th>Total</th>
+                                        <th>Remove</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="cartarea__product__thumbnail">
+                                            <a href="#">
+                                                <img loading="lazy" src="{% static 'img/products/2.jpg' %}"
+                                                    alt="product-1">
+                                            </a>
+                                        </td>
+                                        <td class="cartarea__product__name"><a href="{% url 'pages:dynamic_pages' template_name='product-details' %}">Product title
+                                                acc 10 - s / red</a></td>
+                                        <td class="cartarea__product__price__cart"><span class="amount">$110.00</span>
+                                        </td>
+                                        <td class="cartarea__product__quantity">
+                                            <div class="cartarea__plus__minus">
+                                                <div class="dec qtybutton">- </div>
+                                                <input class="cartarea__plus__minus__box" type="text" value="1"
+                                                    name="updates[]">
+                                                <div class="inc qtybutton">+</div>
+                                            </div>
+
+                                        </td>
+                                        <td class="cartarea__product__subtotal">$110.00</td>
+                                        <td class="cartarea__product__remove">
+                                            <a href="#">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon"
+                                                    viewBox="0 0 512 512">
+                                                    <title>Pencil</title>
+                                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                                        stroke-linejoin="round" stroke-width="32"
+                                                        d="M364.13 125.25L87 403l-23 45 44.99-23 277.76-277.13-22.62-22.62zM420.69 68.69l-22.62 22.62 22.62 22.63 22.62-22.63a16 16 0 000-22.62h0a16 16 0 00-22.62 0z" />
+                                                </svg></a>
+                                            <a href="#">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon"
+                                                    viewBox="0 0 512 512">
+                                                    <title>Trash</title>
+                                                    <path
+                                                        d="M112 112l20 320c.95 18.49 14.4 32 32 32h184c17.67 0 30.87-13.51 32-32l20-320"
+                                                        fill="none" stroke="currentColor" stroke-linecap="round"
+                                                        stroke-linejoin="round" stroke-width="32" />
+                                                    <path stroke="currentColor" stroke-linecap="round"
+                                                        stroke-miterlimit="10" stroke-width="32" d="M80 112h352" />
+                                                    <path
+                                                        d="M192 112V72h0a23.93 23.93 0 0124-24h80a23.93 23.93 0 0124 24h0v40M256 176v224M184 176l8 224M328 176l-8 224"
+                                                        fill="none" stroke="currentColor" stroke-linecap="round"
+                                                        stroke-linejoin="round" stroke-width="32" />
+                                                </svg></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cartarea__product__thumbnail">
+                                            <a href="#">
+                                                <img loading="lazy" src="{% static 'img/products/1.jpg' %}"
+                                                    alt="product 2">
+                                            </a>
+                                        </td>
+                                        <td class="cartarea__product__name"><a href="{% url 'pages:dynamic_pages' template_name='product-details' %}">Product title
+                                                acc 10 - s / red</a></td>
+                                        <td class="cartarea__product__price__cart"><span class="amount">$110.00</span>
+                                        </td>
+                                        <td class="cartarea__product__quantity">
+                                            <div class="cartarea__plus__minus">
+                                                <div class="dec qtybutton">-
+                                                </div>
+                                                <input class="cartarea__plus__minus__box" type="text" value="1"
+                                                    name="updates[]">
+                                                <div class="inc qtybutton">+</div>
+                                            </div>
+
+                                        </td>
+                                        <td class="cartarea__product__subtotal">$110.00</td>
+                                        <td class="cartarea__product__remove">
+                                            <a href="#">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon"
+                                                    viewBox="0 0 512 512">
+                                                    <title>Pencil</title>
+                                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                                        stroke-linejoin="round" stroke-width="32"
+                                                        d="M364.13 125.25L87 403l-23 45 44.99-23 277.76-277.13-22.62-22.62zM420.69 68.69l-22.62 22.62 22.62 22.63 22.62-22.63a16 16 0 000-22.62h0a16 16 0 00-22.62 0z" />
+                                                </svg></a>
+                                            <a href="#">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon"
+                                                    viewBox="0 0 512 512">
+                                                    <title>Trash</title>
+                                                    <path
+                                                        d="M112 112l20 320c.95 18.49 14.4 32 32 32h184c17.67 0 30.87-13.51 32-32l20-320"
+                                                        fill="none" stroke="currentColor" stroke-linecap="round"
+                                                        stroke-linejoin="round" stroke-width="32" />
+                                                    <path stroke="currentColor" stroke-linecap="round"
+                                                        stroke-miterlimit="10" stroke-width="32" d="M80 112h352" />
+                                                    <path
+                                                        d="M192 112V72h0a23.93 23.93 0 0124-24h80a23.93 23.93 0 0124 24h0v40M256 176v224M184 176l8 224M328 176l-8 224"
+                                                        fill="none" stroke="currentColor" stroke-linecap="round"
+                                                        stroke-linejoin="round" stroke-width="32" />
+                                                </svg></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="cartarea__shiping__update__wrapper">
+                        <div class="cartarea__shiping__update">
+                            <a href="">Continue Shopping</a>
+                        </div>
+                        <div class="cartarea__clear">
+                            <a href="#">Update Cart</a>
+                            <a href="#">Clear Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-12">
+                    <div class="cartarea__tax">
+                        <div class="cartarea__title">
+                            <h4>Estimate Shipping And Tax</h4>
+                        </div>
+                        <div class="cartarea__text">
+                            <p>Enter your destination to get a shipping estimate.</p>
+                        </div>
+                        <div class="cartarea__select">
+                            <div class="cartarea__tax__select">
+                                <label for="address__country">* Country</label>
+                                <select name="email" id="address__country">
+                                    <option value="USA">USA</option>
+                                    <option value="UK">UK</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="Russia">Russia</option>
+                                    <option value="China">China</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="cartarea__code cartarea__select">
+                            <label for="address__zip">* Zip/Postal Code</label>
+                            <input type="text" placeholder="Zip/Postal Code" id="address__zip" name="address[zip]">
+                        </div>
+                        <button type="button" class="default__button">Calculate shipping</button>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-lg-4 col-md-12 col-12">
+                    <div class="cartarea__discount__code__wrapper cartarea__tax">
+                        <div class="cartarea__title">
+                            <h4>Cart Note</h4>
+                        </div>
+                        <div class="cartarea__discount__code">
+                            <p>Special instructions for seller</p>
+                            <textarea name="note" id="CartSpecialInstructions"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-lg-4 col-md-12 col-12">
+                    <div class="cartarea__grand__totall cartarea__tax">
+                        <div class="cartarea__title">
+                            <h4>Cart Total</h4>
+                        </div>
+                        <h5>Cart Totals
+                            <span>$189.00</span>
+                        </h5>
+                        <a href="#">Proceed to Checkout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- cart__section__end-->
+
+
+
+    <!-- footer__section__start -->
+    <div class="footerarea">
+        <div class="container">
+            <div class="footerarea__newsletter__wraper">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12" data-aos="fade-up">
+                        <div class="footerarea__logo">
+                            <a href="#"><img loading="lazy" src="{% static 'img/logo/logo_2.png' %}"
+                                    alt="logophoto"></a>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12" data-aos="fade-up">
+                        <div class="footerarea__newsletter">
+                            <div class="footerarea__newsletter__input">
+                                <form action="#">
+                                    <input type="text" placeholder="Enter your email here">
+                                    <div class="footerarea__newsletter__button">
+                                        <button type="submit" class="subscribe__btn">Subscribe Now</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footerarea__wrapper">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 " data-aos="fade-up">
+                        <div class="footerarea__inner footerarea__about__us">
+                            <div class="footerarea__heading">
+                                <h3>About us</h3>
+                            </div>
+                            <div class="footerarea__content">
+                                <p>orporate clients and leisure travelers has been relying on Groundlink for dependable
+                                    safe, and professional chauffeured car end service in major cities across World.</p>
+                            </div>
+                            <div class="footerarea__icon">
+                                <ul>
+                                    <li><a href="//facebook.com"><i class="icofont-facebook"></i></a></li>
+                                    <li><a href="//twitter.com"><i class="icofont-twitter"></i></a></li>
+                                    <li><a href="//vimeo.com"><i class="icofont-vimeo"></i></a></li>
+                                    <li><a href="//linkedin.com"><i class="icofont-linkedin"></i></a></li>
+                                    <li><a href="//skype.com"><i class="icofont-skype"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 " data-aos="fade-up">
+                        <div class="footerarea__inner">
+                            <div class="footerarea__heading">
+                                <h3>Usefull Links</h3>
+                            </div>
+                            <div class="footerarea__list">
+                                <ul>
+                                    <li>
+                                        <a href="#">About Us</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Teachers</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Partner</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Room-Details</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Gallery</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 " data-aos="fade-up">
+                        <div class="footerarea__inner footerarea__padding__left">
+                            <div class="footerarea__heading">
+                                <h3>Course</h3>
+                            </div>
+                            <div class="footerarea__list">
+                                <ul>
+                                    <li>
+                                        <a href="#">Ui Ux Design</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Web Development</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Business Strategy</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Softwere Development</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Business English</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12" data-aos="fade-up">
+                        <div class="footerarea__right__wraper footerarea__inner">
+                            <div class="footerarea__heading">
+                                <h3>Recent Post</h3>
+                            </div>
+                            <div class="footerarea__right__list">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <div class="footerarea__right__img">
+                                                <img loading="lazy" src="{% static 'img/footer/footer__1.png' %}"
+                                                    alt="footerphoto">
+                                            </div>
+                                            <div class="footerarea__right__content">
+                                                <span>02 Apr 2024 </span>
+                                                <h6>Best Your Business</h6>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            <div class="footerarea__right__img">
+                                                <img loading="lazy" src="{% static 'img/footer/footer__2.png' %}"
+                                                    alt="footerphoto">
+                                            </div>
+                                            <div class="footerarea__right__content">
+                                                <span>02 Apr 2024 </span>
+                                                <h6>Keep Your Business</h6>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            <div class="footerarea__right__img">
+                                                <img loading="lazy" src="{% static 'img/footer/footer__3.png' %}"
+                                                    alt="footerphoto">
+                                            </div>
+                                            <div class="footerarea__right__content">
+                                                <span>02 Apr 2024 </span>
+                                                <h6>Nice Your Business</h6>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footerarea__copyright__wrapper">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" data-aos="fade-up">
+                        <div class="footerarea__copyright__content">
+                            <p>© 2024 Powered by <a href="#">Edurock</a>. All Rights Reserved.</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" data-aos="fade-up">
+                        <div class="footerarea__copyright__list">
+                            <ul>
+                                <li><a href="#">Terms of Use</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- footer__section__end -->
+
+</main>
+
+{% endblock %}

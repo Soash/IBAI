@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block title %}Blog{% endblock %}
+
+{% block content %}
+  {% include 'partials/theme-switch.html' %}
+
+<main class="main_wrapper overflow-hidden">
+
+  {% include 'partials/top-banner.html' %}
+  {% include 'partials/navbar.html' %}
+  {% include 'partials/mobile-menu.html' %}
+
+  <!-- theme fixed shadow -->
+  <div>
+    <div class="theme__shadow__circle"></div>
+    <div class="theme__shadow__circle shadow__right"></div>
+  </div>
+
+  <!-- Blog Section -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="mb-5 text-center fw-bold">📰 Latest Blog Posts</h2>
+
+      {% if posts %}
+        <div class="row g-4">
+          {% for post in posts %}
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden hover-shadow transition-all">
+                
+                {% if post.image %}
+                  <div class="ratio ratio-16x9">
+                    <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-fluid object-fit-cover">
+                  </div>
+                {% endif %}
+                
+                <div class="card-body p-4 d-flex flex-column">
+                  <h5 class="card-title mb-2">
+                    <a href="{% url 'blog_detail' post.slug %}" class="text-decoration-none text-dark fw-semibold">
+                      {{ post.title }}
+                    </a>
+                  </h5>
+
+                  <p class="text-muted small mb-3">
+                    By <strong>{{ post.author }}</strong> · {{ post.created_at|date:"F j, Y" }}
+                  </p>
+
+                  <p class="flex-grow-1 text-muted">{{ post.content|truncatewords:25 }}</p>
+
+                  <a href="{% url 'blog_detail' post.slug %}" class="btn btn-outline-primary w-100 mt-3">
+                    Read More →
+                  </a>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        
+        <!-- Pagination -->
+        <div class="d-flex justify-content-center mt-5">
+          <nav aria-label="Blog pagination">
+            <ul class="pagination pagination-lg">
+              {% if page_obj.has_previous %}
+                <li class="page-item">
+                  <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">&laquo;</a>
+                </li>
+              {% else %}
+                <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
+              {% endif %}
+
+              {% for num in page_obj.paginator.page_range %}
+                {% if page_obj.number == num %}
+                  <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+                {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                  <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                {% endif %}
+              {% endfor %}
+
+              {% if page_obj.has_next %}
+                <li class="page-item">
+                  <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">&raquo;</a>
+                </li>
+              {% else %}
+                <li class="page-item disabled"><span class="page-link">&raquo;</span></li>
+              {% endif %}
+            </ul>
+          </nav>
+        </div>
+
+      {% else %}
+        <div class="text-center text-muted py-5">
+          <p>No blog posts available yet.</p>
+        </div>
+      {% endif %}
+    </div>
+  </section>
+
+  {% include 'partials/footer.html' %}
+</main>
+{% endblock %}

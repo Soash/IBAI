@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% load static i18n %}
+
+{% block title %}Password Reset{% endblock %}
+
+{% include 'partials/theme-switch.html' %}
+
+{% block content %}
+
+<main class="main_wrapper overflow-hidden">
+
+  <!-- topbar__section__stert -->
+  {% include 'partials/top-banner.html' %}
+  <!-- topbar__section__end -->
+
+  <!-- headar section start -->
+  {% include 'partials/navbar.html' %}
+  <!-- header section end -->
+
+  <!-- Mobile Menu Start Here -->
+  {% include 'partials/mobile-menu.html' %}
+  <!-- Mobile Menu end Here -->
+
+  <!-- theme fixed shadow -->
+  <div>
+      <div class="theme__shadow__circle"></div>
+      <div class="theme__shadow__circle shadow__right"></div>
+  </div>
+  <!-- theme fixed shadow -->
+
+  	<!-- login__section__start -->
+	<div class="loginarea sp_top_100 sp_bottom_100">
+		<div class="container">
+
+			<div class="row">
+				<div class="tab-content tab__content__wrapper" id="myTabContent" data-aos="fade-up">
+					<div class="tab-pane fade active show" id="projects__one" role="tabpanel" aria-labelledby="projects__one">
+						<div class="col-xl-8 col-md-8 offset-md-2">
+							<div class="loginarea__wraper">
+								<div class="login__heading">
+									<h5 class="login__title">Verify Certificate</h5>
+								</div>
+								<div>
+									<!-- login form -->
+									<form method="GET" action="{% url 'verify_certificate' %}">
+										<div class="login__form">
+											<label class="form__label">Certificate ID</label>
+											<input class="common__login__input" type="text" placeholder="Certificate ID" name="certificate_id" required>
+										</div>
+										<div class="login__button">
+											<button class="default__button" type="submit">Verify</button>
+										</div>
+									</form>
+									<!-- login form -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class=" login__shape__img educationarea__shape_image">
+				<img loading="lazy" class="hero__shape hero__shape__1" src="{% static 'img/education/hero_shape2.png' %}" alt="Shape">
+				<img loading="lazy" class="hero__shape hero__shape__2" src="{% static 'img/education/hero_shape3.png' %}" alt="Shape">
+				<img loading="lazy" class="hero__shape hero__shape__3" src="{% static 'img/education/hero_shape4.png' %}" alt="Shape">
+				<img loading="lazy" class="hero__shape hero__shape__4" src="{% static 'img/education/hero_shape5.png' %}" alt="Shape">
+			</div>
+		</div>
+	</div>
+  	<!-- login__section__end -->
+
+  {% include 'partials/footer.html' %}
+</main>
+
+{% endblock %}
+
