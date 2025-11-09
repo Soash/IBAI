@@ -143,7 +143,12 @@ STATIC_URL = 'static/'
 # Folder where Django will collect all static files (for production)
 MEDIA_URL = 'media/'
 STATIC_ROOT = BASE_DIR/'staticfiles'
-MEDIA_ROOT = BASE_DIR / 'media'
+
+if not DEBUG:
+    MEDIA_ROOT = '/home/dawnofbi/public_html/media'
+else:
+    MEDIA_ROOT = BASE_DIR / 'media'
+
 STATICFILES_DIRS = [BASE_DIR/'static']
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 ####
