@@ -92,8 +92,9 @@
                 <div class="single__service">
                     <div class="service__img">
 
+                      {% if category.icon %}
                         <img src="{{ category.icon.url }}" alt="{{ category.name }}" srcset="" width="50" height="50">
-
+                      {% endif %}
                         <div class="service__bg__img">
                             <svg class="service__icon__bg" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
