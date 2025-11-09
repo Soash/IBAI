@@ -54,13 +54,18 @@
                 </div>
                 <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12" data-aos="fade-up">
 
-                    <div class="herobanner__video registerarea__video">
+                    {% comment %} <div class="herobanner__video registerarea__video">
                         <img loading="lazy" src="https://img.youtube.com/vi/YuBjrnwPNfk/maxresdefault.jpg" alt="Video Banner">
-
                         <div class="video__pop__btn">
-                            <a class="video-btn" href="https://www.youtube.com/watch?v=YuBjrnwPNfk"> <img loading="lazy"
-                                    src="{% static 'img/icon/video.png' %}" alt=""></a>
+                            <a class="video-btn" href="https://www.youtube.com/embed/sH0te4d6grc?si=f0c6EaiL6RRyk4KQ&controls=0">
+                              <img loading="lazy"
+                                    src="{% static 'img/icon/video.png' %}" alt="">
+                            </a>
                         </div>
+                    </div> {% endcomment %}
+
+                    <div class="herobanner__video registerarea__video">
+                      <iframe width="500" height="350" src="https://www.youtube.com/embed/sH0te4d6grc?si=f0c6EaiL6RRyk4KQ&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
 
                 </div>

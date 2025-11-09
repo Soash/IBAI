@@ -34,12 +34,12 @@
           <div class="headerarea__main__menu">
             <nav>
               <ul>
+                <li><a href="{% url 'course_list' %}">Short Courses</a></li>
                 <li><a href="{% url 'training_list' %}">Training</a></li>
                 <li><a href="{% url 'intern_list' %}">Internship</a></li>
-                <li><a href="#">Thesis</a></li>
-                <li><a href="#">Collaboration</a></li>
+                <li><a href="#">Thesis Support</a></li>
                 <li><a href="{% url 'blog_list' %}">Blogs</a></li>
-                <li><a href="{% url 'course_list' %}">Courses</a></li>
+                <li><a href="#">Collaboration</a></li>
                 {% if user.is_authenticated %}
                 <li><a href="{% url 'student_dashboard' %}">Dashboard</a></li>
                 {% endif %}
@@ -56,9 +56,9 @@
             </div>
             {% endif %}
             {% if user.is_authenticated %}
-            <div class="headerarea__login">
+            {% comment %} <div class="headerarea__login">
               <div>Welcome, {{ user.username }}!</div>
-            </div>
+            </div> {% endcomment %}
             <div class="headerarea__login">
                 <a href="{% url 'user_logout' %}"><i class="icofont-logout"></i></a>
             </div>
