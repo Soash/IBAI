@@ -8,10 +8,12 @@
       <div class="mobile-navigation">
         <nav>
           <ul class="mobile-menu">
+            <li class="menu-item-has-children "><a href="{% url 'course_list' %}">Short Courses</a></li><hr>
+            <li class="menu-item-has-children "><a href="{% url 'training_list' %}">Training</a></li><hr>
+            <li class="menu-item-has-children "><a href="{% url 'intern_list' %}">Internship</a></li><hr>
             <li class="menu-item-has-children "><a href="{% url 'blog_list' %}">Blogs</a></li><hr>
-            <li class="menu-item-has-children "><a href="{% url 'course_list' %}">Courses</a></li><hr>
-            <li class="menu-item-has-children "><a href="{% url 'student_dashboard' %}">Profile</a></li><hr>
             {% if user.is_authenticated %}
+            <li class="menu-item-has-children "><a href="{% url 'student_dashboard' %}">Profile</a></li><hr>
             <li class="menu-item-has-children "><a href="{% url 'user_logout' %}">Logout</a></li><hr>
             {% else %}
             <li class="menu-item-has-children "><a href="{% url 'user_login' %}">Login</a></li><hr>
