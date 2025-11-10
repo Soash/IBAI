@@ -57,6 +57,12 @@
           <div class="border rounded-3 p-3 mb-3">
             <p class="mb-1"><strong>{{ comment.user }}</strong> · {{ comment.created_at|date:"F j, Y H:i" }}</p>
             <p>{{ comment.content }}</p>
+            {% if request.user == comment.user %}
+              <form method="post" action="{% url 'delete_comment' comment.id %}" class="mt-2">
+                {% csrf_token %}
+                <button class="btn btn-sm btn-outline-danger">Delete</button>
+              </form>
+            {% endif %}
           </div>
         {% empty %}
           <p class="text-muted">No comments yet. Be the first to comment!</p>

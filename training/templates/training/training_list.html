@@ -51,7 +51,7 @@
             <td>{{ training.date|date:"M d, Y" }}</td>
             <td>
               {% if training.registration_link %}
-                <a href="{{ training.registration_link }}" class="btn btn-sm btn-success" target="_blank">Register</a>
+                <a href="{{ training.registration_link }}" class="btn btn-sm dawn-blue-bg" target="_blank">Register</a>
               {% else %}
                 <span class="text-muted">TBA</span>
               {% endif %}
@@ -78,7 +78,7 @@
             Details
           </a>
           {% if training.registration_link %}
-            <a href="{{ training.registration_link }}" class="btn btn-success" target="_blank">
+            <a href="{{ training.registration_link }}" class="btn dawn-blue-bg" target="_blank">
               Register
             </a>
           {% else %}

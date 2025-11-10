@@ -43,7 +43,7 @@
                   </h5>
 
                   <p class="text-muted small mb-3">
-                    By <strong>{{ post.author }}</strong> · {{ post.created_at|date:"F j, Y" }}
+                    By <strong>{{ post.author }}</strong> · {{ post.created_at|date:"F j, Y" }} · <i class="icofont-read-book"></i> {{ post.view_count }}
                   </p>
 
                   <p class="flex-grow-1 text-muted">{{ post.content|truncatewords:25 }}</p>

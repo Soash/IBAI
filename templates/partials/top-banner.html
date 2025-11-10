@@ -1,39 +1,20 @@
-<div class="topbararea topbararea--2">
+<div id="topbar" class="py-2 text-white text-end">
   <div class="container">
     <div class="row">
-      <div class="col-xl-6 col-lg-6">
-        <div class="topbar__left">
-          <ul>
-            <li>
-              <i class="icofont-phone"></i>
-              Call Us: +880 1517 831 136 
-            </li>
-            <li>
-              <i class="icofont-email ms-3"></i>
-              Mail Us: dawn.of.bioinformatics@gmail.com
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-xl-6 col-lg-6">
-        <div class="topbar__right">
-          <div class="topbar__icon">
-            <i class="icofont-location-pin"></i>
-          </div>
-          <div class="topbar__text">
-            <p>Staff Quarter, Dhaka, Bangladesh</p>
-          </div>
-          <div class="topbar__list">
-            <ul>
-              <li>
-                <a href="https://www.facebook.com/ibaidob"><i class="icofont-facebook"></i></a>
-              </li>
-            </ul>
-          </div>
-        </div>
+      <div class="col-12">
+        <ul class="list-unstyled mb-0">
+          <li>
+            Dawn of Bioinformatics
+            <i class="icofont-long-arrow-right"></i>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
 </div>
 
-
+<script>
+  const topbar = document.getElementById('topbar');
+  const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  topbar.style.backgroundColor = isDark ? '#0d1b2a' : '#212529';
+</script>
