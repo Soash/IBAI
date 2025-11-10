@@ -66,7 +66,7 @@ def course_detail(request, slug):
         'total_comments': total_comments,
     }
 
-    print("Context prepared, rendering template...")
+    # print("Context prepared, rendering template...")
     return render(request, 'courses/course-details.html', context)
 
 @login_required
