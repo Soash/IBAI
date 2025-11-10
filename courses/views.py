@@ -25,10 +25,10 @@ def course_list(request):
 
 def course_detail(request, slug):
     course = get_object_or_404(Course, slug=slug, published=True)
-    print(f"Course: {course.title} (slug: {course.slug})")
+    # print(f"Course: {course.title} (slug: {course.slug})")
 
     lessons = course.lessons.prefetch_related('video', 'exam').all()
-    print(f"Total lessons: {lessons.count()}")
+    # print(f"Total lessons: {lessons.count()}")
 
     for lesson in lessons:
         videos = list(lesson.video.all())

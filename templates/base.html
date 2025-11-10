@@ -22,7 +22,13 @@
     <link href="{% static 'css/swiper-bundle.min.css' %}" rel="stylesheet"/>
     <link href="{% static 'css/style.css' %}" rel="stylesheet"/>
 
-    {% block extra_css %} {% endblock extra_css %}
+    {% block extra_css %}
+    <style>
+      .dawn-blue{
+        color: #255d98 !important;
+      }
+    </style>
+    {% endblock extra_css %}
   {% endblock css %}
 
   <script>

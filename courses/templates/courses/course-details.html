@@ -99,14 +99,9 @@
                                 </li>
                             </ul>
                         </div>
-                        <div>
-
-                        </div>
                         <div class="course__details__paragraph" data-aos="fade-up">
-                            <p>{{ course.description }}</p>
+                            <p>{{ course.summary }}</p>
                         </div>
-
-
                         <div class="course__details__tab__wrapper" data-aos="fade-up">
                             <div class="row">
                                 <div class="col-xl-12">
@@ -121,10 +116,14 @@
                                                 data-bs-target="#projects__four" type="button"><i
                                                     class="icofont-teacher"></i>Instructor</button>
                                         </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="single__tab__link" data-bs-toggle="tab"
+                                                data-bs-target="#projects__three" type="button"><i
+                                                    class="icofont-teacher"></i>Description</button>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
-
 
                             <div class="tab-content tab__content__wrapper" id="myTabContent">
                                 <!-- Curriculum -->
@@ -228,6 +227,15 @@
                                 </div>
                                 <!-- Instructor -->
 
+                                <div class="tab-pane fade" id="projects__three" role="tabpanel"
+                                    aria-labelledby="projects__one">
+                                    <div class="experence__heading">
+                                        <h5>Description</h5>
+                                    </div>
+                                    <div class="experence__description">
+                                        {{ course.description|safe }}
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -244,7 +252,7 @@
                                     {% if comment.user.profile_picture %}
                                         <img loading="lazy" src="{{ comment.user.profile_picture.url }}" alt="author" width="80">
                                     {% else %}
-                                        <img loading="lazy" src="{% static 'img/profile.png' %}" alt="author">
+                                        <img loading="lazy" src="{% static 'img/profile.png' %}" alt="author" width="80">
                                     {% endif %}
                                 </div>
                                 <div class="author__content">
@@ -295,25 +303,41 @@
 
 
                 <div class="col-xl-4 col-lg-4">
-
                     <div class="course__details__sidebar">
                         <div class="event__sidebar__wraper" data-aos="fade-up">
 
-
                             <div class="blogarae__img__2 course__details__img__2" data-aos="fade-up">
 
-                                {% if intro_video_thumbnail %}
+                                {% comment %} {% if intro_video_thumbnail %}
                                     <img loading="lazy" src="{{ intro_video_thumbnail }}" alt="blog">
-                                {% endif %}
+                                {% endif %} {% endcomment %}
 
                                 <div class="registerarea__content course__details__video">
                                     <div class="registerarea__video">
-                                        <div class="video__pop__btn">
+                                        {% comment %} <div class="video__pop__btn">
                                             <a class="video-btn" href="{{ course.intro_video_url }}">
                                                 <img loading="lazy" src="{% static 'img/icon/video.png' %}" alt=""></a>
-                                        </div>
+                                        </div> {% endcomment %}
                                     </div>
                                 </div>
+
+                                <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                                    {% comment %} <iframe 
+                                        src="https://www.youtube.com/embed/sH0te4d6grc?si=f0c6EaiL6RRyk4KQ&controls=0&rel=0" 
+                                        title="YouTube video player" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                        allowfullscreen
+                                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;">
+                                    </iframe> {% endcomment %}
+                                    <iframe
+                                        src="{{ course.intro_video_url }}?controls=0"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin"
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+
                             </div>
 
                             <div class="event__price__wraper">
@@ -378,12 +402,12 @@
                                     </li>
                                 </ul>
                             </div>
+
                             <div class="course__summery__button">
                                 <p>More inquery about course.</p>
                                 <a class="default__button default__button--3" href="tel:+8801517831136"><i
                                         class="icofont-phone"></i> +880 1517 831 136</a>
                             </div>
-
 
                         </div>
                     </div>
