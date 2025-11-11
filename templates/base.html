@@ -39,7 +39,7 @@
   {% endblock css %}
 
   <script>
-    if (localStorage.getItem("theme-color") === "dark" || (!("theme-color" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+    if (localStorage.getItem("theme-color") === "light" || (!("theme-color" in localStorage) && window.matchMedia("(prefers-color-scheme: light)").matches)) {
       document.documentElement.classList.add("is_dark");
     }
     if (localStorage.getItem("theme-color") === "light") {
