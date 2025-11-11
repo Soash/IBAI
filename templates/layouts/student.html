@@ -38,11 +38,24 @@
                   <div class="dashboardarea__left">
                     <div class="dashboardarea__left__img">
 
-                      {% if request.user.profile_picture %}
+                      {% comment %} {% if request.user.profile_picture %}
                           <img loading="lazy" src="{{ request.user.profile_picture.url }}" alt="photo">
                       {% else %}
                           <img loading="lazy" src="{% static 'img/profile.png' %}" alt="photo">
-                      {% endif %}
+                      {% endif %} {% endcomment %}
+
+                      <div class="ratio ratio-1x1 overflow-hidden rounded">
+                        
+                        {% if request.user.profile_picture %}
+                            <img loading="lazy" src="{{ request.user.profile_picture.url }}" alt="photo"
+                                class="img-fluid h-100 w-100" style="object-fit: cover;">
+                        {% else %}
+                            <img loading="lazy" src="{% static 'img/profile.png' %}" alt="grid"
+                                class="img-fluid h-100 w-100" style="object-fit: cover;">
+                        {% endif %}
+                        
+                      </div>
+
                     </div>
                     <div class="dashboardarea__left__content">
                       <h4>{{ request.user.first_name }}</h4>
