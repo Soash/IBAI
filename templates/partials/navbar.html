@@ -39,7 +39,17 @@
                 <li><a href="{% url 'training_list' %}">Training</a></li>
                 <li><a href="{% url 'intern_list' %}">Internship</a></li>
                 <li><a href="#">Thesis Support</a></li>
-                <li><a href="{% url 'blog_list' %}">Blogs</a></li>
+                
+                <li>
+                  <a class="headerarea__has__dropdown" href="#">Blogs
+                    <i class="icofont-rounded-down"></i>
+                  </a>
+                  <ul class="headerarea__submenu d-flex flex-column">
+                    <li><a href="{% url 'blog_list' %}">Blog Posts</a></li>
+                    <li><a href="#">Video Posts</a></li>
+                  </ul>
+                </li>
+
                 <li><a href="#">Collaboration</a></li>
                 {% if user.is_authenticated %}
                 <li><a href="{% url 'student_dashboard' %}">Dashboard</a></li>

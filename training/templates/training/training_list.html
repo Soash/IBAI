@@ -2,7 +2,7 @@
 {% load static i18n %}
 {% block title %}Training List{% endblock %}
 {% block content %}
-{% include 'partials/theme-switch.html' %}
+{% comment %} {% include 'partials/theme-switch.html' %} {% endcomment %}
 
 <main class="main_wrapper overflow-hidden">
   {% include 'partials/top-banner.html' %}
@@ -81,7 +81,7 @@
       </table>
     </div>
 
-    <!-- Detailed List -->
+    
       {% comment %}
       {% for training in trainings %}
         <div class="row mb-5 border-bottom p-4 align-items-center shadow-lg">
@@ -115,69 +115,81 @@
         </div>
       {% endfor %}
       {% endcomment %}
+  </div>
 
-  {% for training in trainings %}
-    <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12" data-aos="fade-up">
-        <div class="gridarea__wraper gridarea__wraper__2 zoom__meeting__grid ">
-            <div class="gridarea__img">
+  <div class="zoom__meetings sp_top_100 sp_bottom_70">
+    <div class="container-fluid full__width__padding">
+      <div class="row">
+        {% for training in trainings %}
+        <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12" data-aos="fade-up">    
+          <div class="gridarea__wraper gridarea__wraper__2 zoom__meeting__grid ">
+              <div class="ratio ratio-4x3 overflow-hidden rounded mb-3">
                 <a href="#">
-                  {% if training.thumbnail %}
-                    <img loading="lazy" src="{{ training.thumbnail.url }}" alt="grid">
-                  {% else %}
-                    <img loading="lazy" src="{% static 'img/zoom/1.jpg' %}" alt="grid">
-                  {% endif %}
-                </a>
-            </div>
-            <div class="gridarea__content ">
-                <div class="gridarea__list">
-                    <ul>
-                        <li>
-                            <i class="icofont-calendar"></i> {{ training.date }}
-                        </li>
-                        {% comment %} <li>
-                            <i class="icofont-clock-time"></i> 1 hr 30 min
-                        </li> {% endcomment %}
-                    </ul>
-                </div>
-                <div class="gridarea__heading">
-                    <h3><a href="{% url 'training_detail' training.slug %}"> {{ training.name }} </a></h3>
-                </div>
-
-                <div class="zoom__meeting__time__id">
-                    <div class="zoom__meeting__time">
-                        <p>
-                            Medium :
-                            <span>{{ training.get_medium_display }}</span>
-                        </p>
-                    </div>
-                    <div class="zoom__meeting__id">
-                        {% if training.platform %}
-                            <p>Platform :<span>{{ training.get_platform_display }}</span></p>
-                        {% else %}
-                            <p>Branch :<span>{{ training.get_branch_display }}</span></p>
-                        {% endif %}
-                    </div>
-                </div>
-                <div class="gridarea__bottom">
-                  <div class="gridarea__small__img">
-                    {% if training.instructor.profile_picture %}
-                      <img src="{{ training.instructor.profile_picture.url }}" width="50" height="50">
+                    {% if training.thumbnail %}
+                        <img loading="lazy" src="{{ training.thumbnail.url }}" alt="grid"
+                            class="img-fluid h-100 w-100" style="object-fit: cover;">
                     {% else %}
-                      <img loading="lazy" src="{% static 'img/grid/grid_small_1.jpg' %}" alt="grid">
+                        <img loading="lazy" src="{% static 'img/zoom/1.jpg' %}" alt="grid"
+                            class="img-fluid h-100 w-100" style="object-fit: cover;">
                     {% endif %}
-                      <div class="gridarea__small__content">
-                          Instructor: <h5>{{ training.instructor.first_name }}</h5>
+                </a>
+              </div>
+              <div class="gridarea__content ">
+                  <div class="gridarea__list">
+                      <ul>
+                          <li>
+                              <i class="icofont-calendar"></i> {{ training.date }}
+                          </li>
+                          {% comment %} <li>
+                              <i class="icofont-clock-time"></i> 1 hr 30 min
+                          </li> {% endcomment %}
+                      </ul>
+                  </div>
+                  <div class="gridarea__heading">
+                      <h3><a href="{% url 'training_detail' training.slug %}"> {{ training.name }} </a></h3>
+                  </div>
+
+                  <div class="zoom__meeting__time__id">
+                      <div class="zoom__meeting__time">
+                          <p>
+                              Medium :
+                              <span>{{ training.get_medium_display }}</span>
+                          </p>
+                      </div>
+                      <div class="zoom__meeting__id">
+                          {% if training.platform %}
+                              <p>Platform :<span>{{ training.get_platform_display }}</span></p>
+                          {% else %}
+                              <p>Branch :<span>{{ training.get_branch_display }}</span></p>
+                          {% endif %}
                       </div>
                   </div>
-                </div>
+                  <div class="gridarea__bottom">
+                    <div class="gridarea__small__img">
+                      {% if training.instructor.profile_picture %}
+                        <img src="{{ training.instructor.profile_picture.url }}" width="50" height="50">
+                      {% else %}
+                        <img loading="lazy" src="{% static 'img/grid/grid_small_1.jpg' %}" alt="grid">
+                      {% endif %}
+                        <div class="gridarea__small__content">
+                            Instructor: <h5>{{ training.instructor.first_name }}</h5>
+                        </div>
+                    </div>
+                  </div>
 
-            </div>
+              </div>
+          </div>
         </div>
+        {% endfor %}
+      </div>
     </div>
-  {% endfor %}
+  </div>
 
   
 
   {% include 'partials/footer.html' %}
 </main>
 {% endblock %}
+
+
+
