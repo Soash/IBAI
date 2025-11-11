@@ -200,7 +200,13 @@ def course_item(request, course_slug, lesson_slug, item_order):
     }
     return render(request, 'courses/course-item.html', context)
 
-
+@login_required
+def delete_course_comment(request, comment_id):
+    comment = get_object_or_404(Comment, id=comment_id, user=request.user)
+    course_slug = comment.course.slug
+    comment.delete()
+    messages.success(request, "Your comment was deleted successfully.")
+    return redirect('course_detail', slug=course_slug)
 
 
 from django.http import HttpResponse

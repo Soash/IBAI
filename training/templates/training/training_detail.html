@@ -6,44 +6,131 @@
 <main class="main_wrapper overflow-hidden">
 
   {% include 'partials/navbar.html' %}
-  <div class="container my-5">
-    <a href="{% url 'training_list' %}" class="btn btn-outline-secondary mb-4">&larr; Back to Training List</a>
+  <div class="blogarea__2 zoom__meetings__details sp_top_20 sp_bottom_100">
+    <div class="container">
+      <a href="{% url 'training_list' %}" class="btn btn-outline-secondary mb-4">&larr; Back to Training List</a>
+        <div class="row">
+            <!-- Video Section (always on top) -->
+            <div class="row mb-4">
+              <div class="col-12">
+                <div class="ratio ratio-16x9">
+                  <iframe width="560" height="315"
+                          src="{{ training.video_embed_url }}"
+                          title="YouTube video player"
+                          frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerpolicy="strict-origin-when-cross-origin"
+                          allowfullscreen>
+                  </iframe>
+                </div>
+              </div>
+            </div>
 
-    <!-- Video Section (always on top) -->
-    <div class="row mb-4">
-      <div class="col-12">
-        <div class="ratio ratio-16x9">
-          <iframe width="560" height="315"
-                  src="{{ training.video_embed_url }}"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen>
-          </iframe>
-        </div>
-      </div>
-    </div>
+            <div class="col-xl-8 col-lg-8">
+                <div class="blog__details__content__wraper">
+                    <div class="course__list__wraper" data-aos="fade-up">
+                      <!-- Details Section -->
+                      <h2 class="mb-3">{{ training.name }}</h2>
+                      
+                      <div class="mt-4" style="text-align: justify;">
+                        {{ training.description|safe }}
+                      </div>
 
-    <!-- Details Section -->
-    <div class="row">
-      <div class="col-md-10 offset-md-1">
-        <h2 class="mb-3">{{ training.name }}</h2>
-        
-        <div class="mt-4" style="text-align: justify;">
-          {{ training.description|safe }}
-        </div>
+                      <div class="mt-4">
+                        {% if training.registration_link %}
+                          <a href="{{ training.registration_link }}" target="_blank" class="btn dawn-blue-bg">Registration Now</a>
+                        {% else %}
+                          <button class="btn btn-secondary" disabled>Registration TBA</button>
+                        {% endif %}
+                      </div>
+                    </div>
+                </div>
+            </div>
 
-        <div class="mt-4">
-          {% if training.registration_link %}
-            <a href="{{ training.registration_link }}" target="_blank" class="btn btn-primary">Registration Now</a>
-          {% else %}
-            <button class="btn btn-secondary" disabled>Registration TBA</button>
-          {% endif %}
+            <div class="col-xl-4 col-lg-4">
+                <div class="course__details__sidebar--2">
+                    <div class="event__sidebar__wraper" data-aos="fade-up">
+                        <div class="event__price__wraper">
+                            <div class="event__price">
+                                ৳{{ training.current_price }} <del>/ ৳{{ training.previous_price }}</del>
+                            </div>
+                            <div class="event__Price__button">
+                                <a href="#">{{ training.discount_percent }}% OFF</a>
+                            </div>
+                        </div>
+                        <div class="event__details__list">
+                            <ul>
+                                <li>
+                                    <div class="event__details__icon">
+                                        <i class="icofont-teacher"></i>
+                                    </div>
+                                    <div class="event__details__date">
+                                        <span class="sb_label">Instructor:</span>
+                                        <span>{{ training.instructor.first_name }}</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="event__details__icon">
+                                        <i class="icofont-book"></i>
+                                    </div>
+                                    <div class="event__details__date">
+                                        <span class="sb_label">Medium: </span><span>{{ training.get_medium_display }}</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="event__details__icon">
+                                        <i class="icofont-location-arrow"></i>
+                                    </div>
+                                    <div class="event__details__date">
+                                        {% if training.platform %}
+                                          <span class="sb_label">Platform: </span><span>{{ training.get_platform_display }}</span>
+                                        {% else %}
+                                            <span class="sb_label">Branch: </span><span>{{ training.get_branch_display }}</span>
+                                        {% endif %}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="event__details__icon">
+                                        <i class="icofont-calendar"></i>
+                                    </div>
+                                    <div class="event__details__date">
+                                        <span class="sb_label">Date: </span><span>{{ training.date|date:"d/m/Y" }}</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="event__details__icon">
+                                        <i class="icofont-globe-alt"></i>
+                                    </div>
+                                    <div class="event__details__date">
+                                        <span class="sb_label">Language:</span> <span>Bangla</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="event__details__icon">
+                                        <i class="icofont-certificate"></i>
+                                    </div>
+                                    <div class="event__details__date">
+                                        <span class="sb_label">Certificate:</span><span>Yes</span>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="event__details__button">
+                          {% if training.registration_link %}
+                            <a href="{{ training.registration_link }}" target="_blank" class="default__button">Register Now</a>
+                          {% else %}
+                            <button class="btn btn-secondary" disabled>Registration TBA</button>
+                          {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
   </div>
+
+
 
   {% include 'partials/footer.html' %}
 </main>

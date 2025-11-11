@@ -263,6 +263,12 @@
                                     </div>
                                     <div class="author__text">
                                         <p>{{ comment.content }}</p>
+                                        {% if request.user == comment.user %}
+                                            <form method="post" action="{% url 'delete_course_comment' comment.id %}" class="mt-2">
+                                                {% csrf_token %}
+                                                <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                            </form>
+                                        {% endif %}
                                     </div>
                                 </div>
                                 <div class="author__icon">
@@ -288,7 +294,7 @@
                                 <div class="row">
                                     <div class="col-xl-12" data-aos="fade-up">
                                         <div class="blog__details__input">
-                                            <textarea cols="30" rows="10" name="content">Enter your message*</textarea>
+                                            <textarea cols="30" rows="10" name="content" placeholder="Enter your message*"></textarea>
                                         </div>
                                     </div>
                                 </div>
