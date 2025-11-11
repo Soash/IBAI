@@ -1,11 +1,20 @@
 from django.db import models
 from django.utils.text import slugify
 from tinymce.models import HTMLField
+from django.conf import settings
 
 class Training(models.Model):
     MEDIUM_CHOICES = [
         ('online', 'Online'),
         ('offline', 'Offline'),
+    ]
+    BRANCH_CHOICES = [
+        ('dhaka', 'Dhaka'),
+        ('chittagong', 'Chittagong'),
+    ]
+    PLATFORM_CHOICES = [
+        ('zoom', 'Zoom'),
+        ('google_meet', 'Meet'),
     ]
 
     name = models.CharField(max_length=255)
@@ -16,6 +25,9 @@ class Training(models.Model):
     description = HTMLField()
     video = models.URLField(help_text="YouTube video URL")
     registration_link = models.URLField(blank=True, null=True)
+    branch = models.CharField(max_length=15, choices=BRANCH_CHOICES, blank=True, null=True)
+    platform = models.CharField(max_length=15, choices=PLATFORM_CHOICES, blank=True, null=True)
+    instructor = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='trainings', blank=True, null=True)
     order = models.PositiveIntegerField(default=0)
     is_active = models.BooleanField(default=True)
     thumbnail = models.ImageField(upload_to='trainings/', blank=True, null=True)
