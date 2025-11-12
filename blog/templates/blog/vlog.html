@@ -49,30 +49,30 @@
             <div class="row g-4">
                 {% for vlog in vlogs %}
                 <div class="col-md-6 col-lg-4">
-                <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden hover-shadow transition-all">
-                    <div class="ratio ratio-16x9">
-                        <iframe
-                            src="{{ vlog.youtube_url }}?rel=0"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                        </iframe>
-                    </div>
-                    <div class="card-body p-4 d-flex flex-column">
-                    <h5 class="card-title mb-3">{{ vlog.title }}</h5>
+                  <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden hover-shadow transition-all">
+                      <div class="ratio ratio-16x9">
+                          <iframe
+                              src="{{ vlog.youtube_url }}?rel=0"
+                              title="YouTube video player" frameborder="0"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                          </iframe>
+                      </div>
+                      <div class="card-body p-4 d-flex flex-column">
+                      <h5 class="card-title mb-3">{{ vlog.title }}</h5>
 
-                    <button class="like-btn text-danger"
-                            data-id="{{ vlog.id }}">
-                        {% if vlog.id in request.session.liked_vlogs %}
-                        <i class="fa-solid fa-heart"></i>
-                        {% else %}
-                        <i class="fa-regular fa-heart"></i>
-                        {% endif %}
-                        <span class="ms-2 like-count">{{ vlog.likes }}</span>
-                    </button>
+                      <button class="like-btn text-danger"
+                              data-id="{{ vlog.id }}">
+                          {% if vlog.id in request.session.liked_vlogs %}
+                          <i class="fa-solid fa-heart"></i>
+                          {% else %}
+                          <i class="fa-regular fa-heart"></i>
+                          {% endif %}
+                          <span class="ms-2 like-count">{{ vlog.likes }}</span>
+                      </button>
 
-                    </div>
-                </div>
+                      </div>
+                  </div>
                 </div>
                 {% endfor %}
             </div>
@@ -116,25 +116,59 @@
 
 {% block extra_javascript %}
 <script>
-document.querySelectorAll('.like-btn').forEach(btn => {
-  btn.addEventListener('click', function () {
-    const vlogId = this.dataset.id;
-    fetch(`/blog/vlogs/like/${vlogId}/`)
-      .then(res => res.json())
-      .then(data => {
-        const icon = this.querySelector('i');
-        const count = this.querySelector('.like-count');
-        count.textContent = data.likes;
+  document.querySelectorAll('.like-btn').forEach(btn => {
+    btn.addEventListener('click', function () {
+      const vlogId = this.dataset.id;
+      fetch(`/blog/vlogs/like/${vlogId}/`)
+        .then(res => res.json())
+        .then(data => {
+          const icon = this.querySelector('i');
+          const count = this.querySelector('.like-count');
+          count.textContent = data.likes;
 
-        if (data.liked) {
-          icon.classList.remove('fa-regular');
-          icon.classList.add('fa-solid');
-        } else {
-          icon.classList.remove('fa-solid');
-          icon.classList.add('fa-regular');
-        }
-      });
+          if (data.liked) {
+            icon.classList.remove('fa-regular');
+            icon.classList.add('fa-solid');
+          } else {
+            icon.classList.remove('fa-solid');
+            icon.classList.add('fa-regular');
+          }
+        });
+    });
   });
-});
 </script>
+
+<script>
+  function equalizeTitleHeights() {
+    const cards = document.querySelectorAll('.card');
+    let rowTops = {};
+    
+    // Reset heights
+    document.querySelectorAll('.card-title').forEach(t => t.style.height = 'auto');
+    
+    // Group titles by their vertical position (row)
+    cards.forEach(card => {
+      const title = card.querySelector('.card-title');
+      if (!title) return;
+
+      const top = Math.round(card.getBoundingClientRect().top);
+      if (!rowTops[top]) rowTops[top] = [];
+      rowTops[top].push(title);
+    });
+
+    // Equalize within each row
+    Object.values(rowTops).forEach(group => {
+      const maxHeight = Math.max(...group.map(t => t.offsetHeight));
+      group.forEach(t => t.style.height = `${maxHeight}px`);
+    });
+  }
+
+  // Run on load and on resize
+  window.addEventListener('load', equalizeTitleHeights);
+  window.addEventListener('resize', () => {
+    clearTimeout(window.eqTimeout);
+    window.eqTimeout = setTimeout(equalizeTitleHeights, 200);
+  });
+</script>
+
 {% endblock extra_javascript %}
