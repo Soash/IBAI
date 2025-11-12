@@ -12,6 +12,7 @@
             <li class="menu-item-has-children "><a href="{% url 'training_list' %}">Training</a></li><hr>
             <li class="menu-item-has-children "><a href="{% url 'intern_list' %}">Internship</a></li><hr>
             <li class="menu-item-has-children "><a href="{% url 'blog_list' %}">Blogs</a></li><hr>
+            <li class="menu-item-has-children "><a href="{% url 'vlog_list' %}">Vlogs</a></li><hr>
             {% if user.is_authenticated %}
             <li class="menu-item-has-children "><a href="{% url 'student_dashboard' %}">Profile</a></li><hr>
             <li class="menu-item-has-children "><a href="{% url 'user_logout' %}">Logout</a></li><hr>
