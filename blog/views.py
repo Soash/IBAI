@@ -6,7 +6,12 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 
 def blog_list(request):
+    search_query = request.GET.get('q', '')
     posts = BlogPost.objects.order_by('-created_at')
+
+    # Filter by search query
+    if search_query:
+        posts = posts.filter(title__icontains=search_query)
 
     # Pagination: 6 posts per page
     paginator = Paginator(posts, 6)

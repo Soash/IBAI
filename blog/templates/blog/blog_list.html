@@ -33,6 +33,18 @@
     <div class="container">
       <h2 class="mb-5 text-center fw-bold">📰 Latest Blog Posts</h2>
 
+      <!-- 🔍 Search Bar -->
+      <form method="get" class="mb-5 text-center">
+        <div class="input-group mx-auto" style="max-width: 400px;">
+            <input type="text" name="q" class="form-control"
+                placeholder="Search vlogs by title..."
+                value="{{ search_query }}">
+            <button class="btn btn-primary" type="submit">
+            <i class="icofont-search-2"></i>
+            </button>
+        </div>
+      </form>
+
       {% if posts %}
         <div class="row g-4">
           {% for post in posts %}
