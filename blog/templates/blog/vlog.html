@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block title %}Vlog{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+.like-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: transform 0.15s ease-in-out;
+}
+.like-btn:active {
+  transform: scale(1.2);
+}
+</style>
+{% endblock extra_css %}
+
+
+{% block content %}
+<main class="main_wrapper overflow-hidden">
+
+  {% include 'partials/top-banner.html' %}
+  {% include 'partials/navbar.html' %}
+  {% include 'partials/mobile-menu.html' %}
+
+  <section class="py-5">
+    <div class="container">
+        <h2 class="mb-5 text-center fw-bold">📰 Latest Vlog Posts</h2>
+
+        <!-- 🔍 Search Bar -->
+        <form method="get" class="mb-5 text-center">
+        <div class="input-group mx-auto" style="max-width: 400px;">
+            <input type="text" name="q" class="form-control"
+                placeholder="Search vlogs by title..."
+                value="{{ search_query }}">
+            <button class="btn btn-primary" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+        </form>
+
+        {% if vlogs %}
+            <div class="row g-4">
+                {% for vlog in vlogs %}
+                <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden hover-shadow transition-all">
+                    <div class="ratio ratio-16x9">
+                        <iframe
+                            src="{{ vlog.youtube_url }}?rel=0"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column">
+                    <h5 class="card-title mb-3">{{ vlog.title }}</h5>
+
+                    <button class="like-btn text-danger"
+                            data-id="{{ vlog.id }}">
+                        {% if vlog.id in request.session.liked_vlogs %}
+                        <i class="fa-solid fa-heart"></i>
+                        {% else %}
+                        <i class="fa-regular fa-heart"></i>
+                        {% endif %}
+                        <span class="ms-2 like-count">{{ vlog.likes }}</span>
+                    </button>
+
+                    </div>
+                </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- 🔢 Pagination -->
+            {% if page_obj.has_other_pages %}
+            <nav class="mt-5">
+            <ul class="pagination justify-content-center">
+                {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?q={{ search_query }}&page={{ page_obj.previous_page_number }}">&laquo; Prev</a>
+                </li>
+                {% endif %}
+
+                {% for num in page_obj.paginator.page_range %}
+                {% if page_obj.number == num %}
+                    <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+                {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                    <li class="page-item"><a class="page-link" href="?q={{ search_query }}&page={{ num }}">{{ num }}</a></li>
+                {% endif %}
+                {% endfor %}
+
+                {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?q={{ search_query }}&page={{ page_obj.next_page_number }}">Next &raquo;</a>
+                </li>
+                {% endif %}
+            </ul>
+            </nav>
+            {% endif %}
+
+        {% else %}
+            <p class="text-center">No vlogs available.</p>
+        {% endif %}
+    </div>
+  </section>
+
+  {% include 'partials/footer.html' %}
+</main>
+{% endblock %}
+
+{% block extra_javascript %}
+<script>
+document.querySelectorAll('.like-btn').forEach(btn => {
+  btn.addEventListener('click', function () {
+    const vlogId = this.dataset.id;
+    fetch(`/blog/vlogs/like/${vlogId}/`)
+      .then(res => res.json())
+      .then(data => {
+        const icon = this.querySelector('i');
+        const count = this.querySelector('.like-count');
+        count.textContent = data.likes;
+
+        if (data.liked) {
+          icon.classList.remove('fa-regular');
+          icon.classList.add('fa-solid');
+        } else {
+          icon.classList.remove('fa-solid');
+          icon.classList.add('fa-regular');
+        }
+      });
+  });
+});
+</script>
+{% endblock extra_javascript %}

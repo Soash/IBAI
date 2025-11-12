@@ -1,8 +1,9 @@
 from django.shortcuts import redirect, render, get_object_or_404
-from .models import BlogComment, BlogPost
+from .models import BlogComment, BlogPost, Vlog
 from django.core.paginator import Paginator
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
 
 def blog_list(request):
     posts = BlogPost.objects.order_by('-created_at')
@@ -58,3 +59,43 @@ def delete_comment(request, comment_id):
     comment.delete()
     messages.success(request, "Your comment was deleted successfully.")
     return redirect('blog_detail', slug=post_slug)
+
+
+def vlog_list(request):
+    search_query = request.GET.get('q', '')
+    vlogs = Vlog.objects.all().order_by('-id')
+
+    # Filter by search query
+    if search_query:
+        vlogs = vlogs.filter(title__icontains=search_query)
+
+    # Pagination (90 per page)
+    paginator = Paginator(vlogs, 90)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    return render(request, 'blog/vlog.html', {
+        'vlogs': page_obj,          # paginated vlogs
+        'page_obj': page_obj,
+        'search_query': search_query,
+    })
+
+def toggle_like(request, vlog_id):
+    vlog = Vlog.objects.get(pk=vlog_id)
+
+    # use session to track liked state
+    liked_vlogs = request.session.get('liked_vlogs', [])
+    if vlog_id in liked_vlogs:
+        vlog.likes = max(0, vlog.likes - 1)
+        liked_vlogs.remove(vlog_id)
+        liked = False
+    else:
+        vlog.likes += 1
+        liked_vlogs.append(vlog_id)
+        liked = True
+
+    vlog.save()
+    request.session['liked_vlogs'] = liked_vlogs
+
+    return JsonResponse({'liked': liked, 'likes': vlog.likes})
+

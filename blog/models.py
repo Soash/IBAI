@@ -40,4 +40,9 @@ class BlogComment(models.Model):
     def __str__(self):
         return f'Comment by {self.user} on {self.post}'
     
-    
+
+class Vlog(models.Model):
+    title = models.CharField(max_length=255)
+    youtube_url = models.URLField(help_text="Embed YouTube video link (e.g., https://www.youtube.com/embed/abcdef)")
+    likes = models.PositiveIntegerField(default=0)
+

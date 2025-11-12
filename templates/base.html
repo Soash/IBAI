@@ -82,8 +82,8 @@
 {% endblock javascript %}
 
 <script>
-  if (localStorage.getItem("theme-color") === "dark" || (!("theme-color" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
-    document.getElementById("light--to-dark-button")?.classList.add("dark--mode");
+  if (localStorage.getItem("theme-color") === "light" || (!("theme-color" in localStorage) && window.matchMedia("(prefers-color-scheme: light)").matches)) {
+    document.getElementById("light--to-dark-button")?.classList.remove("dark--mode");
   }
   if (localStorage.getItem("theme-color") === "light") {
     document.getElementById("light--to-dark-button")?.classList.remove("dark--mode");
