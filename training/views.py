@@ -3,7 +3,8 @@ from .models import Training
 
 def training_list(request):
     trainings = Training.objects.filter(is_active=True, medium='offline')
-    return render(request, 'training/training_list.html', {'trainings': trainings})
+    has_branch = trainings.filter(branch__isnull=False).exists()
+    return render(request, 'training/training_list.html', {'trainings': trainings, 'has_branch': has_branch})
 
 def online_training_list(request):
     trainings = Training.objects.filter(is_active=True, medium='online')

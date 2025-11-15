@@ -50,7 +50,7 @@
           <tr>
             <th>Training</th>
             <th>Medium</th>
-            {% if training.branch %}
+            {% if has_branch %}
             <th>
               Branch
             </th>
@@ -70,9 +70,6 @@
               {{ training.get_branch_display }}
             </td>
             {% endif %}
-
-
-
             <td>{{ training.date|date:"M d, Y" }}</td>
             <td>
               {% if training.registration_link %}
