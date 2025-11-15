@@ -57,7 +57,7 @@
         <tbody>
           {% for training in trainings %}
           <tr>
-            <td>{{ training.name }}</td>
+            <td class="text-start">{{ training.name }}</td>
             <td>{{ training.get_medium_display }}
               {% if training.branch %}
                 - {{ training.get_branch_display }}
