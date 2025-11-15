@@ -133,7 +133,10 @@
                             <div class="gridarea__wraper gridarea__wraper__2">
                                 <div class="gridarea__img">
                                     <a href="{% url 'course_detail' course.slug %}">
+                                      {% if course.thumbnail %}
                                         <img loading="lazy" src="{{ course.thumbnail.url }}" alt="{{ course.title }}">
+                                      {% endif %}
+
                                     </a>
                                     <div class="gridarea__small__button">
                                         <div class="grid__badge">{{ course.category.name }}</div>
