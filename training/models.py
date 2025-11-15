@@ -64,3 +64,17 @@ class Training(models.Model):
         elif "youtu.be/" in self.video:
             return self.video.replace("youtu.be/", "www.youtube.com/embed/")
         return self.video
+
+
+class TrainingComment(models.Model):
+    training = models.ForeignKey(Training, on_delete=models.CASCADE, related_name='trainingcomments')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='trainingcomments')
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['created_at']
+
+    def __str__(self):
+        return f"Comment by {self.user.username} on {self.course.title}"
+
