@@ -50,6 +50,11 @@
           <tr>
             <th>Training</th>
             <th>Medium</th>
+            {% if training.branch %}
+            <th>
+              Branch
+            </th>
+            {% endif %}
             <th>Starting From</th>
             <th>Registration</th>
           </tr>
@@ -58,11 +63,16 @@
           {% for training in trainings %}
           <tr>
             <td class="text-start">{{ training.name }}</td>
-            <td>{{ training.get_medium_display }}
-              {% if training.branch %}
-                - {{ training.get_branch_display }}
-              {% endif %}
+            <td>{{ training.get_medium_display }}</td>
+
+            {% if training.branch %}
+            <td>
+              {{ training.get_branch_display }}
             </td>
+            {% endif %}
+
+
+
             <td>{{ training.date|date:"M d, Y" }}</td>
             <td>
               {% if training.registration_link %}
