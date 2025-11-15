@@ -7,14 +7,14 @@
 
   {% include 'partials/navbar.html' %}
   <div class="container my-5">
-    <a href="{% url 'training_list' %}" class="btn btn-outline-secondary mb-4">&larr; Back to Training List</a>
+    <a href="{% url 'intern_list' %}" class="btn btn-outline-secondary mb-4">&larr; Back to Internship List</a>
 
     <!-- Video Section (always on top) -->
     <div class="row mb-4">
       <div class="col-12">
         <div class="ratio ratio-16x9">
           <iframe width="560" height="315"
-                  src="{{ training.video_embed_url }}"
+                  src="{{ intern.video }}"
                   title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -28,15 +28,15 @@
     <!-- Details Section -->
     <div class="row">
       <div class="col-md-10 offset-md-1">
-        <h2 class="mb-3">{{ training.name }}</h2>
+        <h2 class="mb-3">{{ intern.name }}</h2>
         
         <div class="mt-4" style="text-align: justify;">
-          {{ training.description|safe }}
+          {{ intern.description|safe }}
         </div>
 
         <div class="mt-4">
-          {% if training.registration_link %}
-            <a href="{{ training.registration_link }}" target="_blank" class="btn btn-primary">Apply Now</a>
+          {% if intern.registration_link %}
+            <a href="{{ intern.registration_link }}" target="_blank" class="btn btn-primary">Apply Now</a>
           {% else %}
             <button class="btn btn-secondary" disabled>Registration TBA</button>
           {% endif %}
