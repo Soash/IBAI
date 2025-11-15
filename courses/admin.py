@@ -33,10 +33,11 @@ class CategoryAdmin(admin.ModelAdmin):
     
 @admin.register(Course)
 class CourseAdmin(admin.ModelAdmin):
-    list_display = ('title', 'instructor', 'category', 'price', 'published', 'created_at')
+    list_display = ('title', 'category', 'price', 'published', 'created_at')
     prepopulated_fields = {'slug': ('title',)}
     list_filter = ('category', 'published')
-    search_fields = ('title', 'description', 'instructor__username')
+    search_fields = ('title', 'description',)
+    filter_horizontal = ('instructor',)
     inlines = [LessonInline]
 
 @admin.register(Lesson)

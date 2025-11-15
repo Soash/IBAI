@@ -25,7 +25,9 @@ class Category(models.Model):
 class Course(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(unique=True, blank=True)
-    instructor = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='courses')
+    
+    instructor = models.ManyToManyField(settings.AUTH_USER_MODEL,related_name='courses', blank=True, null=True)
+    
     summary = models.TextField()
     description = HTMLField(blank=True, null=True)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, related_name='courses')

@@ -178,14 +178,14 @@
                                 <!-- Curriculum -->
 
                                 <!-- Instructor -->
-                                <div class="tab-pane fade" id="projects__four" role="tabpanel"
-                                    aria-labelledby="projects__four">
+                                <div class="tab-pane fade" id="projects__four" role="tabpanel" aria-labelledby="projects__four">
                                     <div class="blogsidebar__content__wraper__2 tab__instructor">
-                                        <div class="blogsidebar__content__inner__2">
+                                        {% for instructor in course.instructor.all %}
+                                        <div class="blogsidebar__content__inner__2 mb-3">
 
                                             <div class="blogsidebar__img__2">
-                                                {% if course.instructor.profile_picture %}
-                                                    <img loading="lazy" src="{{ course.instructor.profile_picture.url }}" alt="profile" width="100">
+                                                {% if instructor.profile_picture %}
+                                                    <img loading="lazy" src="{{ instructor.profile_picture.url }}" alt="profile" width="100">
                                                 {% else %}
                                                     <img loading="lazy" src="{% static 'img/profile.png' %}" alt="profile" width="100">
                                                 {% endif %} 
@@ -194,38 +194,40 @@
                                             <div class="tab__instructor__inner">
                                                 <div class="blogsidebar__name__2">
                                                     <h5>
-                                                        <a href="#">{{ course.instructor.first_name }}</a>
+                                                        <a href="#">{{ instructor.first_name }}</a>
                                                     </h5>
                                                 </div>
                                                 <div class="blog__sidebar__text__2">
-                                                    <p>{{ course.instructor.bio }}</p>
+                                                    <p>{{ instructor.bio }}</p>
                                                 </div>
                                                 <div class="blogsidbar__icon__2">
                                                     <ul>
                                                         <li>
-                                                            <a href="mailto:{{ course.instructor.email }}"><i class="icofont-email"></i></a>
+                                                            <a href="mailto:{{ instructor.email }}"><i class="icofont-email"></i></a>
                                                         </li>
-                                                        {% if course.instructor.facebook_link %}
+                                                        {% if instructor.facebook_link %}
                                                             <li>
-                                                                <a href="{{ course.instructor.facebook_link }}"><i class="icofont-facebook"></i></a>
+                                                                <a href="{{ instructor.facebook_link }}"><i class="icofont-facebook"></i></a>
                                                             </li>
                                                         {% endif %}
-                                                        {% if course.instructor.linkedin_link %}
+                                                        {% if instructor.linkedin_link %}
                                                             <li>
-                                                                <a href="{{ course.instructor.linkedin_link }}"><i class="icofont-linkedin"></i></a>
+                                                                <a href="{{ instructor.linkedin_link }}"><i class="icofont-linkedin"></i></a>
                                                             </li>
                                                         {% endif %}
-                                                        {% if course.instructor.website %}
+                                                        {% if instructor.website %}
                                                             <li>
-                                                                <a href="{{ course.instructor.website }}"><i class="icofont-web"></i></a>
+                                                                <a href="{{ instructor.website }}"><i class="icofont-web"></i></a>
                                                             </li>
                                                         {% endif %}
                                                     </ul>
                                                 </div>
                                             </div>
                                         </div>
+                                        {% endfor %}
                                     </div>
                                 </div>
+
                                 <!-- Instructor -->
 
                                 <div class="tab-pane fade" id="projects__three" role="tabpanel"
