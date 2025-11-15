@@ -14,7 +14,7 @@ class Training(models.Model):
     ]
     PLATFORM_CHOICES = [
         ('zoom', 'Zoom'),
-        ('google_meet', 'Meet'),
+        ('google_meet', 'Google Meet'),
     ]
 
     name = models.CharField(max_length=255)
