@@ -153,7 +153,7 @@
                                                     <span class="text-success small">Free</span>
                                                 {% endif %}
                                             </div>
-                                            <div class="gridarea__bottom">
+                                            {% comment %} <div class="gridarea__bottom">
                                                 <a href="#">
                                                     <div class="gridarea__small__img">
                                                         {% if course.instructor.profile_picture %}
@@ -166,7 +166,26 @@
                                                         </div>
                                                     </div>
                                                 </a>
+                                            </div> {% endcomment %}
+                                            <div class="gridarea__bottom">
+                                                {% with first_instructor=course.instructor.all|first %}
+                                                {% if first_instructor %}
+                                                
+                                                    <div class="gridarea__small__img">
+                                                        {% if first_instructor.profile_picture %}
+                                                            <img loading="lazy" src="{{ first_instructor.profile_picture.url }}" alt="instructor" width="50" height="50" style="max-width: fit-content;">
+                                                        {% else %}
+                                                            <img loading="lazy" src="{% static 'img/profile.png' %}" alt="instructor">
+                                                        {% endif %}
+                                                        <div class="gridarea__small__content">
+                                                            <h6>{{ first_instructor.first_name }}</h6>
+                                                        </div>
+                                                    </div>
+                                                
+                                                {% endif %}
+                                                {% endwith %}
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>
