@@ -49,3 +49,13 @@ class Vlog(models.Model):
     youtube_url = models.URLField(help_text="Embed YouTube video link (e.g., https://www.youtube.com/embed/abcdef)")
     likes = models.PositiveIntegerField(default=0)
 
+
+class ResearchPaper(models.Model):
+    title = models.CharField(max_length=255)
+    authors = models.CharField(max_length=255)
+    publication_date = models.DateField()
+    journal = models.CharField(max_length=255)
+    abstract = models.TextField()
+    link = models.URLField()
+    image = models.ImageField(upload_to='research_papers/', blank=True, null=True)
+    

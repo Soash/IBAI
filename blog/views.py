@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render, get_object_or_404
-from .models import BlogComment, BlogPost, Vlog
+from .models import BlogComment, BlogPost, ResearchPaper, Vlog
 from django.core.paginator import Paginator
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -23,7 +23,6 @@ def blog_list(request):
         'posts': page_obj.object_list,
     }
     return render(request, 'blog/blog_list.html', context)
-
 
 def blog_detail(request, slug):
     post = get_object_or_404(BlogPost, slug=slug, published=True)
@@ -56,7 +55,6 @@ def blog_detail(request, slug):
         'comments': comments
     })
 
-
 @login_required
 def delete_comment(request, comment_id):
     comment = get_object_or_404(BlogComment, id=comment_id, user=request.user)
@@ -64,7 +62,6 @@ def delete_comment(request, comment_id):
     comment.delete()
     messages.success(request, "Your comment was deleted successfully.")
     return redirect('blog_detail', slug=post_slug)
-
 
 def vlog_list(request):
     search_query = request.GET.get('q', '')
@@ -104,3 +101,19 @@ def toggle_like(request, vlog_id):
 
     return JsonResponse({'liked': liked, 'likes': vlog.likes})
 
+def research_papers(request):
+    search_query = request.GET.get("q", "")
+    papers = ResearchPaper.objects.all().order_by("-publication_date")
+
+    if search_query:
+        papers = papers.filter(title__icontains=search_query)
+
+    paginator = Paginator(papers, 8)  # 8 papers per page
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+
+    return render(request, "blog/research.html", {
+        "page_obj": page_obj,
+        "search_query": search_query,
+    })
+    

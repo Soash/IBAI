@@ -1,5 +1,5 @@
 from django.contrib import admin, messages
-from .models import BlogComment, BlogPost, Vlog
+from .models import BlogComment, BlogPost, ResearchPaper, Vlog
 
 @admin.action(description="Duplicate selected blog posts")
 def duplicate_blog_posts(modeladmin, request, queryset):
@@ -55,3 +55,12 @@ class VlogAdmin(admin.ModelAdmin):
     search_fields = ('title',)
     ordering = ('-id',)
     actions = [duplicate_vlogs]
+    
+@admin.register(ResearchPaper)
+class ResearchPaperAdmin(admin.ModelAdmin):
+    list_display = ('title', 'authors', 'publication_date', 'journal')
+    search_fields = ('title', 'authors', 'journal')
+    list_filter = ('publication_date',)
+    ordering = ('-publication_date',)
+    
+    

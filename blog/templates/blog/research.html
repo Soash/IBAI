@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<main class="main_wrapper overflow-hidden">
+  {% include 'partials/top-banner.html' %}
+  {% include 'partials/navbar.html' %}
+  {% include 'partials/mobile-menu.html' %}
+
+  <section class="py-5">
+    <div class="container">
+      <h2 class="mb-5 text-center fw-bold">📄 Research Papers</h2>
+
+      <!-- Search Bar -->
+      <form method="get" class="mb-5 text-center">
+        <div class="input-group mx-auto" style="max-width: 420px;">
+          <input type="text" name="q" class="form-control"
+            placeholder="Search by title..."
+            value="{{ search_query }}">
+          <button class="btn btn-primary"><i class="icofont-search-2"></i></button>
+        </div>
+      </form>
+
+      <!-- Paper List -->
+      <div class="row gy-4">
+        {% for paper in page_obj %}
+        <div class="col-12">
+          <div class="card shadow rounded-4 overflow-hidden h-100">
+            <div class="row g-0 p-4">
+
+              <!-- Text Section -->
+              <div class="col-md-6 p-4">
+                <h4 class="fw-bold">{{ paper.title }}</h4>
+                <p class="mb-1"><strong>Authors:</strong> {{ paper.authors }}</p>
+                <p class="mb-1"><strong>Journal:</strong> {{ paper.journal }}</p>
+                <p class="small text-muted mb-2"><strong>Publication Date:</strong> {{ paper.publication_date }}</p>
+                <p class="text-truncate-3">{{ paper.abstract }}</p>
+                <a href="{{ paper.link }}" target="_blank" class="btn btn-sm btn-outline-primary mt-2">
+                  Read Full Paper →
+                </a>
+              </div>
+
+              <!-- Image Section -->
+              <div class="col-md-6 text-end mt-4">
+                {% if paper.image %}
+                <img src="{{ paper.image.url }}" alt="Research Paper Image"
+                     class="img-fluid rounded-end shadow" style="height: auto; object-fit: cover; width: 100%;">
+                {% else %}
+                <img src="{% static 'img/research.png' %}" alt="No Image"
+                     class="img-fluid rounded-end shadow" style="height: auto; object-fit: cover; width: 100%;">
+                {% endif %}
+              </div>
+
+            </div>
+          </div>
+        </div>
+        {% empty %}
+        <p class="text-center text-danger">No research papers found.</p>
+        {% endfor %}
+      </div>
+
+      <!-- Pagination -->
+      {% if page_obj.has_other_pages %}
+      <nav class="mt-4 d-flex justify-content-center">
+        <ul class="pagination">
+          {% if page_obj.has_previous %}
+          <li class="page-item">
+            <a class="page-link" href="?q={{ search_query }}&page={{ page_obj.previous_page_number }}">« Prev</a>
+          </li>
+          {% endif %}
+
+          {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}
+              <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+            {% else %}
+              <li class="page-item"><a class="page-link" href="?q={{ search_query }}&page={{ num }}">{{ num }}</a></li>
+            {% endif %}
+          {% endfor %}
+
+          {% if page_obj.has_next %}
+          <li class="page-item">
+            <a class="page-link" href="?q={{ search_query }}&page={{ page_obj.next_page_number }}">Next »</a>
+          </li>
+          {% endif %}
+        </ul>
+      </nav>
+      {% endif %}
+
+    </div>
+  </section>
+
+  {% include 'partials/footer.html' %}
+</main>
+{% endblock %}
