@@ -9,8 +9,10 @@
         <nav>
           <ul class="mobile-menu">
             <li class="menu-item-has-children "><a href="{% url 'course_list' %}">Short Courses</a></li><hr>
-            <li class="menu-item-has-children "><a href="{% url 'training_list' %}">Training</a></li><hr>
+            <li class="menu-item-has-children "><a href="{% url 'training_list' %}">Offline Training</a></li><hr>
+            <li class="menu-item-has-children "><a href="{% url 'online_training_list' %}">Online Training</a></li><hr>
             <li class="menu-item-has-children "><a href="{% url 'intern_list' %}">Internship</a></li><hr>
+            <li class="menu-item-has-children "><a href="{% url 'research_list' %}">Research</a></li><hr>
             <li class="menu-item-has-children "><a href="{% url 'blog_list' %}">Blogs</a></li><hr>
             <li class="menu-item-has-children "><a href="{% url 'vlog_list' %}">Vlogs</a></li><hr>
             {% if user.is_authenticated %}
