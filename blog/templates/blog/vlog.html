@@ -45,6 +45,7 @@
         </div>
         </form>
 
+        {% comment %}
         {% if vlogs %}
             <div class="row g-4">
                 {% for vlog in vlogs %}
@@ -106,6 +107,107 @@
 
         {% else %}
             <p class="text-center">No vlogs available.</p>
+        {% endif %}
+        {% endcomment %}
+
+
+        {% if vlogs %}
+        <div class="row g-4">
+
+            {% for vlog in vlogs %}
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden hover-shadow transition-all">
+
+                    <!-- 🎬 Video -->
+                    <div class="ratio ratio-16x9">
+                        <iframe
+                            src="{{ vlog.youtube_url }}?rel=0&modestbranding=1"
+                            title="{{ vlog.title }}"
+                            loading="lazy"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+                    <!-- 📌 Body -->
+                    <div class="card-body p-4 d-flex flex-column">
+                      <!-- Title -->
+                      <h5 class="card-title mb-2 fw-semibold text-dark">{{ vlog.title }}</h5>
+
+                      <!-- Date + Author -->
+                      {% if vlog.date or vlog.author %}
+                      <p class="text-muted small mb-3">
+                          {% if vlog.date %} <i class="fa-regular fa-calendar"></i> {{ vlog.date }}{% endif %}
+                          {% if vlog.author %} &nbsp;•&nbsp; <i class="fa-regular fa-user"></i> {{ vlog.author }}{% endif %}
+                      </p>
+                      {% endif %}
+
+                      <!-- Description -->
+                      {% if vlog.description %}
+                      <p class="flex-grow-1 text-secondary">{{ vlog.description|truncatechars:120 }}</p>
+                      {% endif %}
+
+                      <!-- ❤️ Likes -->
+                      <div class="text-end">
+                        <button
+                            class="like-btn text-danger align-self-start"
+                            data-id="{{ vlog.id }}"
+                            style="background: none; border: none; cursor: pointer;">
+                            
+                            {% if vlog.id in request.session.liked_vlogs %}
+                                <i class="fa-solid fa-heart"></i>
+                            {% else %}
+                                <i class="fa-regular fa-heart"></i>
+                            {% endif %}
+                            <span class="ms-2 like-count">{{ vlog.likes }}</span>
+                        </button>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+
+        <!-- 🔢 Pagination -->
+        {% if page_obj.has_other_pages %}
+        <nav class="mt-5">
+            <ul class="pagination justify-content-center">
+
+                {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?q={{ search_query }}&page={{ page_obj.previous_page_number }}">
+                        &laquo; Prev
+                    </a>
+                </li>
+                {% endif %}
+
+                {% for num in page_obj.paginator.page_range %}
+                {% if page_obj.number == num %}
+                    <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+                {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                    <li class="page-item">
+                        <a class="page-link" href="?q={{ search_query }}&page={{ num }}">{{ num }}</a>
+                    </li>
+                {% endif %}
+                {% endfor %}
+
+                {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?q={{ search_query }}&page={{ page_obj.next_page_number }}">
+                        Next &raquo;
+                    </a>
+                </li>
+                {% endif %}
+
+            </ul>
+        </nav>
+        {% endif %}
+
+        {% else %}
+        <p class="text-center">No vlogs available.</p>
         {% endif %}
     </div>
   </section>

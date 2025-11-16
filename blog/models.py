@@ -43,6 +43,9 @@ class BlogComment(models.Model):
 
 class Vlog(models.Model):
     title = models.CharField(max_length=255)
+    description = models.TextField(blank=True, null=True)
+    date = models.DateField(blank=True, null=True)
+    author = models.CharField(blank=True, null=True)
     youtube_url = models.URLField(help_text="Embed YouTube video link (e.g., https://www.youtube.com/embed/abcdef)")
     likes = models.PositiveIntegerField(default=0)
 
