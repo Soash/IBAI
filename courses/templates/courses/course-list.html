@@ -154,22 +154,18 @@
                                                 {% endif %}
                                             </div>
                                             <div class="gridarea__bottom">
-                                                {% with first_instructor=course.instructor.all|first %}
-                                                {% if first_instructor %}
-                                                
+                                                <a href="#">
                                                     <div class="gridarea__small__img">
-                                                        {% if first_instructor.profile_picture %}
-                                                            <img loading="lazy" src="{{ first_instructor.profile_picture.url }}" alt="instructor" width="50" height="50" style="max-width: fit-content;">
+                                                        {% if course.instructor.profile_picture %}
+                                                            <img loading="lazy" src="{{ course.instructor.profile_picture.url }}" alt="instructor" width="50" height="50" style="max-width: fit-content;">
                                                         {% else %}
                                                             <img loading="lazy" src="{% static 'img/profile.png' %}" alt="instructor">
                                                         {% endif %}
                                                         <div class="gridarea__small__content">
-                                                            <h6>{{ first_instructor.first_name }}</h6>
+                                                            <h6>{{ course.instructor.first_name }}</h6>
                                                         </div>
                                                     </div>
-                                                
-                                                {% endif %}
-                                                {% endwith %}
+                                                </a>
                                             </div>
 
                                         </div>
@@ -219,22 +215,18 @@
                                     </div>
                                     <div class="gridarea__bottom">
                                         <div class="gridarea__bottom__left">
-                                            {% with first_instructor=course.instructor.all|first %}
-                                            {% if first_instructor %}
                                             <a href="#">
                                                 <div class="gridarea__small__img">
-                                                        {% if first_instructor.profile_picture %}
-                                                            <img loading="lazy" src="{{ first_instructor.profile_picture.url }}" alt="instructor" width="50" height="50" style="max-width: fit-content;">
+                                                        {% if course.instructor.profile_picture %}
+                                                            <img loading="lazy" src="{{ course.instructor.profile_picture.url }}" alt="instructor" width="50" height="50" style="max-width: fit-content;">
                                                         {% else %}
                                                             <img loading="lazy" src="{% static 'img/profile.png' %}" alt="instructor">
                                                         {% endif %}
                                                     <div class="gridarea__small__content">
-                                                        <h6>{{ first_instructor }}</h6>
+                                                        <h6>{{ course.instructor.first_name }}</h6>
                                                     </div>
                                                 </div>
                                             </a>
-                                            {% endif %}
-                                            {% endwith %}
                                         </div>
                                         <div class="gridarea__details">
                                             <a href="{% url 'course_detail' course.slug %}">Details

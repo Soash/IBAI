@@ -29,7 +29,7 @@ class Training(models.Model):
     platform = models.CharField(max_length=15, choices=PLATFORM_CHOICES, blank=True, null=True)
     
     instructor = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='trainings', blank=True, null=True)
-    instructors = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='training_instructors', blank=True, null=True)
+    instructors = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='training_instructors', blank=True)
     
     order = models.PositiveIntegerField(default=0)
     is_active = models.BooleanField(default=True)

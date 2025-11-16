@@ -37,7 +37,7 @@ class CourseAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     list_filter = ('category', 'published')
     search_fields = ('title', 'description',)
-    filter_horizontal = ('instructor',)
+    filter_horizontal = ('instructors',)
     inlines = [LessonInline]
 
 @admin.register(Lesson)
