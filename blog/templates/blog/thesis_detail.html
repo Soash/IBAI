@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<main class="main_wrapper overflow-hidden">
+
+  {% include 'partials/top-banner.html' %}
+  {% include 'partials/navbar.html' %}
+  {% include 'partials/mobile-menu.html' %}
+
+  
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+
+            <!-- Main Content -->
+            <div class="col-xl-8 col-lg-8" style="max-width: 850px;">
+                {% if post.image %}
+                <div class="mb-4 text-center">
+                    <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-fluid rounded-4 shadow-sm">
+                </div>
+                {% endif %}
+
+                <article class="p-4 p-md-5 rounded-4 shadow-sm">
+                <div class="content lead" style="line-height: 1.8;">
+                    {{ post.content|safe }}
+                </div>
+                </article>
+
+                <div class="d-flex justify-content-between align-items-center mt-5">
+                <a href="{% url 'blog_list' %}" class="btn btn-outline-secondary rounded-pill px-4">
+                    ← Back to Blog
+                </a>
+                <a href="#top" class="btn btn-primary rounded-pill px-4">
+                    ↑ Top
+                </a>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-xl-4 col-lg-4">
+                <div class="course__details__sidebar sticky-top" style="top: 90px;">
+                <div class="event__sidebar__wraper">
+
+                    <div class="course__summery__button">
+                    <a href="#" class="default__button">Register Now</a>
+                    </div>
+
+                    <div class="course__summery__lists">
+                    <ul>
+                        <li><div class="course__summery__item"><span class="sb_label">Duration</span><span class="sb_content">4-6 Months</span></div></li>
+                        <li><div class="course__summery__item"><span class="sb_label">Support</span><span class="sb_content">Online & Offline</span></div></li>
+                        <li><div class="course__summery__item"><span class="sb_label">Session</span><span class="sb_content">One-to-One</span></div></li>
+                        <li><div class="course__summery__item"><span class="sb_label">Type</span><span class="sb_content">Thesis / Project</span></div></li>
+                        <li><div class="course__summery__item"><span class="sb_label">Mentor</span><span class="sb_content">Yes</span></div></li>
+                        <li><div class="course__summery__item"><span class="sb_label">Response</span><span class="sb_content">4 Hours / 7 Days</span></div></li>
+                        <li><div class="course__summery__item"><span class="sb_label">Software Access</span><span class="sb_content">Yes</span></div></li>
+                        <li><div class="course__summery__item"><span class="sb_label">Technical Support</span><span class="sb_content">Yes</span></div></li>
+                        <li><div class="course__summery__item"><span class="sb_label">Language</span><span class="sb_content">Bangla</span></div></li>
+                        <li><div class="course__summery__item"><span class="sb_label">Certificate</span><span class="sb_content">Yes</span></div></li>
+                    </ul>
+                    </div>
+
+                    <div class="course__summery__button mt-3">
+                    <p>More inquiry about course.</p>
+                    <a class="default__button default__button--3" href="tel:+8801517831136">
+                        <i class="icofont-phone"></i> +880 1517 831 136
+                    </a>
+                    </div>
+
+                </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </section>
+
+
+  {% include 'partials/footer.html' %}
+</main>
+{% endblock %}

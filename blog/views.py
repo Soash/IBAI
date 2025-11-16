@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render, get_object_or_404
-from .models import BlogComment, BlogPost, ResearchPaper, Vlog
+from .models import BlogComment, BlogPost, ResearchPaper, Thesis, Vlog
 from django.core.paginator import Paginator
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -117,3 +117,13 @@ def research_papers(request):
         "search_query": search_query,
     })
     
+def thesis_list(request):
+    theses = Thesis.objects.filter(published=True).order_by('-id')
+    return render(request, 'blog/thesis_list.html', {'theses': theses})
+
+def thesis_details(request, slug):
+    post = get_object_or_404(Thesis, slug=slug, published=True)
+    return render(request, 'blog/thesis_detail.html', {'post': post,})
+
+
+
