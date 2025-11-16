@@ -49,6 +49,7 @@
           <tr>
             <th>Training</th>
             <th>Medium</th>
+            <th>Branch</th>
             <th>Starting From</th>
             <th>Registration</th>
           </tr>
@@ -58,6 +59,7 @@
           <tr>
             <td>{{ intern.name }}</td>
             <td>{{ intern.get_medium_display }}</td>
+            <td>{{ intern.get_branch_display }}</td>
             <td>{{ intern.date|date:"M d, Y" }}</td>
             <td>
               {% if intern.registration_link %}
@@ -77,37 +79,75 @@
     </div>
 
     <!-- Detailed List -->
-  {% for intern in interns %}
-    <div class="row mb-5 border-bottom p-4 align-items-center shadow-lg">
-      <div class="col-md-6">
-        <h4>{{ intern.name }}</h4>
-        <p class="mt-3 text-justify" style="text-align: justify;">{{ intern.summary }}</p>
-        
-        <div class="d-flex justify-content-between align-items-center mt-3">
-          <a href="{% url 'intern_detail' intern.slug %}" class="btn btn-outline-primary">
-            Details
-          </a>
-          {% if intern.registration_link %}
-            <a href="{{ intern.registration_link }}" class="btn btn-success" target="_blank">
-              Register
-            </a>
-          {% else %}
-            <button class="btn btn-secondary" disabled>TBA</button>
-          {% endif %}
-        </div>
-      </div>
 
-      <div class="col-md-6 mt-4 mt-md-0">
-        <div class="ratio ratio-16x9">
-          <iframe width="560" height="315" src="{{ intern.video }}" 
-                  title="YouTube video player" frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-          </iframe>
+    <div class="zoom__meetings sp_top_100 sp_bottom_70">
+      <div class="container full__width__padding">
+        <div class="row">
+          {% for intern in interns %}
+          <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12" data-aos="fade-up">    
+            <div class="gridarea__wraper gridarea__wraper__2 zoom__meeting__grid ">
+                {% comment %} <div class="ratio ratio-16x9 overflow-hidden rounded mb-3"> {% endcomment %}
+                <div class="ratio mb-3" style="--bs-aspect-ratio: calc(16 / 11.5 * 100%);">
+                  <a href="#">
+                      {% if intern.thumbnail %}
+                          <img loading="lazy" src="{{ intern.thumbnail.url }}" alt="grid"
+                              class="img-fluid h-100 w-100" style="object-fit: cover;">
+                      {% else %}
+                          <img loading="lazy" src="{% static 'img/zoom/1.jpg' %}" alt="grid"
+                              class="img-fluid h-100 w-100" style="object-fit: cover;">
+                      {% endif %}
+                  </a>
+                </div>
+                <div class="gridarea__content ">
+                    <div class="gridarea__list">
+                        <ul>
+                            <li style="display: block ruby;">
+                                <i class="icofont-calendar"></i> {{ intern.date }}
+                            </li>
+                            {% comment %} <li>
+                                <i class="icofont-clock-time"></i> 1 hr 30 min
+                            </li> {% endcomment %}
+                        </ul>
+                    </div>
+                    <div class="gridarea__heading">
+                        <h3><a href="{% url 'intern_detail' intern.slug %}"> {{ intern.name }} </a></h3>
+                    </div>
+
+                    <div class="zoom__meeting__time__id">
+                        <div class="zoom__meeting__time">
+                            <p>
+                                Medium :
+                                <span>{{ intern.get_medium_display }}</span>
+                            </p>
+                        </div>
+                        <div class="zoom__meeting__id">
+                            {% if intern.platform %}
+                                <p>Platform :<span>{{ intern.get_platform_display }}</span></p>
+                            {% else %}
+                                <p>Branch :<span>{{ intern.get_branch_display }}</span></p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="gridarea__bottom">
+                      <div class="gridarea__small__img">
+                        {% if intern.instructor.profile_picture %}
+                          <img src="{{ intern.instructor.profile_picture.url }}" width="50" height="50">
+                        {% else %}
+                          <img loading="lazy" src="{% static 'img/grid/grid_small_1.jpg' %}" alt="grid">
+                        {% endif %}
+                          <div class="gridarea__small__content">
+                              Instructor: <h5>{{ intern.instructor.first_name }}</h5>
+                          </div>
+                      </div>
+                    </div>
+
+                </div>
+            </div>
+          </div>
+          {% endfor %}
         </div>
       </div>
     </div>
-  {% endfor %}
 
   </div>
 

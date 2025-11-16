@@ -8,3 +8,4 @@ class InternAdmin(admin.ModelAdmin):
     search_fields = ('name',)
     prepopulated_fields = {'slug': ('name',)}
     list_filter = ('medium', 'is_active', 'date')
+    filter_horizontal = ('instructors',)

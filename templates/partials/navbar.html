@@ -65,29 +65,20 @@
                 {% if user.is_authenticated %}
                 <li><a href="{% url 'student_dashboard' %}">Dashboard</a></li>
                 {% endif %}
+
+
+                {% if not user.is_authenticated %}
+                <li><a href="{% url 'user_login' %}"><i class="icofont-user-alt-5"></i></a></li>
+                {% endif %}
+                {% if user.is_authenticated %}
+                <li>
+                  <a href="{% url 'user_logout' %}"><i class="icofont-logout border border-2 p-2 rounded"></i></a>
+                </li>
+                {% endif %}
               </ul>
             </nav>
           </div>
         </div>
-
-        <div class="col-xl-3 col-lg-3 col-md-6">
-          <div class="headerarea__right">
-            {% if not user.is_authenticated %}
-            <div class="headerarea__login">
-              <a href="{% url 'user_login' %}"><i class="icofont-user-alt-5"></i></a>
-            </div>
-            {% endif %}
-            {% if user.is_authenticated %}
-            {% comment %} <div class="headerarea__login">
-              <div>Welcome, {{ user.username }}!</div>
-            </div> {% endcomment %}
-            <div class="headerarea__login">
-                <a href="{% url 'user_logout' %}"><i class="icofont-logout"></i></a>
-            </div>
-            {% endif %}
-          </div>
-        </div>
-
       </div>
 
     </div>
