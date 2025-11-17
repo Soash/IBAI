@@ -76,5 +76,6 @@ class TrainingComment(models.Model):
         ordering = ['created_at']
 
     def __str__(self):
-        return f"Comment by {self.user.username} on {self.course.title}"
+        return f"Comment by {self.user.username} on {self.training.name}"
+
 

@@ -42,10 +42,10 @@
             <div class="blog__details__content__wraper">
                 <div class="course__list__wraper" data-aos="fade-up">
                   <!-- Details Section -->
-                  <h2 class="mb-3">{{ training.name }}</h2>
+                  {% comment %} <h2 class="mb-3">{{ intern.name }}</h2> {% endcomment %}
 
                   <div class="my-4" style="text-align: justify;">
-                    {{ training.summary }}
+                    {% comment %} {{ intern.summary }} {% endcomment %}
                   </div>
                   
                   <div class="course__details__tab__wrapper" data-aos="fade-up">
@@ -189,11 +189,11 @@
                             </div>
                             <div class="author__text">
                                 <p>{{ comment.content }}</p>
-                                {% if request.user == comment.user %}
-                                    <form method="post" action="{% url 'delete_training_comment' comment.id %}" class="mt-2">
-                                        {% csrf_token %}
-                                        <button class="btn btn-sm btn-outline-danger">Delete</button>
-                                    </form>
+                                {% if request.user == comment.user and comment.id %}
+                                <form method="post" action="{% url 'delete_intern_comment' comment.id %}" class="mt-2">
+                                    {% csrf_token %}
+                                    <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                </form>
                                 {% endif %}
                             </div>
                         </div>
@@ -212,23 +212,19 @@
                 </div>
 
                 {% if user.is_authenticated %}
-                <form method="post" action="#">{% csrf_token %}
+                <form method="post">{% csrf_token %}
                     <div class="blog__details__form">
                         <div class="blog__details__input__heading" data-aos="fade-up">
                             <h5>Write your comment</h5>
                         </div>
-                        <div class="row">
-                            <div class="col-xl-12" data-aos="fade-up">
-                                <div class="blog__details__input">
-                                    <textarea cols="30" rows="10" name="content" placeholder="Enter your message*"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="blog__details__button" data-aos="fade-up">
-                        <button class="default__button" type="submit">Post a Comment</button>
+                        <textarea name="content" class="form-control mb-2" rows="3" placeholder="Write your thoughts..." required></textarea>
+                        <button type="submit" class="btn btn-primary mt-3">Post Comment</button>
                     </div>
                 </form>
+                {% else %}
+                <div class="alert alert-info mt-4">
+                    <a href="{% url 'user_login' %}">Login</a> to add a comment.
+                </div>
                 {% endif %}
                 <!-- comments section -->
             </div>
