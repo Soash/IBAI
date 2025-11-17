@@ -29,6 +29,8 @@ class Intern(models.Model):
     instructor = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='intern_instructor', blank=True, null=True)
     instructors = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='intern_instructors', blank=True)
     
+    syllabus = models.URLField(help_text="Link to the syllabus document or page", blank=True, null=True)
+    
     
 
     class Meta:
