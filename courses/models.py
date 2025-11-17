@@ -25,6 +25,7 @@ class Category(models.Model):
 class Course(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(unique=True, blank=True)
+    order = models.PositiveIntegerField(default=0)
     
     instructor = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='instructor_courses', blank=True, null=True)
     instructors = models.ManyToManyField(settings.AUTH_USER_MODEL,related_name='collaborated_courses', blank=True)

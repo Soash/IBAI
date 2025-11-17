@@ -27,6 +27,8 @@ def course_list(request):
 
     if category_slug:
         courses = courses.filter(category__slug=category_slug)
+    
+    courses = courses.order_by('order')
 
     categories = Category.objects.all()
     total_courses = courses.count()
