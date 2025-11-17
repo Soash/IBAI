@@ -5,21 +5,38 @@ import urllib.parse
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import (
-    Course, ExamAttempt, Lesson, Video, VideoProgress,
+    Category, Course, ExamAttempt, Lesson, Video, VideoProgress,
     Exam, ExamProgress,
     CourseProgress, Comment
 )
 import urllib.parse
 from django.utils import timezone
+from django.db.models import Q
+
+
 
 
 def course_list(request):
+    query = request.GET.get("q")
+    category_slug = request.GET.get("category")
+
     courses = Course.objects.filter(published=True)
 
+    if query:
+        courses = courses.filter(title__icontains=query)
+
+    if category_slug:
+        courses = courses.filter(category__slug=category_slug)
+
+    categories = Category.objects.all()
     total_courses = courses.count()
+
     context = {
         'courses': courses,
         'total_courses': total_courses,
+        'categories': categories,
+        'query': query or "",
+        'selected_category': category_slug or "",
     }
     return render(request, 'courses/course-list.html', context)
 
