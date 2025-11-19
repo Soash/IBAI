@@ -341,7 +341,8 @@
                                     {% if is_enrolled %}
                                         <button class="default__button default__button--2" disabled>Enrolled</button>
                                     {% else %}
-                                        <a href="{% url 'initiate_payment' course.slug %}" class="default__button">Buy Now</a>
+                                        {% comment %} <a href="{% url 'initiate_payment' course.slug %}" class="default__button">Buy Now</a> {% endcomment %}
+                                        <a href="#" class="default__button">Coming Soon</a>
                                     {% endif %}
                                 {% else %}
                                     <a href="{% url 'user_login' %}?next={{ request.path }}" class="default__button">Login to Enroll</a>
