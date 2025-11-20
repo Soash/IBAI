@@ -89,13 +89,28 @@
 
 <script>
   var swiper = new Swiper(".featured__course", {
+    loop: true,
     autoplay: {
-      delay: 2500,             // time in ms between slides
-      disableOnInteraction: false  // continue autoplay even after user swipes
+      delay: 1000,   // scroll every 2.5 seconds
+      disableOnInteraction: false, // continue autoplay even after user swipes
     },
-    loop: true   // optional, recommended for continuous autoplay
+    slidesPerView: 1,
+    spaceBetween: 20,
+
+    breakpoints: {
+      576: { slidesPerView: 1 },
+      768: { slidesPerView: 2 },
+      992: { slidesPerView: 3 },
+      1200: { slidesPerView: 4 }
+    },
+
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    }
   });
 </script>
+
 
 
 </body>
