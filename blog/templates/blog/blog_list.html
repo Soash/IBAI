@@ -5,11 +5,10 @@
 
 
 {% block extra_css %}
-<style>
-.post-content p {
-  color: #6c757d; /* pure black */
-}
-</style>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
 {% endblock extra_css %}
   
 
@@ -77,7 +76,7 @@
       </div>
 
       {% if posts %}
-        <div class="row g-4">
+        {% comment %} <div class="row g-4">
           {% for post in posts %}
             <div class="col-md-6 col-lg-4">
               <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden hover-shadow transition-all">
@@ -99,14 +98,9 @@
                     By <strong>{{ post.author }}</strong> · {{ post.created_at|date:"F j, Y" }} · <i class="icofont-read-book"></i> {{ post.view_count }}
                   </p>
 
-                  {% comment %} <p class="flex-grow-1 text-muted">{{ post.content|safe|truncatewords:25 }}</p> {% endcomment %}
                   <div class="flex-grow-1 text-muted post-content">
                     {{ post.content|truncatewords_html:25|safe }}
                   </div>
-
-
-                  
-
 
                   <a href="{% url 'blog_detail' post.slug %}" class="btn btn-outline-primary w-100 mt-3">
                     Read More →
@@ -115,7 +109,62 @@
               </div>
             </div>
           {% endfor %}
+        </div> {% endcomment %}
+
+        <div class="row g-4">
+          {% for post in posts %}
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden hover-shadow transition-all">
+
+                {% if post.image %}
+                  <!-- Image wrapper -->
+                  <div class="position-relative" style="width: 100%; height: 0; padding-bottom: 56.25%;">
+                    <img src="{{ post.image.url }}" alt="{{ post.title }}" 
+                        class="img-fluid position-absolute top-0 start-0 w-100 h-100" 
+                        style="object-fit: cover;">
+
+                    <!-- View Count Badge -->
+                    <div class="position-absolute top-0 end-0 m-2 p-2 bg-light rounded-circle shadow-sm d-flex align-items-center justify-content-center">
+                      <i class="icofont-read-book"></i>
+                      <span class="ms-1">{{ post.view_count }}</span>
+                    </div>
+                  </div>
+                {% endif %}
+
+                <div class="card-body p-4 d-flex flex-column">
+                  <!-- Title -->
+                  <h5 class="card-title mb-2">
+                    <a href="{% url 'blog_detail' post.slug %}" class="text-decoration-none text-dark fw-semibold">
+                      {{ post.title }}
+                    </a>
+                  </h5>
+
+                  <!-- Author & Date -->
+                  {% if post.created_at or post.author %}
+                    <p class="text-muted small mb-3">
+                      {% if post.created_at %} <i class="fa-regular fa-calendar"></i> {{ post.created_at|date:"F j, Y" }}{% endif %}
+                      {% if post.author %} &nbsp;•&nbsp; <i class="fa-regular fa-user"></i> {{ post.author.first_name }}{% endif %}
+                    </p>
+                  {% endif %}
+
+                  <!-- Post Content -->
+                  <div class="flex-grow-1 text-muted post-content">
+                    {{ post.content|truncatewords_html:25|safe }}
+                  </div>
+
+                  <!-- Read More Button -->
+                  <a href="{% url 'blog_detail' post.slug %}" class="btn btn-outline-primary w-100 mt-3">
+                    Read More →
+                  </a>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
         </div>
+
+
+
+
         
         <!-- Pagination -->
         <div class="d-flex justify-content-center mt-5">
