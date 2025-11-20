@@ -86,6 +86,17 @@
   document.body.classList.remove("dark-mode");
 </script>
 
+
+<script>
+  var swiper = new Swiper(".featured__course", {
+    loop: true,
+    autoplay: {
+      delay: 1000,   // scroll every 2.5 seconds
+      disableOnInteraction: false, // continue autoplay even after user swipes
+    },
+  });
+</script>
+
 </body>
 </html>
 
