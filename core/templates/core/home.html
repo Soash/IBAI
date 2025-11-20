@@ -118,79 +118,10 @@
         <div class="container-fluid full__width__padding">
 
             <div class="section__title">
-
                 <div class="section__title__heading">
                     <h2>Featured Course</h2>
                 </div>
             </div>
-
-            <div class="row row__custom__class">
-                <div class="swiper featured__course">
-                    <div class="swiper-wrapper">
-                      {% for course in courses %}
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 grid-item column__custom__class swiper-slide">
-                            <div class="gridarea__wraper gridarea__wraper__2">
-                                <div class="gridarea__img">
-                                    <a href="{% url 'course_detail' course.slug %}">
-                                      {% if course.thumbnail %}
-                                        <img loading="lazy" src="{{ course.thumbnail.url }}" alt="{{ course.title }}">
-                                      {% endif %}
-
-                                    </a>
-                                    <div class="gridarea__small__button">
-                                        <div class="grid__badge">{{ course.category.name }}</div>
-                                    </div>
-                                    {% comment %}
-                                    <div class="gridarea__small__icon">
-                                        <a href="#"><i class="icofont-heart-alt"></i></a>
-                                    </div>
-                                    {% endcomment %}
-                                </div>
-                                <div class="gridarea__content">
-                                    <div class="gridarea__list">
-                                        <ul>
-                                            <li><i class="icofont-book-alt"></i> {{ course.total_videos }} Lectures</li>
-                                            <li><i class="icofont-clock-time"></i> {{ course.total_duration }} min</li>
-                                        </ul>
-                                    </div>
-                                    <div class="gridarea__heading">
-                                        <h3><a href="{% url 'course_detail' course.slug %}">{{ course.title }}</a></h3>
-                                    </div>
-                                    <div class="gridarea__price">
-                                        ৳{{ course.price }} {% if course.original_price %}<del>/ ৳{{ course.original_price }}</del>{% endif %}
-                                        {% if course.price > 0 %}
-                                            <span class="text-danger small"></span>
-                                        {% else %}
-                                            <span class="text-success small">Free</span>
-                                        {% endif %}
-                                    </div>
-                                    <div class="gridarea__bottom">
-                                        <a href="#">
-                                            <div class="gridarea__small__img">
-                                                {% if course.instructor.profile_picture %}
-                                                    <img loading="lazy" src="{{ course.instructor.profile_picture.url }}" alt="instructor">
-                                                {% else %}
-                                                    <img loading="lazy" src="{% static 'img/profile.png' %}" alt="instructor">
-                                                {% endif %}
-                                                <div class="gridarea__small__content">
-                                                    <h6>{{ course.instructor }}</h6>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                      {% endfor %}
-                    </div>
-
-                    <div class="slider__controls__wrap slider__controls__arrows">
-                      <div class="swiper-button-next arrow-btn"></div>
-                      <div class="swiper-button-prev arrow-btn"></div>
-                    </div>
-                </div>
-            </div>
-
 
             <div class="row row__custom__class">
               <div class="swiper featured__course">
