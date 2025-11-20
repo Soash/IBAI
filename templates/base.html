@@ -39,15 +39,6 @@
     {% endblock extra_css %}
   {% endblock css %}
 
-  <script>
-    if (localStorage.getItem("theme-color") === "light" || (!("theme-color" in localStorage) && window.matchMedia("(prefers-color-scheme: light)").matches)) {
-      document.documentElement.classList.add("is_dark");
-    }
-    if (localStorage.getItem("theme-color") === "light") {
-      document.documentElement.classList.remove("is_dark");
-    }
-  </script>
-
   <script id="pixel-chaty" async="true" src="https://cdn.chaty.app/pixel.js?id=Jlv6tCZr"></script>
 </head>
 
@@ -84,12 +75,15 @@
 {% endblock javascript %}
 
 <script>
-  if (localStorage.getItem("theme-color") === "light" || (!("theme-color" in localStorage) && window.matchMedia("(prefers-color-scheme: light)").matches)) {
-    document.getElementById("light--to-dark-button")?.classList.remove("dark--mode");
-  }
-  if (localStorage.getItem("theme-color") === "light") {
-    document.getElementById("light--to-dark-button")?.classList.remove("dark--mode");
-  }
+  // Always force light mode
+  localStorage.setItem("theme-color", "light");
+
+  // Make sure the toggle button shows light state
+  document.getElementById("light--to-dark-button")?.classList.remove("dark--mode");
+
+  // Also force the <html> or <body> tag to light mode if you are using a class
+  document.documentElement.classList.remove("dark-mode");
+  document.body.classList.remove("dark-mode");
 </script>
 
 </body>
