@@ -152,6 +152,23 @@
           <div class="course__details__sidebar sticky-top" style="top: 90px;">
             <div class="event__sidebar__wraper">
 
+              <div class="event__price__wraper">
+                <div class="event__price">
+                    ৳{{ training.current_price }}
+                </div>
+                <div class="event__Price__button">
+                    <a href="#" style="width: 150px;">Student</a>
+                </div>
+              </div>
+              <div class="event__price__wraper">
+                <div class="event__price">
+                    ৳{{ training.professional_price }}
+                </div>
+                <div class="event__Price__button">
+                    <a href="#" style="width: 150px;">Professional</a>
+                </div>
+              </div>
+
               <div class="course__summery__button mb-3">
                 {% if training.registration_link %}
                 <a href="{{ training.registration_link }}" class="default__button" target="_blank">

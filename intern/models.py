@@ -31,6 +31,8 @@ class Intern(models.Model):
     
     syllabus = models.URLField(help_text="Link to the syllabus document or page", blank=True, null=True)
     
+    current_price = models.DecimalField(max_digits=10, decimal_places=0, blank=True, null=True) 
+    
     
 
     class Meta:

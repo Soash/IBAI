@@ -37,6 +37,8 @@ class Training(models.Model):
     current_price = models.DecimalField(max_digits=8, decimal_places=0, blank=True, null=True)
     previous_price = models.DecimalField(max_digits=8, decimal_places=0, blank=True, null=True)
     discount_percent = models.PositiveIntegerField(blank=True, null=True)
+    
+    professional_price = models.DecimalField(max_digits=8, decimal_places=0, blank=True, null=True)
 
     class Meta:
         ordering = ['order', '-date']
