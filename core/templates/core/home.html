@@ -141,9 +141,11 @@
                                     <div class="gridarea__small__button">
                                         <div class="grid__badge">{{ course.category.name }}</div>
                                     </div>
+                                    {% comment %}
                                     <div class="gridarea__small__icon">
                                         <a href="#"><i class="icofont-heart-alt"></i></a>
                                     </div>
+                                    {% endcomment %}
                                 </div>
                                 <div class="gridarea__content">
                                     <div class="gridarea__list">
@@ -158,7 +160,7 @@
                                     <div class="gridarea__price">
                                         ৳{{ course.price }} {% if course.original_price %}<del>/ ৳{{ course.original_price }}</del>{% endif %}
                                         {% if course.price > 0 %}
-                                            <span class="text-danger small">Paid</span>
+                                            <span class="text-danger small"></span>
                                         {% else %}
                                             <span class="text-success small">Free</span>
                                         {% endif %}
