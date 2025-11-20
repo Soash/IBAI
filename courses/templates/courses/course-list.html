@@ -157,9 +157,9 @@
                                             <div class="gridarea__small__button">
                                                 <div class="grid__badge">{{ course.category.name }}</div>
                                             </div>
-                                            <div class="gridarea__small__icon">
+                                            {% comment %} <div class="gridarea__small__icon">
                                                 <a href="#"><i class="icofont-heart-alt"></i></a>
-                                            </div>
+                                            </div> {% endcomment %}
                                         </div>
                                         <div class="gridarea__content">
                                             <div class="gridarea__list">
@@ -201,70 +201,6 @@
                                 <p>No courses available yet.</p>
                                 {% endfor %}
                             </div>
-                        </div>
-
-                        <!-- List View Tab -->
-                        <div class="tab-pane fade" id="projects__two" role="tabpanel" aria-labelledby="projects__two-tab">
-                            {% for course in courses %}
-                            <div class="gridarea__wraper gridarea__wraper__2 gridarea__course__list" data-aos="fade-up">
-                                <div class="gridarea__img">
-                                    <a href="{% url 'course_detail' course.slug %}">
-                                        {% if course.thumbnail %}
-                                            <img loading="lazy" src="{{ course.thumbnail.url }}" alt="{{ course.title }}">
-                                        {% endif %}
-                                        
-                                    </a>
-                                    <div class="gridarea__small__button">
-                                        <div class="grid__badge">{{ course.category.name }}</div>
-                                    </div>
-                                    <div class="gridarea__small__icon">
-                                        <a href="#"><i class="icofont-heart-alt"></i></a>
-                                    </div>
-                                </div>
-                                <div class="gridarea__content">
-                                    <div class="gridarea__list">
-                                        <ul>
-                                            <li><i class="icofont-book-alt"></i> {{ course.total_videos }} Lectures</li>
-                                            <li><i class="icofont-clock-time"></i> {{ course.total_duration }} min</li>
-                                        </ul>
-                                    </div>
-                                    <div class="gridarea__heading mb-4">
-                                        <h3><a href="{% url 'course_detail' course.slug %}">{{ course.title }}</a></h3>
-                                    </div>
-                                    <div class="gridarea__price mt-2">
-                                        ৳{{ course.price }} {% if course.original_price %}<del>/ ৳{{ course.original_price }}</del>{% endif %}
-                                        {% if course.price > 0 %}
-                                            <span class="text-danger small"></span>
-                                        {% else %}
-                                            <span class="text-success small">Free</span>
-                                        {% endif %}
-                                    </div>
-                                    <div class="gridarea__bottom">
-                                        <div class="gridarea__bottom__left">
-                                            <a href="#">
-                                                <div class="gridarea__small__img">
-                                                        {% if course.instructor.profile_picture %}
-                                                            <img loading="lazy" src="{{ course.instructor.profile_picture.url }}" alt="instructor" width="50" height="50" style="max-width: fit-content;">
-                                                        {% else %}
-                                                            <img loading="lazy" src="{% static 'img/profile.png' %}" alt="instructor">
-                                                        {% endif %}
-                                                    <div class="gridarea__small__content">
-                                                        <h6>{{ course.instructor.first_name }}</h6>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="gridarea__details">
-                                            <a href="{% url 'course_detail' course.slug %}">Details
-                                                <i class="icofont-arrow-right"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            {% empty %}
-                            <p>No courses available yet.</p>
-                            {% endfor %}
                         </div>
 
                     </div>
