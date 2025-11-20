@@ -4,8 +4,18 @@
 
 {% block title %}Login/Register{% endblock %}
 
+
+{% block extra_css %}
+<style>
+    #id_profile_picture{
+        padding-top: 10px;
+    }
+</style>
+{% endblock extra_css %}
+    
+
 {% block content %}
-{% include 'partials/theme-switch.html' %}
+{% comment %} {% include 'partials/theme-switch.html' %} {% endcomment %}
 
 <main class="main_wrapper overflow-hidden">
 
@@ -73,7 +83,7 @@
                             <button class="single__tab__link active" data-bs-toggle="tab" data-bs-target="#projects__one" type="button">Log in</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="single__tab__link" data-bs-toggle="tab" data-bs-target="#projects__two" type="button">Sign up</button>
+                            <button class="single__tab__link" data-bs-toggle="tab" data-bs-target="#signup" type="button">Sign up</button>
                         </li>
                     </ul>
                 </div>
@@ -116,7 +126,7 @@
                         </div>
                     </div>
 
-                    <div class="tab-pane fade" id="projects__two" role="tabpanel" aria-labelledby="projects__two">
+                    <div class="tab-pane fade" id="signup" role="tabpanel" aria-labelledby="signup">
                         <div class="col-xl-8 offset-md-2">
 
                             <div class="loginarea__wraper">
@@ -127,48 +137,26 @@
                                 </div>
                                 
                                 <!-- registration form -->
-                                <form method="POST" action="{% url 'user_registration' %}">
+                                <form method="POST" action="{% url 'user_registration' %}" enctype="multipart/form-data">
                                     {% csrf_token %}
                                     <div class="row">
-                                        <div class="col-xl-12">
-                                            <div class="login__form">
-                                                <label class="form__label">Full Name</label>
-                                                <input class="common__login__input" name="first_name" type="text" placeholder="Full Name" required>
+                                        {% for field in form %}
+                                            <div class="col-xl-12" id="{% if field.name == 'session' %}session_div{% endif %}">
+                                                <div class="login__form">
+                                                    <label class="form__label">{{ field.label }}</label>
+                                                    {{ field }}
+                                                    {% if field.help_text %}
+                                                        <small class="form-text text-muted">{{ field.help_text }}</small>
+                                                    {% endif %}
+                                                    {% for error in field.errors %}
+                                                        <div class="text-danger">{{ error }}</div>
+                                                    {% endfor %}
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-xl-12">
-                                            <div class="login__form">
-                                                <label class="form__label">Email</label>
-                                                <input class="common__login__input" name="email" type="email" placeholder="Email" required>
-                                            </div>
-                                        </div>
-
-                                        {% comment %} 
-                                        <div class="col-xl-6">
-                                            <div class="login__form">
-                                                <label class="form__label">Password</label>
-                                                <input class="common__login__input" name="password1" type="password" placeholder="Password" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-6">
-                                            <div class="login__form">
-                                                <label class="form__label">Re-Enter Password</label>
-                                                <input class="common__login__input" name="password2" type="password" placeholder="Re-Enter Password" required>
-                                            </div>
-                                        </div>
-                                        {% endcomment %}
+                                        {% endfor %}
                                     </div>
 
-                                    {% comment %}  
-                                    <div class="login__form d-flex justify-content-between flex-wrap gap-2">
-                                        <div class="form__check">
-                                            <input id="accept_pp" name="accept_pp" type="checkbox" required>
-                                            <label for="accept_pp">Accept the Terms and Privacy Policy</label>
-                                        </div>
-                                    </div>
-                                    {% endcomment %}
-
-                                    <div class="login__button">
+                                    <div class="login__button mt-4">
                                         <button class="default__button" type="submit">Register</button>
                                     </div>
                                 </form>
@@ -197,3 +185,35 @@
 
 
 
+{% block extra_javascript %}
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Activate tab if URL has a hash
+        const hash = window.location.hash;
+        if (hash) {
+            const tabTrigger = document.querySelector(`button[data-bs-target="${hash}"]`);
+            if (tabTrigger) {
+                const tab = new bootstrap.Tab(tabTrigger);
+                tab.show();
+            }
+        }
+
+        // Show session only if user_type is student
+        const userTypeSelect = document.getElementById('id_user_type');
+        const sessionDiv = document.getElementById('session_div');
+        if (userTypeSelect && sessionDiv) {
+            function toggleSession() {
+                if (userTypeSelect.value === 'student') {
+                    sessionDiv.style.display = 'block';
+                } else {
+                    sessionDiv.style.display = 'none';
+                }
+            }
+            userTypeSelect.addEventListener('change', toggleSession);
+            toggleSession();
+        }
+    });
+</script>
+{% endblock extra_javascript %}
+
+    

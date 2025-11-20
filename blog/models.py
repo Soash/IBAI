@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.text import slugify
 from django.contrib.auth import get_user_model
 from tinymce.models import HTMLField
+from courses.models import Category
 
 User = get_user_model()
 
@@ -15,6 +16,7 @@ class BlogPost(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     published = models.BooleanField(default=True)
     view_count = models.PositiveIntegerField(default=0)
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
 
     class Meta:
         ordering = ['-created_at']
@@ -46,6 +48,7 @@ class Vlog(models.Model):
     author = models.CharField(blank=True, null=True)
     youtube_url = models.URLField(help_text="Embed YouTube video link (e.g., https://www.youtube.com/embed/abcdef)")
     likes = models.PositiveIntegerField(default=0)
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
 
 class ResearchPaper(models.Model):
     title = models.CharField(max_length=255)

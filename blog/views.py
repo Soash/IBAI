@@ -4,16 +4,23 @@ from django.core.paginator import Paginator
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
+from courses.models import Category
 
 def blog_list(request):
     search_query = request.GET.get('q', '')
-    posts = BlogPost.objects.order_by('-created_at')
+    selected_category = request.GET.get('category', '')
+    
+    posts = BlogPost.objects.filter(published=True).order_by('-created_at')
 
-    # Filter by search query
+    # Filter by search
     if search_query:
         posts = posts.filter(title__icontains=search_query)
 
-    # Pagination: 6 posts per page
+    # Filter by category
+    if selected_category:
+        posts = posts.filter(category__slug=selected_category)
+
+    # Pagination
     paginator = Paginator(posts, 6)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
@@ -21,6 +28,10 @@ def blog_list(request):
     context = {
         'page_obj': page_obj,
         'posts': page_obj.object_list,
+        'search_query': search_query,
+        'categories': Category.objects.all(),
+        'selected_category': selected_category,
+        'total_posts': posts.count(),
     }
     return render(request, 'blog/blog_list.html', context)
 
@@ -63,13 +74,23 @@ def delete_comment(request, comment_id):
     messages.success(request, "Your comment was deleted successfully.")
     return redirect('blog_detail', slug=post_slug)
 
+
 def vlog_list(request):
     search_query = request.GET.get('q', '')
-    vlogs = Vlog.objects.all().order_by('-id')
+    selected_category = request.GET.get('category', '')
 
-    # Filter by search query
+    vlogs = Vlog.objects.all().order_by('-id')
+    categories = Category.objects.all()
+
+    # Filter by search text
     if search_query:
         vlogs = vlogs.filter(title__icontains=search_query)
+
+    # Filter by category
+    if selected_category:
+        vlogs = vlogs.filter(category__slug=selected_category)
+
+    total_vlogs = vlogs.count()
 
     # Pagination (90 per page)
     paginator = Paginator(vlogs, 90)
@@ -77,10 +98,14 @@ def vlog_list(request):
     page_obj = paginator.get_page(page_number)
 
     return render(request, 'blog/vlog.html', {
-        'vlogs': page_obj,          # paginated vlogs
+        'vlogs': page_obj,
         'page_obj': page_obj,
         'search_query': search_query,
+        'categories': categories,
+        'selected_category': selected_category,
+        'total_vlogs': total_vlogs,
     })
+
 
 def toggle_like(request, vlog_id):
     vlog = Vlog.objects.get(pk=vlog_id)

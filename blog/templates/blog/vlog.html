@@ -9,15 +9,15 @@
       integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
-.like-btn {
-  border: none;
-  background: none;
-  cursor: pointer;
-  transition: transform 0.5s ease-in-out;
-}
-.like-btn:active {
-  transform: scale(1.2);
-}
+  .like-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+  }
+  .like-btn:active {
+    transform: scale(1.2);
+  }
 </style>
 {% endblock extra_css %}
 
@@ -31,85 +31,50 @@
 
   <section class="py-5">
     <div class="container">
-        <h2 class="mb-5 text-center fw-bold">📰 Latest Vlog Posts</h2>
+        {% comment %} <h2 class="mb-5 text-center fw-bold">📰 Latest Vlog Posts</h2> {% endcomment %}
 
-        <!-- 🔍 Search Bar -->
-        <form method="get" class="mb-5 text-center">
-        <div class="input-group mx-auto" style="max-width: 400px;">
-            <input type="text" name="q" class="form-control"
-                placeholder="Search vlogs by title..."
-                value="{{ search_query }}">
-            <button class="btn btn-primary" type="submit">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-        </div>
-        </form>
+        <!-- ===== Section Header + Filters ===== -->
+        <div class="row mb-4">
+            <div class="col-xl-12">
+                <div class="course__text__wraper d-flex flex-wrap justify-content-between align-items-center gap-3">
 
-        {% comment %}
-        {% if vlogs %}
-            <div class="row g-4">
-                {% for vlog in vlogs %}
-                <div class="col-md-6 col-lg-4">
-                  <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden hover-shadow transition-all">
-                      <div class="ratio ratio-16x9">
-                          <iframe
-                              src="{{ vlog.youtube_url }}?rel=0"
-                              title="YouTube video player" frameborder="0"
-                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                          </iframe>
-                      </div>
-                      <div class="card-body p-4 d-flex flex-column">
-                      <h5 class="card-title mb-3">{{ vlog.title }}</h5>
+                    <!-- Section Title -->
+                    <h2 class="fw-bold m-0">Explore Our Vlogs</h2>
 
-                      <button class="like-btn text-danger"
-                              data-id="{{ vlog.id }}">
-                          {% if vlog.id in request.session.liked_vlogs %}
-                          <i class="fa-solid fa-heart"></i>
-                          {% else %}
-                          <i class="fa-regular fa-heart"></i>
-                          {% endif %}
-                          <span class="ms-2 like-count">{{ vlog.likes }}</span>
-                      </button>
+                    <!-- Search + Category Filter -->
+                    <form method="GET" class="d-flex gap-2 flex-wrap">
 
-                      </div>
-                  </div>
+                        <!-- Search -->
+                        <input type="text"
+                              name="q"
+                              placeholder="Search vlogs by title..."
+                              class="form-control"
+                              value="{{ search_query }}"
+                              style="min-width:200px;">
+
+                        <!-- Category Filter -->
+                        <select name="category" class="form-select" style="min-width:200px;">
+                            <option value="">All Categories</option>
+                            {% for cat in categories %}
+                                <option value="{{ cat.slug }}" {% if selected_category == cat.slug %}selected{% endif %}>
+                                    {{ cat.name }}
+                                </option>
+                            {% endfor %}
+                        </select>
+
+                        <!-- Submit -->
+                        <button type="submit" class="btn btn-primary px-4">
+                            <i class="fa-solid fa-magnifying-glass"></i> Search
+                        </button>
+                    </form>
                 </div>
-                {% endfor %}
+
+                <!-- Showing Results Text -->
+                <p class="mt-2">
+                    Showing <strong>{{ total_vlogs }}</strong> vlog{{ total_vlogs|pluralize }} result{{ total_vlogs|pluralize }}.
+                </p>
             </div>
-
-            <!-- 🔢 Pagination -->
-            {% if page_obj.has_other_pages %}
-            <nav class="mt-5">
-            <ul class="pagination justify-content-center">
-                {% if page_obj.has_previous %}
-                <li class="page-item">
-                    <a class="page-link" href="?q={{ search_query }}&page={{ page_obj.previous_page_number }}">&laquo; Prev</a>
-                </li>
-                {% endif %}
-
-                {% for num in page_obj.paginator.page_range %}
-                {% if page_obj.number == num %}
-                    <li class="page-item active"><span class="page-link">{{ num }}</span></li>
-                {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-                    <li class="page-item"><a class="page-link" href="?q={{ search_query }}&page={{ num }}">{{ num }}</a></li>
-                {% endif %}
-                {% endfor %}
-
-                {% if page_obj.has_next %}
-                <li class="page-item">
-                    <a class="page-link" href="?q={{ search_query }}&page={{ page_obj.next_page_number }}">Next &raquo;</a>
-                </li>
-                {% endif %}
-            </ul>
-            </nav>
-            {% endif %}
-
-        {% else %}
-            <p class="text-center">No vlogs available.</p>
-        {% endif %}
-        {% endcomment %}
-
+        </div>
 
         {% if vlogs %}
         <div class="row g-4">
