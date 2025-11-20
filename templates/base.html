@@ -22,7 +22,6 @@
     <link href="{% static 'css/swiper-bundle.min.css' %}" rel="stylesheet"/>
     <link href="{% static 'css/style.css' %}" rel="stylesheet"/>
 
-    {% block extra_css %}
     <style>
       .dawn-blue{
         color: #255d98 !important;
@@ -31,14 +30,12 @@
         background: #255d98 !important;
         color: white;
       }
-      .mode_switcher.my_switcher {
-        top: 140px !important;
-      }
       #scrollUp{
         bottom: 100px !important;
         right: 35px !important;
       }
     </style>
+    {% block extra_css %}
     {% endblock extra_css %}
   {% endblock css %}
 
