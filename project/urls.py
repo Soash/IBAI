@@ -12,8 +12,8 @@ urlpatterns = [
     path('', include('courses.urls')),
     path('', include('training.urls')),
     path('', include('intern.urls')),
+    path('', include('blog.urls')),
     path('payments/', include('payments.urls')),
-    path('blog/', include('blog.urls')),
     path('tinymce/', include('tinymce.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
