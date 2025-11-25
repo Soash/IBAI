@@ -304,17 +304,17 @@
 
                 {% for research in researches %}
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12" data-aos="fade-up">
-                    <div class="single__blog__wraper">
+                    <div class="single__blog__wraper d-flex flex-column h-100"> <!-- full height -->
                         <div class="single__blog__img" style="height: 250px; overflow: hidden;">
                             <img loading="lazy" src="{{ research.image.url }}" alt="blog" style="width: 100%; height: 100%; object-fit: cover;">
                             <div class="single__blog__button">
                                 {% comment %} <a class="default__button" href="#">Story</a> {% endcomment %}
                             </div>
                         </div>
-                        <div class="single__blog__content">
+                        <div class="single__blog__content d-flex flex-column flex-grow-1"> <!-- content stretch -->
                             <p>{{ research.date }}</p>
                             <h4> <a href="#">{{ research.title|truncatechars:100 }}</a></h4>
-                            <div class="single__blog__bottom__button">
+                            <div class="single__blog__bottom__button mt-auto"> <!-- push to bottom -->
                                 <a href="{{ research.link }}">Read More
                                     <i class="icofont-long-arrow-right"></i>
                                 </a>
