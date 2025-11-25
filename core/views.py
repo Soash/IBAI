@@ -7,7 +7,7 @@ def home(request):
     courses = Course.objects.all()
     categories = Category.objects.all()
     trainings = Training.objects.all()
-    researches = ResearchPaper.objects.all()
+    researches = ResearchPaper.objects.all()[:3]
     context = {
         'courses': courses,
         'categories': categories,
