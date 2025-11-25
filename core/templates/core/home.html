@@ -227,9 +227,6 @@
                                     <li style="display: block ruby;">
                                         <i class="icofont-calendar"></i> {{ training.date }}
                                     </li>
-                                    {% comment %} <li>
-                                        <i class="icofont-clock-time"></i> 1 hr 30 min
-                                    </li> {% endcomment %}
                                 </ul>
                             </div>
                             <div class="gridarea__heading">
@@ -251,7 +248,8 @@
                                     {% endif %}
                                 </div>
                             </div>
-                            <div class="gridarea__bottom">
+
+                            <div class="gridarea__bottom mt-auto">
                               <div class="gridarea__small__img">
                                 {% if training.instructor.profile_picture %}
                                   <img src="{{ training.instructor.profile_picture.url }}" width="50" height="50">
