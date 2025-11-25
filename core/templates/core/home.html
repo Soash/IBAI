@@ -129,6 +129,7 @@
                   {% for course in courses %}
                   <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 d-flex grid-item column__custom__class swiper-slide">   <!-- ⬅ makes column flex -->
                     <div class="gridarea__wraper gridarea__wraper__2 d-flex flex-column w-100">  <!-- ⬅ full height -->
+
                       <div class="gridarea__img">
                           <a href="{% url 'course_detail' course.slug %}">
                             {% if course.thumbnail %}
@@ -175,6 +176,7 @@
                               </a>
                           </div>
                       </div>
+
                     </div>
                   </div>
                   {% endfor %}
@@ -221,7 +223,7 @@
                               {% endif %}
                           </a>
                         </div>
-                        <div class="gridarea__content ">
+                        <div class="gridarea__content flex-grow-1 d-flex flex-column">
                             <div class="gridarea__list">
                                 <ul>
                                     <li style="display: block ruby;">
@@ -233,7 +235,7 @@
                                 <h3><a href="{% url 'training_detail' training.slug %}"> {{ training.name }} </a></h3>
                             </div>
 
-                            <div class="zoom__meeting__time__id">
+                            <div class="zoom__meeting__time__id mt-auto">
                                 <div class="zoom__meeting__time">
                                     <p>
                                         Medium :
@@ -249,7 +251,7 @@
                                 </div>
                             </div>
 
-                            <div class="gridarea__bottom mt-auto">
+                            <div class="gridarea__bottom pt-2 mt-auto">
                               <div class="gridarea__small__img">
                                 {% if training.instructor.profile_picture %}
                                   <img src="{{ training.instructor.profile_picture.url }}" width="50" height="50">
