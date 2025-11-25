@@ -192,6 +192,91 @@
 
 
 
+    <div class="zoom__meetings sp_top_100 sp_bottom_70" data-aos="fade-up">
+        <div class="container full__width__padding">
+
+            <div class="section__title mb-4">
+                <div class="section__title__heading">
+                    <h2>Upcoming Trainings</h2>
+                </div>
+            </div>
+
+            <div class="swiper trainings__slider">
+                <div class="swiper-wrapper">
+                    {% for training in trainings %}
+                    <div class="swiper-slide">
+                        <div class="gridarea__wraper gridarea__wraper__2 zoom__meeting__grid">
+                            <div class="ratio ratio-4x3 overflow-hidden rounded mb-3">
+                                <a href="{% url 'training_detail' training.slug %}">
+                                    {% if training.thumbnail %}
+                                        <img loading="lazy" src="{{ training.thumbnail.url }}" alt="grid"
+                                            class="img-fluid h-100 w-100" style="object-fit: cover;">
+                                    {% else %}
+                                        <img loading="lazy" src="{% static 'img/zoom/1.jpg' %}" alt="grid"
+                                            class="img-fluid h-100 w-100" style="object-fit: cover;">
+                                    {% endif %}
+                                </a>
+                            </div>
+
+                            <div class="gridarea__content">
+                                <div class="gridarea__list">
+                                    <ul>
+                                        <li><i class="icofont-calendar"></i> {{ training.date }}</li>
+                                    </ul>
+                                </div>
+
+                                <div class="gridarea__heading">
+                                    <h3><a href="{% url 'training_detail' training.slug %}">{{ training.name }}</a></h3>
+                                </div>
+
+                                <div class="zoom__meeting__time__id">
+                                    <div class="zoom__meeting__time">
+                                        <p>Medium: <span>{{ training.get_medium_display }}</span></p>
+                                    </div>
+                                    <div class="zoom__meeting__id">
+                                        {% if training.platform %}
+                                            <p>Platform: <span>{{ training.get_platform_display }}</span></p>
+                                        {% else %}
+                                            <p>Branch: <span>{{ training.get_branch_display }}</span></p>
+                                        {% endif %}
+                                    </div>
+                                </div>
+
+                                <div class="gridarea__bottom">
+                                    <div class="gridarea__small__img">
+                                        {% if training.instructor.profile_picture %}
+                                            <img src="{{ training.instructor.profile_picture.url }}" width="50" height="50">
+                                        {% else %}
+                                            <img loading="lazy" src="{% static 'img/grid/grid_small_1.jpg' %}" alt="grid">
+                                        {% endif %}
+                                        <div class="gridarea__small__content">
+                                            Instructor: <h5>{{ training.instructor.first_name }}</h5>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Slider Arrows -->
+                <div class="slider__controls__wrap slider__controls__arrows mt-3">
+                    <div class="swiper-button-next arrow-btn"></div>
+                    <div class="swiper-button-prev arrow-btn"></div>
+                </div>
+
+                <!-- Slider Pagination (optional) -->
+                <div class="swiper-pagination mt-3"></div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
     <!-- aboutarea__2__section__start -->
     <div class="aboutarea__2 sp_top_30">
       <div class="container">
