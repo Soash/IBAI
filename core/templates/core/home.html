@@ -313,7 +313,7 @@
                         </div>
                         <div class="single__blog__content">
                             <p>{{ research.date }}</p>
-                            <h4> <a href="#">{{ research.title }}</a></h4>
+                            <h4> <a href="#">{{ research.title|truncatewords:10 }}</a></h4>
                             <div class="single__blog__bottom__button">
                                 <a href="{{ research.link }}">Read More
                                     <i class="icofont-long-arrow-right"></i>
