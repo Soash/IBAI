@@ -5,7 +5,7 @@ from training.models import Training
 def home(request):
     courses = Course.objects.all()
     categories = Category.objects.all()
-    trainings = Training.objects.filter(is_training=True)
+    trainings = Training.objects.all()
     context = {
         'courses': courses,
         'categories': categories,
