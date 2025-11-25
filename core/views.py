@@ -1,15 +1,18 @@
 from django.shortcuts import render
 from courses.models import Course, Category
 from training.models import Training
+from blog.models import ResearchPaper
 
 def home(request):
     courses = Course.objects.all()
     categories = Category.objects.all()
     trainings = Training.objects.all()
+    researches = ResearchPaper.objects.all()
     context = {
         'courses': courses,
         'categories': categories,
-        'trainings': trainings
+        'trainings': trainings,
+        'researches': researches,
     }
     return render(request, 'core/home.html', context)
 
