@@ -10,6 +10,7 @@ def home(request):
     researches = ResearchPaper.objects.all()
     blogs = BlogPost.objects.all()
     training_comments = TrainingComment.objects.all()
+    news = BlogPost.objects.filter(category__slug='news')[:3]
     context = {
         'courses': courses,
         'categories': categories,
@@ -17,6 +18,7 @@ def home(request):
         'researches': researches,
         'blogs': blogs,
         'training_comments': training_comments,
+        'news': news,
     }
     return render(request, 'core/home.html', context)
 
