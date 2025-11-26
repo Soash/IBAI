@@ -7,7 +7,7 @@ def home(request):
     courses = Course.objects.all()
     categories = Category.objects.exclude(slug='news')
     trainings = Training.objects.all()
-    researches = ResearchPaper.objects.all()[:3]
+    researches = ResearchPaper.objects.all()
     blogs = BlogPost.objects.all()
     training_comments = TrainingComment.objects.all()
     context = {
