@@ -425,136 +425,6 @@
     <!-- Trainings -->
 
 
-
-
-    <!-- Research -->
-    <div class="blogarea__2 sp_top_100 sp_bottom_100">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12" data-aos="fade-up">
-                    <div class="section__title__2 text-center teamarea__margin">
-                        <div class="section__title__heading__2 section__title__heading__3 heading__fontsize__2">
-                            <h2>Latest Research</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row row__custom__class mb-5" data-aos="fade-up">
-              <div class="swiper featured__course">
-
-                <div class="swiper-wrapper">
-                  {% for research in researches %}
-                  <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 column__custom__class swiper-slide">
-                      <div class="single__blog__wraper d-flex flex-column h-100"> <!-- full height -->
-                          <div class="single__blog__img" style="height: 250px; overflow: hidden;">
-                              <img loading="lazy" src="{{ research.image.url }}" alt="blog" style="width: 100%; height: 100%; object-fit: cover;">
-                          </div>
-                          <div class="single__blog__content d-flex flex-column flex-grow-1"> <!-- content stretch -->
-                              <p>{{ research.date }}</p>
-                              <h4> <a href="#">{{ research.title|truncatechars:100 }}</a></h4>
-                              <div class="single__blog__bottom__button mt-auto"> <!-- push to bottom -->
-                                  <a href="{{ research.link }}">Read More
-                                      <i class="icofont-long-arrow-right"></i>
-                                  </a>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  {% endfor %}
-                </div>
-
-                <div class="slider__controls__wrap slider__controls__arrows">
-                  <div class="swiper-button-next arrow-btn"></div>
-                  <div class="swiper-button-prev arrow-btn"></div>
-                </div>
-  
-              </div>
-            </div>
-        </div>
-    </div>
-    <!-- Research -->
-
-
-
-    {% if blogs %}
-    <div class="gridarea__2 sp_bottom_100 sp_top_80" data-aos="fade-up">
-      <div class="container-fluid full__width__padding">
-        <div class="section__title">
-            <div class="section__title__heading">
-                <h2>Latest Blogs</h2>
-            </div>
-        </div>
-
-        <div class="row row__custom__class mb-5" data-aos="fade-up">
-          <div class="swiper featured__course">
-            <div class="swiper-wrapper">
-              {% for post in blogs %}
-                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 column__custom__class swiper-slide">
-
-                  <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden hover-shadow transition-all">
-
-                    {% if post.image %}
-                      <!-- Image wrapper -->
-                      <div class="position-relative" style="width: 100%; height: 0; padding-bottom: 56.25%;">
-                        <img src="{{ post.image.url }}" alt="{{ post.title }}" 
-                            class="img-fluid position-absolute top-0 start-0 w-100 h-100" 
-                            style="object-fit: cover;">
-
-                        <!-- View Count Badge -->
-                        <div class="position-absolute end-0 m-2 p-1 bg-light rounded shadow-sm d-flex align-items-center justify-content-center">
-                          <i class="icofont-read-book"></i>
-                          <span class="ms-1 small">{{ post.view_count }}</span>
-                        </div>
-                      </div>
-                    {% endif %}
-
-                    <div class="card-body p-4 d-flex flex-column">
-                      <!-- Title -->
-                      <h5 class="card-title mb-2">
-                        <a href="{% url 'blog_detail' post.slug %}" class="text-decoration-none text-dark fw-semibold">
-                          {{ post.title }}
-                        </a>
-                      </h5>
-
-                      <!-- Author & Date -->
-                      {% if post.created_at or post.author %}
-                        <p class="text-muted small mb-3">
-                          {% if post.created_at %} <i class="fa-regular fa-calendar"></i> {{ post.created_at|date:"F j, Y" }}{% endif %}
-                          {% if post.author %} &nbsp;•&nbsp; <i class="fa-regular fa-user"></i> {{ post.author.first_name }}{% endif %}
-                        </p>
-                      {% endif %}
-
-                      <!-- Post Content -->
-                      <div class="flex-grow-1 text-muted post-content">
-                        {{ post.content|truncatewords_html:25|safe }}
-                      </div>
-
-                      <!-- Read More Button -->
-                      <a href="{% url 'blog_detail' post.slug %}" class="btn btn-outline-primary w-100 mt-3">
-                        Read More →
-                      </a>
-                    </div>
-                  </div>
-
-                </div>
-              {% endfor %}
-            </div>
-            <div class="slider__controls__wrap slider__controls__arrows">
-              <div class="swiper-button-next arrow-btn"></div>
-              <div class="swiper-button-prev arrow-btn"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    {% endif %}
-
-
-
-
-
-    
-
     <!-- counter__section__start -->
     <div class="counterarea sp_bottom_100 sp_top_50">
       <div class="container">
@@ -1087,8 +957,134 @@
     <!-- populer__section__end-->
 
 
+    <!-- Research -->
+    <div class="blogarea__2 sp_top_100 sp_bottom_100">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12" data-aos="fade-up">
+                    <div class="section__title__2 text-center teamarea__margin">
+                        <div class="section__title__heading__2 section__title__heading__3 heading__fontsize__2">
+                            <h2>Latest Research</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row row__custom__class mb-5" data-aos="fade-up">
+              <div class="swiper featured__course">
+
+                <div class="swiper-wrapper">
+                  {% for research in researches %}
+                  <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 column__custom__class swiper-slide">
+                      <div class="single__blog__wraper d-flex flex-column h-100"> <!-- full height -->
+                          <div class="single__blog__img" style="height: 250px; overflow: hidden;">
+                              <img loading="lazy" src="{{ research.image.url }}" alt="blog" style="width: 100%; height: 100%; object-fit: cover;">
+                          </div>
+                          <div class="single__blog__content d-flex flex-column flex-grow-1"> <!-- content stretch -->
+                              <p>{{ research.date }}</p>
+                              <h4> <a href="#">{{ research.title|truncatechars:100 }}</a></h4>
+                              <div class="single__blog__bottom__button mt-auto"> <!-- push to bottom -->
+                                  <a href="{{ research.link }}">Read More
+                                      <i class="icofont-long-arrow-right"></i>
+                                  </a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  {% endfor %}
+                </div>
+
+                <div class="slider__controls__wrap slider__controls__arrows">
+                  <div class="swiper-button-next arrow-btn"></div>
+                  <div class="swiper-button-prev arrow-btn"></div>
+                </div>
+  
+              </div>
+            </div>
+        </div>
+    </div>
+    <!-- Research -->
 
 
+    <!-- blog__section__start -->
+    <div class="blogarea sp_bottom_70 sp_top_100">
+      <div class="container">
+        <div class="row" data-aos="fade-up">
+          <div class="col-xl-12">
+            <div class="section__title text-center">
+              <div class="section__title__button">
+                <div class="default__small__button">News & Blogs</div>
+              </div>
+              <div class="section__title__heading">
+                <h2>Latest News & Blog</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <!-- Left big blog (latest blog) -->
+          <div class="col-xl-8 col-lg-8" data-aos="fade-up">
+            {% if blogs %}
+            {% with blogs.0 as main_blog %}
+            <div class="blogarea__content__wraper">
+              <div class="blogarea__img" style="height: 400px; object-fit: cover;">
+                <img loading="lazy" src="{{ main_blog.image.url }}" alt="blog">
+                <div class="blogarea__date">
+                  {{ main_blog.created_at|date:"d" }}
+                  <span>{{ main_blog.created_at|date:"M" }}</span>
+                </div>
+              </div>
+              <div class="blogarea__text__wraper">
+                <h3><a href="{% url 'blog_detail' main_blog.slug %}">{{ main_blog.title }}</a></h3>
+                <div class="blogarea__para">
+                  <p>{{ main_blog.content|striptags|truncatewords:40 }}</p>
+                </div>
+
+                <div class="blogarea__icon">
+                  <div class="blogarea__person">
+                    <div class="blogarea__img">
+                      {% if main_blog.author.profile_picture %}
+                      <img loading="lazy" class="rounded" src="{{ main_blog.author.profile_picture.url }}"
+                          style="object-fit: cover;width: 40px;height: 40px;">
+                      {% else %}
+                      <img loading="lazy" src="{% static 'img/profile.png' %}" alt="">
+                        
+                      {% endif %}
+                      
+                    </div>
+                    <div class="blogarea__name">
+                      <span>By</span>: {{ main_blog.author.first_name }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endwith %}
+            {% endif %}
+          </div>
+
+          <!-- Right side list of next 2 blogs -->
+          <div class="col-xl-4 col-lg-4" data-aos="fade-up">
+            {% for blog in blogs|slice:"1:3" %}
+            <div class="blogarea__content__wraper">
+              <div class="blogarea__img">
+                <img loading="lazy" src="{{ blog.image.url }}" alt="blog">
+                <div class="blogarea__date small__date">
+                  {{ blog.created_at|date:"d" }}
+                  <span>{{ blog.created_at|date:"M" }}</span>
+                </div>
+              </div>
+              <div class="blogarea__text__wraper blogarea__text__wraper__2">
+                <h3><a href="{% url 'blog_detail' blog.slug %}">{{ blog.title }}</a></h3>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- blog__section__end -->
 
 
 
@@ -1197,86 +1193,7 @@
 
 
 
-    <!-- blog__section__start -->
-    <div class="blogarea sp_bottom_70 sp_top_100">
-      <div class="container">
-        <div class="row" data-aos="fade-up">
-          <div class="col-xl-12">
-            <div class="section__title text-center">
-              <div class="section__title__button">
-                <div class="default__small__button">News & Blogs</div>
-              </div>
-              <div class="section__title__heading">
-                <h2>Latest News & Blog</h2>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <div class="row">
-          <!-- Left big blog (latest blog) -->
-          <div class="col-xl-8 col-lg-8" data-aos="fade-up">
-            {% if blogs %}
-            {% with blogs.0 as main_blog %}
-            <div class="blogarea__content__wraper">
-              <div class="blogarea__img" style="height: 400px; object-fit: cover;">
-                <img loading="lazy" src="{{ main_blog.image.url }}" alt="blog">
-                <div class="blogarea__date">
-                  {{ main_blog.created_at|date:"d" }}
-                  <span>{{ main_blog.created_at|date:"M" }}</span>
-                </div>
-              </div>
-              <div class="blogarea__text__wraper">
-                <h3><a href="{% url 'blog_detail' main_blog.slug %}">{{ main_blog.title }}</a></h3>
-                <div class="blogarea__para">
-                  <p>{{ main_blog.content|striptags|truncatewords:40 }}</p>
-                </div>
-
-                <div class="blogarea__icon">
-                  <div class="blogarea__person">
-                    <div class="blogarea__img">
-                      {% if main_blog.author.profile_picture %}
-                      <img loading="lazy" class="rounded" src="{{ main_blog.author.profile_picture.url }}"
-                          style="object-fit: cover;width: 40px;height: 40px;">
-                      {% else %}
-                      <img loading="lazy" src="{% static 'img/profile.png' %}" alt="">
-                        
-                      {% endif %}
-                      
-                    </div>
-                    <div class="blogarea__name">
-                      <span>By</span>: {{ main_blog.author.first_name }}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {% endwith %}
-            {% endif %}
-          </div>
-
-          <!-- Right side list of next 2 blogs -->
-          <div class="col-xl-4 col-lg-4" data-aos="fade-up">
-            {% for blog in blogs|slice:"1:3" %}
-            <div class="blogarea__content__wraper">
-              <div class="blogarea__img">
-                <img loading="lazy" src="{{ blog.image.url }}" alt="blog">
-                <div class="blogarea__date small__date">
-                  {{ blog.created_at|date:"d" }}
-                  <span>{{ blog.created_at|date:"M" }}</span>
-                </div>
-              </div>
-              <div class="blogarea__text__wraper blogarea__text__wraper__2">
-                <h3><a href="{% url 'blog_detail' blog.slug %}">{{ blog.title }}</a></h3>
-              </div>
-            </div>
-            {% endfor %}
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <!-- blog__section__end -->
 
 
 
