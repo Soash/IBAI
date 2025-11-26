@@ -15,7 +15,7 @@ class CustomUserAdmin(UserAdmin):
     # Fields for editing a user
     fieldsets = (
         (None, {'fields': ('username', 'password')}),
-        (_('Personal info'), {'fields': ('first_name', 'last_name', 'email', 'phone_number', 'bio', 'profile_picture', 'facebook_link', 'linkedin_link', 'website')}),
+        (_('Personal info'), {'fields': ('first_name', 'last_name', 'email', 'phone_number', 'bio', 'profile_picture', 'facebook_link', 'linkedin_link', 'website', 'user_type', 'designation', 'university_name', 'session')}),
         (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
         (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
     )

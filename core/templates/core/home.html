@@ -112,6 +112,71 @@
     </div>
     <!-- animate condtent end-->
 
+    <!-- aboutarea__2__section__start -->
+    <div class="aboutarea__2 sp_top_30">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12" data-aos="fade-up">
+            <div class="about__right__wraper__2">
+              <div class="educationarea__img" data-tilt>
+                <img loading="lazy" class="aboutarea__2__img__1" src="{% static 'img/about/about_2.png' %}"
+                     alt="education">
+                <img loading="lazy" class="aboutarea__2__img__2" src="{% static 'img/about/about_3.png' %}"
+                     alt="education">
+                <img loading="lazy" class="aboutarea__2__img__3" src="{% static 'img/about/about_4.png' %}"
+                     alt="education">
+                <img loading="lazy" class="aboutarea__2__img__4" src="{% static 'img/about/about_11.png' %}"
+                     alt="education">
+              </div>
+              <div class="aboutarea__2__text">
+                <div class="aboutarea__counter">
+                  <span class="counter">25</span> +
+                </div>
+
+                <p>YEARS EXPERIENCE JUST ACHIVED</p>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12" data-aos="fade-up">
+
+            <div class="aboutarea__content__wraper">
+              <div class="aboutarea__button">
+                <div class="default__small__button">About Us</div>
+              </div>
+              <div class="aboutarea__headding heading__underline">
+                <h2>Welcome to the <span>Online</span> Learning Center</h2>
+              </div>
+              <div class="aboutarea__para aboutarea__para__2">
+                <p>25+Contrary to popular belief, Lorem Ipsum is not simply random text roots in a piece of classical
+                  Latin literature from 45 BC</p>
+              </div>
+              <div class="aboutarea__list__2">
+                <ul>
+                  <li>
+                    <i class="icofont-check"></i> Lorem Ipsum is simply dummy
+                  </li>
+
+                  <li>
+                    <i class="icofont-check"></i> Explore a variety of fresh educational teach
+                  </li>
+
+                  <li>
+                    <i class="icofont-check"></i> Lorem Ipsum is simply dummy text of
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- aboutarea__2__section__end -->
+
+
     <!-- Featured Course -->
     {% if courses %}
     <div class="gridarea__2 sp_bottom_100 sp_top_80" data-aos="fade-up">
@@ -193,9 +258,10 @@
         </div>
     </div>
     {% endif %}
+    <!-- Featured Course -->
 
 
-
+    <!-- Trainings -->
     <div class="zoom__meetings sp_bottom_70" data-aos="fade-up">
         <div class="container full__width__padding">
 
@@ -281,6 +347,7 @@
 
         </div>
     </div>
+    <!-- Trainings -->
 
 
 
@@ -349,7 +416,6 @@
           <div class="swiper featured__course">
             <div class="swiper-wrapper">
               {% for post in blogs %}
-                {% comment %} <div class="col-md-6 col-lg-4 swiper-slide"> {% endcomment %}
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 column__custom__class swiper-slide">
 
                   <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden hover-shadow transition-all">
@@ -413,69 +479,7 @@
 
 
 
-    <!-- aboutarea__2__section__start -->
-    <div class="aboutarea__2 sp_top_30">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12" data-aos="fade-up">
-            <div class="about__right__wraper__2">
-              <div class="educationarea__img" data-tilt>
-                <img loading="lazy" class="aboutarea__2__img__1" src="{% static 'img/about/about_2.png' %}"
-                     alt="education">
-                <img loading="lazy" class="aboutarea__2__img__2" src="{% static 'img/about/about_3.png' %}"
-                     alt="education">
-                <img loading="lazy" class="aboutarea__2__img__3" src="{% static 'img/about/about_4.png' %}"
-                     alt="education">
-                <img loading="lazy" class="aboutarea__2__img__4" src="{% static 'img/about/about_11.png' %}"
-                     alt="education">
-              </div>
-              <div class="aboutarea__2__text">
-                <div class="aboutarea__counter">
-                  <span class="counter">25</span> +
-                </div>
-
-                <p>YEARS EXPERIENCE JUST ACHIVED</p>
-
-
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12" data-aos="fade-up">
-
-            <div class="aboutarea__content__wraper">
-              <div class="aboutarea__button">
-                <div class="default__small__button">About Us</div>
-              </div>
-              <div class="aboutarea__headding heading__underline">
-                <h2>Welcome to the <span>Online</span> Learning Center</h2>
-              </div>
-              <div class="aboutarea__para aboutarea__para__2">
-                <p>25+Contrary to popular belief, Lorem Ipsum is not simply random text roots in a piece of classical
-                  Latin literature from 45 BC</p>
-              </div>
-              <div class="aboutarea__list__2">
-                <ul>
-                  <li>
-                    <i class="icofont-check"></i> Lorem Ipsum is simply dummy
-                  </li>
-
-                  <li>
-                    <i class="icofont-check"></i> Explore a variety of fresh educational teach
-                  </li>
-
-                  <li>
-                    <i class="icofont-check"></i> Lorem Ipsum is simply dummy text of
-                  </li>
-                </ul>
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- aboutarea__2__section__end -->
+    
 
     <!-- counter__section__start -->
     <div class="counterarea sp_bottom_100 sp_top_50">
@@ -777,386 +781,6 @@
     </div>
     <!-- populer__section__end-->
 
-    <!-- grid__section__start -->
-    <div class="gridarea gridarea__2">
-      <div class="container">
-        <div class="row grid__row">
-
-          <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12" data-aos="fade-up">
-            <div class="section__title__2">
-              <div class="section__title__button">
-                <div class="default__small__button">Course List</div>
-              </div>
-              <div class="section__title__heading__2 section__title__heading__3 heading__fontsize__2">
-                <h2>Perfect Online Course Your Carrer</h2>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12" data-aos="fade-up">
-            <div class="gridfilter_nav grid__filter__2 gridFilter">
-              <button class="active" data-filter="*">See All</button>
-              <button data-filter=".filter1" class="">Data science</button>
-              <button data-filter=".filter2" class="">Engineering</button>
-              <button data-filter=".filter3" class="">Featured</button>
-              <button data-filter=".filter4" class="">Architecture</button>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="row grid" data-aos="fade-up">
-          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 grid-item filter1 filter3">
-            <div class="gridarea__wraper">
-              <div class="gridarea__img">
-                {% comment %} <a href="{% url 'pages:dynamic_pages' template_name='course-details' %}"><img loading="lazy" src="{% static 'img/grid/grid_1.png' %}" {% endcomment %}
-                                                   alt="grid"></a>
-                <div class="gridarea__small__button">
-                  <div class="grid__badge">Data & Tech</div>
-                </div>
-                <div class="gridarea__small__icon">
-                  <a href="#"><i class="icofont-heart-alt"></i></a>
-                </div>
-
-              </div>
-              <div class="gridarea__content">
-                <div class="gridarea__list">
-                  <ul>
-                    <li>
-                      <i class="icofont-book-alt"></i> 23 Lesson
-                    </li>
-                    <li>
-                      <i class="icofont-clock-time"></i> 1 hr 30 min
-                    </li>
-                  </ul>
-                </div>
-                <div class="gridarea__heading">
-                  {% comment %} <h3><a href="{% url 'pages:dynamic_pages' template_name='course-details' %}">Foundation course to under stand {% endcomment %}
-                    about softwere</a></h3>
-                </div>
-                <div class="gridarea__price">
-                  $32.00
-                  <del>/ $67.00</del>
-                  <span> <del class="del__2">Free</del></span>
-
-                </div>
-                <div class="gridarea__bottom">
-
-                  {% comment %} <a href="{% url 'pages:dynamic_pages' template_name='instructor-detail' %}"> {% endcomment %}
-                    <div class="gridarea__small__img">
-                      <img loading="lazy" src="{% static 'img/grid/grid_small_1.jpg' %}" alt="grid">
-                      <div class="gridarea__small__content">
-                        <h6>Micle Jhon</h6>
-                      </div>
-                    </div>
-                  </a>
-
-                  <div class="gridarea__star">
-                    <i class="icofont-star"></i>
-                    <i class="icofont-star"></i>
-                    <i class="icofont-star"></i>
-                    <i class="icofont-star"></i>
-                    <i class="icofont-star"></i>
-                    <span>(44)</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 grid-item filter2 filter3">
-            <div class="gridarea__wraper">
-              <div class="gridarea__img">
-                <img loading="lazy" src="{% static 'img/grid/grid_2.png' %}" alt="grid">
-                <div class="gridarea__small__button">
-                  <div class="grid__badge blue__color">Mechanical</div>
-                </div>
-                <div class="gridarea__small__icon">
-                  <a href="#"><i class="icofont-heart-alt"></i></a>
-                </div>
-
-              </div>
-              <div class="gridarea__content">
-                <div class="gridarea__list">
-                  <ul>
-                    <li>
-                      <i class="icofont-book-alt"></i> 29 Lesson
-                    </li>
-                    <li>
-                      <i class="icofont-clock-time"></i> 2 hr 10 min
-                    </li>
-                  </ul>
-                </div>
-                <div class="gridarea__heading">
-                  <h3><a href="#">Nidnies course to under stand
-                    about softwere</a></h3>
-                </div>
-                <div class="gridarea__price green__color">
-                  $32.00
-                  <del>/$67.00</del>
-                  <span>.Free</span>
-
-                </div>
-                <div class="gridarea__bottom">
-                  {% comment %} <a href="{% url 'pages:dynamic_pages' template_name='instructor-detail' %}"> {% endcomment %}
-                    <div class="gridarea__small__img">
-                      <img loading="lazy" src="{% static 'img/grid/grid_small_2.jpg' %}" alt="grid">
-                      <div class="gridarea__small__content">
-                        <h6>Rinis Jhon</h6>
-                      </div>
-                    </div>
-                  </a>
-                  <div class="gridarea__star">
-                    <i class="icofont-star"></i>
-                    <i class="icofont-star"></i>
-                    <i class="icofont-star"></i>
-                    <i class="icofont-star"></i>
-                    <i class="icofont-star"></i>
-                    <span>(44)</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 grid-item filter4 filter5">
-            <div class="gridarea__wraper">
-              <div class="gridarea__img">
-                {% comment %} <a href="{% url 'pages:dynamic_pages' template_name='course-details' %}"><img loading="lazy" src="{% static 'img/grid/grid_3.png' %}" {% endcomment %}
-                                                   alt="grid"></a>
-                <div class="gridarea__small__button">
-                  <div class="grid__badge pink__color">Development</div>
-                </div>
-                <div class="gridarea__small__icon">
-                  <a href="#"><i class="icofont-heart-alt"></i></a>
-                </div>
-
-              </div>
-              <div class="gridarea__content">
-                <div class="gridarea__list">
-                  <ul>
-                    <li>
-                      <i class="icofont-book-alt"></i> 25 Lesson
-                    </li>
-                    <li>
-                      <i class="icofont-clock-time"></i> 1 hr 40 min
-                    </li>
-                  </ul>
-                </div>
-                <div class="gridarea__heading">
-                  {% comment %} <h3><a href="{% url 'pages:dynamic_pages' template_name='course-details' %}">Minws course to under stand {% endcomment %}
-                    about solution</a></h3>
-                </div>
-                <div class="gridarea__price">
-                  $40.00
-                  <del>/ $67.00</del>
-                  <span> <del class="del__2">Free</del></span>
-
-                </div>
-                <div class="gridarea__bottom">
-
-                  {% comment %} <a href="{% url 'pages:dynamic_pages' template_name='instructor-detail' %}"> {% endcomment %}
-                    <div class="gridarea__small__img">
-                      <img loading="lazy" src="{% static 'img/grid/grid_small_3.jpg' %}" alt="grid">
-                      <div class="gridarea__small__content">
-                        <h6>Micle Jhon</h6>
-                      </div>
-                    </div>
-                  </a>
-
-                  <div class="gridarea__star">
-                    <i class="icofont-star"></i>
-                    <i class="icofont-star"></i>
-                    <i class="icofont-star"></i>
-                    <i class="icofont-star"></i>
-                    <i class="icofont-star"></i>
-                    <span>(44)</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 grid-item filter4">
-            <div class="gridarea__wraper">
-              <div class="gridarea__img">
-                {% comment %} <a href="{% url 'pages:dynamic_pages' template_name='course-details' %}"><img loading="lazy" src="{% static 'img/grid/grid_4.png' %}" {% endcomment %}
-                                                   alt="grid"></a>
-                <div class="gridarea__small__button">
-                  <div class="grid__badge green__color">Ui & UX Design</div>
-                </div>
-                <div class="gridarea__small__icon">
-                  <a href="#"><i class="icofont-heart-alt"></i></a>
-                </div>
-
-              </div>
-              <div class="gridarea__content">
-                <div class="gridarea__list">
-                  <ul>
-                    <li>
-                      <i class="icofont-book-alt"></i> 36 Lesson
-                    </li>
-                    <li>
-                      <i class="icofont-clock-time"></i> 3 hr 40 min
-                    </li>
-                  </ul>
-                </div>
-                <div class="gridarea__heading">
-                  {% comment %} <h3><a href="{% url 'pages:dynamic_pages' template_name='course-details' %}">Design course to under stand {% endcomment %}
-                    about solution</a></h3>
-                </div>
-                <div class="gridarea__price">
-                  $40.00
-                  <del>/ $67.00</del>
-                  <span> <del class="del__2">Free</del></span>
-
-                </div>
-                <div class="gridarea__bottom">
-
-                  {% comment %} <a href="{% url 'pages:dynamic_pages' template_name='instructor-detail' %}"> {% endcomment %}
-                    <div class="gridarea__small__img">
-                      <img loading="lazy" src="{% static 'img/grid/grid_small_4.jpg' %}" alt="grid">
-                      <div class="gridarea__small__content">
-                        <h6>Micle Robin</h6>
-                      </div>
-                    </div>
-                  </a>
-
-                  <div class="gridarea__star">
-                    <i class="icofont-star"></i>
-                    <i class="icofont-star"></i>
-                    <i class="icofont-star"></i>
-                    <i class="icofont-star"></i>
-                    <i class="icofont-star"></i>
-                    <span>(44)</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 grid-item filter1 filter3">
-            <div class="gridarea__wraper">
-              <div class="gridarea__img">
-                {% comment %} <a href="{% url 'pages:dynamic_pages' template_name='course-details' %}"><img loading="lazy" src="{% static 'img/grid/grid_5.png' %}" {% endcomment %}
-                                                   alt="grid"></a>
-                <div class="gridarea__small__button">
-                  <div class="grid__badge orange__color">Data & Tech</div>
-                </div>
-                <div class="gridarea__small__icon">
-                  <a href="#"><i class="icofont-heart-alt"></i></a>
-                </div>
-
-              </div>
-              <div class="gridarea__content">
-                <div class="gridarea__list">
-                  <ul>
-                    <li>
-                      <i class="icofont-book-alt"></i> 36 Lesson
-                    </li>
-                    <li>
-                      <i class="icofont-clock-time"></i> 3 hr 40 min
-                    </li>
-                  </ul>
-                </div>
-                <div class="gridarea__heading">
-                  {% comment %} <h3><a href="{% url 'pages:dynamic_pages' template_name='course-details' %}">Data course to under stand {% endcomment %}
-                    about solution</a></h3>
-                </div>
-                <div class="gridarea__price">
-                  $40.00
-                  <del>/ $67.00</del>
-                  <span> <del class="del__2">Free</del></span>
-
-                </div>
-                <div class="gridarea__bottom">
-
-                  {% comment %} <a href="{% url 'pages:dynamic_pages' template_name='instructor-detail' %}"> {% endcomment %}
-                    <div class="gridarea__small__img">
-                      <img loading="lazy" src="{% static 'img/grid/grid_small_5.jpg' %}" alt="grid">
-                      <div class="gridarea__small__content">
-                        <h6>Micle Robin</h6>
-                      </div>
-                    </div>
-                  </a>
-
-                  <div class="gridarea__star">
-                    <i class="icofont-star"></i>
-                    <i class="icofont-star"></i>
-                    <i class="icofont-star"></i>
-                    <i class="icofont-star"></i>
-                    <i class="icofont-star"></i>
-                    <span>(44)</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 grid-item filter5 filter2">
-            <div class="gridarea__wraper">
-              <div class="gridarea__img">
-                {% comment %} <a href="{% url 'pages:dynamic_pages' template_name='course-details' %}"><img loading="lazy" src="{% static 'img/grid/grid_6.png' %}" {% endcomment %}
-                                                   alt="grid"></a>
-                <div class="gridarea__small__button">
-                  <div class="grid__badge yellow__color">Big Data</div>
-                </div>
-                <div class="gridarea__small__icon">
-                  <a href="#"><i class="icofont-heart-alt"></i></a>
-                </div>
-
-              </div>
-              <div class="gridarea__content">
-                <div class="gridarea__list">
-                  <ul>
-                    <li>
-                      <i class="icofont-book-alt"></i> 30 Lesson
-                    </li>
-                    <li>
-                      <i class="icofont-clock-time"></i> 3 hr 40 min
-                    </li>
-                  </ul>
-                </div>
-                <div class="gridarea__heading">
-                  {% comment %} <h3><a href="{% url 'pages:dynamic_pages' template_name='course-details' %}">Big data to under stand {% endcomment %}
-                    about solution pacage</a></h3>
-                </div>
-                <div class="gridarea__price">
-                  $40.00
-                  <del>/ $67.00</del>
-                  <span> <del class="del__2">Free</del></span>
-
-                </div>
-                <div class="gridarea__bottom">
-
-                  {% comment %} <a href="{% url 'pages:dynamic_pages' template_name='instructor-detail' %}"> {% endcomment %}
-                    <div class="gridarea__small__img">
-                      <img loading="lazy" src="{% static 'img/grid/grid_small_5.jpg' %}" alt="grid">
-                      <div class="gridarea__small__content">
-                        <h6>Micle Robin</h6>
-                      </div>
-                    </div>
-                  </a>
-
-                  <div class="gridarea__star">
-                    <i class="icofont-star"></i>
-                    <i class="icofont-star"></i>
-                    <i class="icofont-star"></i>
-                    <i class="icofont-star"></i>
-                    <i class="icofont-star"></i>
-                    <span>(44)</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <!-- grid__section__end -->
-
     <!-- register__section__start-->
     <div class="registerarea sp_top_90">
       <div class="container">
@@ -1226,331 +850,57 @@
     </div>
     <!-- register__section__start-->
 
-    <!-- Learning__section__start -->
-    <div class="pricingarea sp_bottom_100 sp_top_90">
-      <div class="container">
-        <div class="row" data-aos="fade-up">
-          <div class="section__title text-center">
-            <div class="section__title__button">
-              <div class="default__small__button">Pricing Plan</div>
-            </div>
-            <div class="section__title__heading">
-              <h2>Choose The Best Package
-                <br>For your Learning</h2>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12" data-aos="fade-up">
-            <div class="pricingarea__content__wraper">
-              <div class="pricingarea__heading">
-                <div class="pricingarea__plan__type">
-                  <h6>FREE</h6>
-                  <img loading="lazy" src="{% static 'img/icon/price__1.png' %}" alt="">
-                </div>
 
-                <div class="pricingarea__number">
-                  <h1><span class="price__currency">$</span>0<span class="price__durition">/ month</span></h1>
-                </div>
-                <p>Perfect for startup</p>
-              </div>
-              <div class="pricingarea__list">
-                <ul>
-                  <li>
-                    <i class="icofont-check"></i> 2 user
-                  </li>
-                  <li>
-                    <i class="icofont-check"></i> Learning Scope
-                  </li>
-                  <li>
-                    <i class="icofont-close close__button"></i> Team collaboration
-                  </li>
-                  <li>
-                    <i class="icofont-check dark__color__2"></i> Export HTML code
-                  </li>
-                  <li>
-                    <i class="icofont-check"></i> Upload Your Logo
-                  </li>
-
-                </ul>
-              </div>
-              <div class="pricingarea__button">
-                <a class="default__button" href="#">Get Started</a>
-              </div>
-              <div class="pricingarea__text">
-                <p>No creadit card required</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12" data-aos="fade-up">
-            <div class="pricingarea__content__wraper">
-              <div class="pricingarea__heading">
-                <div class="pricingarea__plan__type">
-                  <h6>BASIC</h6>
-                  <img loading="lazy" src="{% static 'img/icon/price__2.png' %}" alt="">
-                </div>
-
-                <div class="pricingarea__number">
-                  <h1><span class="price__currency">$</span>29<span class="price__durition">/ month</span></h1>
-                </div>
-                <p>Perfect for startup</p>
-              </div>
-              <div class="pricingarea__list">
-                <ul>
-                  <li>
-                    <i class="icofont-check"></i> 5 user
-                  </li>
-                  <li>
-                    <i class="icofont-check"></i> Learning Scope
-                  </li>
-                  <li>
-                    <i class="icofont-close close__button"></i> Team collaboration
-                  </li>
-                  <li>
-                    <i class="icofont-check dark__color__2"></i> Export HTML code
-                  </li>
-                  <li>
-                    <i class="icofont-check"></i> Upload Your Logo
-                  </li>
-
-                </ul>
-              </div>
-              <div class="pricingarea__button pricingarea__button__2">
-                <a class="default__button" href="#">Get Started</a>
-              </div>
-              <div class="pricingarea__text">
-                <p>No creadit card required</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12" data-aos="fade-up">
-            <div class="pricingarea__content__wraper">
-              <div class="pricingarea__heading">
-                <div class="pricingarea__plan__type">
-                  <h6>PRO</h6>
-                  <img loading="lazy" src="{% static 'img/icon/price__3.png' %}" alt="">
-                </div>
-
-                <div class="pricingarea__number">
-                  <h1><span class="price__currency">$</span>59<span class="price__durition">/ month</span></h1>
-                </div>
-                <p>Perfect for startup</p>
-              </div>
-              <div class="pricingarea__list">
-                <ul>
-                  <li>
-                    <i class="icofont-check"></i> 2 user
-                  </li>
-                  <li>
-                    <i class="icofont-check"></i> Learning Scope
-                  </li>
-                  <li>
-                    <i class="icofont-close close__button"></i> Team collaboration
-                  </li>
-                  <li>
-                    <i class="icofont-check dark__color__2"></i> Export HTML code
-                  </li>
-                  <li>
-                    <i class="icofont-check"></i> Upload Your Logo
-                  </li>
-
-                </ul>
-              </div>
-              <div class="pricingarea__button">
-                <a class="default__button" href="#">Get Started</a>
-              </div>
-              <div class="pricingarea__text">
-                <p>No creadit card required</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Learning__section__end-->
-
-    <!-- about__section__3__start -->
-    <div class="aboutarea__3 testimonial__area__2 sp_bottom_90 sp_top_120">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 custom__review__grid" data-aos="fade-up">
-            <div class="section__title aboutarea__3__section__title">
-              <div class="section__title__button">
-                <div class="default__small__button">Course List</div>
-              </div>
-              <div class="section__title__heading">
-                <h2>What They Say
-                  <br>About us</h2>
-              </div>
-            </div>
-
-            <div class="aboutarea__3__content">
-              <p>Construction is a general term meaning the art and science to form systems organizations and comes from
-                Latin Construction is</p>
-            </div>
-            <div class="aboutarea__3__button">
-              <a class="default__button" href="#">Explore More
-                <i class="icofont-long-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 custom__review__grid" data-aos="fade-up">
-            <div class="aboutarea__content__wraper__3">
-              <div class="aboutarea__para__3">
-                <p>“The other hand we denounce righteou indg ation men who are so beguiled and demoraliz by the the mo
-                  ment.Dislike men who so development co” </p>
-                <div class="aboutarea__icon__3">
-                  <i class="icofont-quote-left"></i>
-                </div>
-              </div>
-              <div class="aboutarea__img__3">
-                <img loading="lazy" src="{% static 'img/about/about_5.png' %}" alt="about">
-                <div class="aboutarea__img__name">
-                  <h6>Robind Jon</h6>
-                  <p>Desginer TechBoot</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 custom__review__grid" data-aos="fade-up">
-            <div class="aboutarea__content__wraper__3">
-              <div class="aboutarea__para__3">
-                <p>“The other hand we denounce righteou indg ation men who are so beguiled and demoraliz by the the mo
-                  ment.Dislike men who so development co” </p>
-                <div class="aboutarea__icon__3">
-                  <i class="icofont-quote-left"></i>
-                </div>
-              </div>
-              <div class="aboutarea__img__3">
-                <img loading="lazy" src="{% static 'img/about/about_5.png' %}" alt="about">
-                <div class="aboutarea__img__name">
-                  <h6>Robind Jon</h6>
-                  <p>Desginer TechBoot</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="aboutarea__img__3">
-        <img loading="lazy" class="aboutarea__3__img__1" src="{% static 'img/about/about_6.png' %}"
-             alt="about">
-        <img loading="lazy" class="aboutarea__3__img__2" src="{% static 'img/about/about_7.png' %}"
-             alt="about">
-        <img loading="lazy" class="aboutarea__3__img__3" src="{% static 'img/about/about_9.png' %}"
-             alt="about">
-      </div>
-    </div>
-    <!-- about__section__3__end -->
-
-    <!-- blog__section__start -->
-    <div class="blogarea sp_bottom_70 sp_top_100">
-      <div class="container">
-        <div class="row" data-aos="fade-up">
-          <div class="col-xl-12">
-            <div class="section__title text-center">
-              <div class="section__title__button">
-                <div class="default__small__button">News & Blogs</div>
-              </div>
-              <div class="section__title__heading">
-                <h2>Leatest News & Blog</h2>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xl-8 col-lg-8" data-aos="fade-up">
-            <div class="blogarea__content__wraper">
-              <div class="blogarea__img">
-                <img loading="lazy" src="{% static 'img/blog/blog_1.png' %}" alt="blog">
-                <div class="blogarea__date">
-                  20
-                  <span>Oct</span>
-                </div>
-              </div>
-              <div class="blogarea__text__wraper">
-                <h3><a href="#">It is a long established fact that a reader
-                  will be Standard Part</a></h3>
-                <div class="blogarea__para">
-                  <p>A wonderful serenity has taken possssion of my entire souing like these sweet
-                    morning spring whch
-                    enjoy with my whole heart I am alone, and feel the charm of existenceths spot whch
-                    was create For
-                    the bliss of souls
-                    like mineing am so happy my dear frend so absori bed in the exquste sens of mere.
-                    A wonderful
-                    serenity has taken posseson of my entire soung like these sweet mornngs spring
-                    whch enjoy …</p>
-                </div>
-
-                <div class="blogarea__icon">
-                  <div class="blogarea__person">
-                    <div class="blogarea__img">
-                      <img loading="lazy" src="{% static 'img/blog/blog_2.png' %}" alt="">
+    <!-- testimonial__section__start -->
+    {% if training_comments %}
+    <div class="testimonialarea__3">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                    <div class="section__title__2" data-aos="fade-up">
+                        <div class="section__small__title">
+                            <span>Education Solution</span>
+                        </div>
+                        <div class="section__title__heading__2 section__title__heading__3 heading__fontsize__2">
+                            <h2>Client Testimonial About Our Lms Agency</h2>
+                        </div>
                     </div>
-                    <div class="blogarea__name">
-                      <span> By</span>: Mirnsdo Jons
+
+                    <div class="testimonial__slider__active__3" data-aos="fade-up">
+
+                      {% for comment in training_comments %}
+                      <div class="testimonialarea__paragraph__3 ">
+                          <p class="testimonial__quote">
+                            <i class="icofont-quote-left quote__left"></i>
+                              {{ comment.content }}
+                            <i class="icofont-quote-right quote__right"></i>
+                          </p>
+
+                          <div class="testimonialarea__person__3">
+                              <div class="testimonial__img__3">
+                                  <img class="rounded-circle" loading="lazy" src="{{ comment.user.profile_picture.url }}" width="50" height="50" alt="">
+                              </div>
+                              <div class="testimonial__name">
+                                  <h6><a href="#">{{ comment.user.first_name }}</a></h6>
+                                  <span>{{ comment.user.get_designation_display }}</span>
+                              </div>
+                          </div>
+
+                      </div>
+                      {% endfor %}
                     </div>
-                  </div>
-                  <div class="blogarea__list">
-                    <ul>
-                      <li>
-                        <a href="#"><i class="icofont-facebook"></i></a>
-                      </li>
-
-                      <li>
-                        <a href="#"><i class="icofont-youtube-play"></i></a>
-                      </li>
-                      <li>
-                        <a href="#"><i class="icofont-instagram"></i></a>
-                      </li>
-                      <li>
-                        <a href="#"><i class="icofont-twitter"></i></a>
-                      </li>
-                    </ul>
-                  </div>
                 </div>
-              </div>
-
-            </div>
-          </div>
-          <div class="col-xl-4 col-lg-4" data-aos="fade-up">
-            <div class="blogarea__content__wraper">
-              <div class="blogarea__img">
-                <img loading="lazy" src="{% static 'img/blog/blog_3.png' %}" alt="blog">
-                <div class="blogarea__date small__date">
-                  20
-                  <span>Oct</span>
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12" data-aos="fade-up">
+                    <div class="testimonial__group__img" data-tilt>
+                        <img loading="lazy" src="{% static 'img/testimonial/testi__group__1.png' %}" alt="">
+                    </div>
                 </div>
-              </div>
-              <div class="blogarea__text__wraper blogarea__text__wraper__2">
-                <h3><a href="#">It is a long established fact that a reader
-                  will be Standard Part</a></h3>
-              </div>
-
             </div>
-
-            <div class="blogarea__content__wraper">
-              <div class="blogarea__img">
-                <img loading="lazy" src="{% static 'img/blog/blog_4.png' %}" alt="blog">
-                <div class="blogarea__date small__date">
-                  20
-                  <span>Oct</span>
-                </div>
-              </div>
-              <div class="blogarea__text__wraper blogarea__text__wraper__2">
-                <h3><a href="#">It is a long established fact that a reader
-                  will be Standard Part</a></h3>
-              </div>
-
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-    <!-- blog__section__end -->
+    {% endif %}
+    <!-- testimonial__section__start -->
+
 
     {% include 'partials/footer.html' %}
 
