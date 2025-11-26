@@ -79,6 +79,7 @@
             <div class="animate__content__wrap">
 
                 {% for category in categories %}
+                <a href="{% url 'course_list' %}?category={{ category.slug }}">
                 <div class="single__service">
                     <div class="service__img">
                       
@@ -105,6 +106,7 @@
                         </svg>
                     </div>
                 </div>
+                </a>
                 {% endfor %}
 
             </div>
