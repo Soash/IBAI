@@ -878,7 +878,13 @@
 
                           <div class="testimonialarea__person__3">
                               <div class="testimonial__img__3">
+                                {% if comment.user.profile_picture %}
                                   <img class="rounded-circle" loading="lazy" src="{{ comment.user.profile_picture.url }}" width="50" height="50" alt="">
+                                {% else %}
+                                  <img class="rounded-circle" loading="lazy" src="{% static 'img/profile.png' %}" width="50" height="50" alt="">
+                                {% endif %}
+
+                                
                               </div>
                               <div class="testimonial__name">
                                   <h6><a href="#">{{ comment.user.first_name }}</a></h6>
