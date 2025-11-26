@@ -30,7 +30,7 @@ def course_list(request):
     
     courses = courses.order_by('order')
 
-    categories = Category.objects.all()
+    categories = Category.objects.exclude(slug='news')
     total_courses = courses.count()
 
     context = {

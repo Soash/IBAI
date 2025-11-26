@@ -5,7 +5,7 @@ from blog.models import ResearchPaper, BlogPost
 
 def home(request):
     courses = Course.objects.all()
-    categories = Category.objects.all()
+    categories = Category.objects.exclude(slug='news')
     trainings = Training.objects.all()
     researches = ResearchPaper.objects.all()[:3]
     blogs = BlogPost.objects.all()
