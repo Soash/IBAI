@@ -54,6 +54,11 @@ class Course(models.Model):
             for lesson in self.lessons.all()
             for video in lesson.video.all()
         )
+        
+    @property
+    def total_duration_in_hours(self):
+        total_minutes = self.total_duration
+        return total_minutes / 60 if total_minutes else 0
     
     # calculate total videos
     @property
