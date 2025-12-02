@@ -6,4 +6,6 @@ urlpatterns = [
     path('success/', views.payment_success, name='payment_success'),
     path('fail/', views.payment_fail, name='payment_fail'),
     path('cancel/', views.payment_cancel, name='payment_cancel'),
+    
+    # path('webhook/', views.piprapay_webhook, name='piprapay_webhook'),
 ]

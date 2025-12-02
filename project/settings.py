@@ -221,3 +221,18 @@ LOGGING = {
         },
     },
 }
+
+
+# settings.py
+
+# PipraPay Configuration
+PIPRAPAY_API_KEY = env('PIPRAPAY_API_KEY')
+PIPRAPAY_IS_SANDBOX = env.bool('PIPRAPAY_IS_SANDBOX', default=True)
+
+if PIPRAPAY_IS_SANDBOX:
+    PIPRAPAY_BASE_URL = "https://sandbox.piprapay.com/api"
+else:
+    PIPRAPAY_BASE_URL = "https://pay.ibaidob.com/api"
+
+
+    
