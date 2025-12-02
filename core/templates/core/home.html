@@ -625,8 +625,8 @@
         <div class="row">
           <!-- Left big blog (latest blog) -->
           <div class="col-xl-8 col-lg-8" data-aos="fade-up">
-            {% if blogs %}
-            {% with blogs.0 as main_blog %}
+            {% if news %}
+            {% with news.0 as main_blog %}
             <div class="blogarea__content__wraper">
               <div class="blogarea__img" style="height: 400px; object-fit: cover;">
                 <img loading="lazy" src="{{ main_blog.image.url }}" alt="blog">
