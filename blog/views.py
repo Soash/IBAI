@@ -141,7 +141,7 @@ def research_papers(request):
     })
     
 def thesis_list(request):
-    theses = Thesis.objects.filter(published=True).order_by('-id')
+    theses = Thesis.objects.filter(published=True).order_by('-order')
     return render(request, 'blog/thesis_list.html', {'theses': theses})
 
 def thesis_details(request, slug):

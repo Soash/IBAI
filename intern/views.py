@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 def intern_list(request):
-    interns = Intern.objects.filter(is_active=True).order_by('-order')
+    interns = Intern.objects.filter(is_active=True)
     return render(request, 'intern/intern_list.html', {'interns': interns})
 
 def intern_detail(request, slug):
