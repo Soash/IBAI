@@ -65,7 +65,8 @@ class ResearchPaperAdmin(admin.ModelAdmin):
     
 @admin.register(Thesis)
 class ThesisAdmin(admin.ModelAdmin):
-    list_display = ('title', 'published')
+    list_display = ('title', 'published', 'order')
+    list_editable = ('order',)
     prepopulated_fields = {'slug': ('title',)}
     list_filter = ('published',)
     search_fields = ('title', 'content')

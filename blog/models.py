@@ -65,6 +65,7 @@ class Thesis(models.Model):
     content = HTMLField()
     image = models.ImageField(upload_to='thesis_images/', blank=True, null=True)
     published = models.BooleanField(default=True)
+    order = models.PositiveIntegerField(default=0, blank=True, null=True)
 
     def save(self, *args, **kwargs):
         if not self.slug:

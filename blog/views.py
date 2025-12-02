@@ -74,7 +74,6 @@ def delete_comment(request, comment_id):
     messages.success(request, "Your comment was deleted successfully.")
     return redirect('blog_detail', slug=post_slug)
 
-
 def vlog_list(request):
     search_query = request.GET.get('q', '')
     selected_category = request.GET.get('category', '')
@@ -105,7 +104,6 @@ def vlog_list(request):
         'selected_category': selected_category,
         'total_vlogs': total_vlogs,
     })
-
 
 def toggle_like(request, vlog_id):
     vlog = Vlog.objects.get(pk=vlog_id)
