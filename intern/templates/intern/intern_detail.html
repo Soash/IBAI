@@ -264,11 +264,16 @@
               <div class="course__summery__lists">
                 <ul>
                   <li><div class="course__summery__item"><span class="sb_label">Price</span><span class="sb_content text-bg-warning">৳{{ intern.current_price|default:"0" }}</span></div></li>
-                  <li><div class="course__summery__item"><span class="sb_label">Duration</span><span class="sb_content">{{ intern.duration|default:"N/A" }}</span></div></li>
-                  <li><div class="course__summery__item"><span class="sb_label">Mode</span><span class="sb_content">{{ intern.mode|default:"Online / Offline" }}</span></div></li>
+                  <li><div class="course__summery__item"><span class="sb_label">Instalment</span><span class="sb_content">Applicable</span></div></li>
+                  <li><div class="course__summery__item"><span class="sb_label">Duration</span><span class="sb_content">{{ intern.duration|default:"6 Months" }}</span></div></li>
+                  <li><div class="course__summery__item"><span class="sb_label">Mode</span><span class="sb_content">{{ intern.mode|default:"Online & Offline" }}</span></div></li>
+                  <li><div class="course__summery__item"><span class="sb_label">Module</span><span class="sb_content">8 - 10</span></div></li>
+                  <li><div class="course__summery__item"><span class="sb_label">Class</span><span class="sb_content">24 + 12 (Project)</span></div></li>
+                  <li><div class="course__summery__item"><span class="sb_label">Project Opportunity</span><span class="sb_content">Yes</span></div></li>
+                  <li><div class="course__summery__item"><span class="sb_label">Software Access</span><span class="sb_content">Yes</span></div></li>
+                  <li><div class="course__summery__item"><span class="sb_label">Technical Support</span><span class="sb_content">{{ intern.support|default:"Yes" }}</span></div></li>    
                   <li><div class="course__summery__item"><span class="sb_label">Certificate</span><span class="sb_content">{{ intern.certificate|default:"Yes" }}</span></div></li>
                   <li><div class="course__summery__item"><span class="sb_label">Language</span><span class="sb_content">{{ intern.language|default:"Bangla" }}</span></div></li>
-                  <li><div class="course__summery__item"><span class="sb_label">Support</span><span class="sb_content">{{ intern.support|default:"Technical Support Available" }}</span></div></li>
                 </ul>
               </div>
 
