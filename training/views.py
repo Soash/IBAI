@@ -5,12 +5,12 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 
 def training_list(request):
-    trainings = Training.objects.filter(is_active=True, medium='offline')
+    trainings = Training.objects.filter(is_active=True, medium='offline').order_by('date')
     has_branch = trainings.filter(branch__isnull=False).exists()
     return render(request, 'training/training_list.html', {'trainings': trainings, 'has_branch': has_branch})
 
 def online_training_list(request):
-    trainings = Training.objects.filter(is_active=True, medium='online')
+    trainings = Training.objects.filter(is_active=True, medium='online').order_by('date')
     return render(request, 'training/training_list.html', {'trainings': trainings})
 
 def training_detail(request, slug):
