@@ -39,7 +39,7 @@
     {% endblock extra_css %}
   {% endblock css %}
 
-  <script id="pixel-chaty" async="true" src="https://cdn.chaty.app/pixel.js?id=Jlv6tCZr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/wa-chat-widget@1.0.3/dist/wa-chat-widget.js"></script>
 </head>
 
 <body {% block body_attribute %}class="body__wrapper"{% endblock body_attribute %}>
@@ -112,6 +112,13 @@
 </script>
 
 
+<script src="https://cdn.jsdelivr.net/npm/wa-chat-widget@1.0.3/dist/wa-chat-widget.js"></script>
+<script>
+    const widget = new WaChatWidget({
+        phoneNumber: '8801517831136',
+        message: "Hello! I'm interested in your services"
+    });
+</script>
 
 </body>
 </html>
